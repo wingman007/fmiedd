@@ -21,7 +21,7 @@ namespace Ani_Krivova_1301681024_CRUD_Project
             AuthConfig.RegisterOpenAuth();
 
             // Initialize the product database. 
-            Database.SetInitializer(new ProductDatabaseInitializer());
+          //  Database.SetInitializer(new Contact());
         }
 
         void Application_End(object sender, EventArgs e)
