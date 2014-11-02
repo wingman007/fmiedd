@@ -1,0 +1,25 @@
+﻿body {
+    margin-left:50px;
+    background-color:#ddaad7;
+}
+div {
+    width:200px;
+    height:auto;
+}
+.title {
+    font-size:50px;
+    font-style:italic;
+    font-weight:900;
+    color:#2e0e69;
+}
+.texts {
+    margin:2px;
+    float:left;
+    overflow:hidden;
+}
+.labels {
+    font-weight:bold;
+    float:left;
+    overflow:hidden;
+    margin:5px;
+}
