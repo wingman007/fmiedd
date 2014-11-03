@@ -11,6 +11,7 @@ div {
     font-style:italic;
     font-weight:900;
     color:#2e0e69;
+    width:300px;
 }
 .texts {
     margin:2px;
@@ -22,4 +23,19 @@ div {
     float:left;
     overflow:hidden;
     margin:5px;
+}
+.buttonlogin {
+    border:2px outset #2e0e69;
+    background-color: #2e0e69;
+    color:white;
+    padding:5px;
+    margin-top:20px;
+    font-size:20px;
+    float:left;
+    overflow:hidden;
+    text-decoration:none;
+}
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
 }
