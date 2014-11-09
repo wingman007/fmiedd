@@ -1,0 +1,30 @@
+C:\Users\SONY\Documents\Visual Studio 2012\Projects\Vtori trimestar\PhoneBook\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe.config
+C:\Users\SONY\Documents\Visual Studio 2012\Projects\Vtori trimestar\PhoneBook\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe
+C:\Users\SONY\Documents\Visual Studio 2012\Projects\Vtori trimestar\PhoneBook\ConsolePhonebook\bin\Debug\ConsoleLibrary.pdb
+C:\Users\SONY\Documents\Visual Studio 2012\Projects\Vtori trimestar\PhoneBook\ConsolePhonebook\obj\Debug\ConsolePhonebook.csprojResolveAssemblyReference.cache
+C:\Users\SONY\Documents\Visual Studio 2012\Projects\Vtori trimestar\PhoneBook\ConsolePhonebook\obj\Debug\ConsoleLibrary.exe
+C:\Users\SONY\Documents\Visual Studio 2012\Projects\Vtori trimestar\PhoneBook\ConsolePhonebook\obj\Debug\ConsoleLibrary.pdb
+D:\Dafi's files\Programirane - 1 godina\Projects - C#\2). Vtori trimestar\PhoneBook\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe.config
+D:\Dafi's files\Programirane - 1 godina\Projects - C#\2). Vtori trimestar\PhoneBook\ConsolePhonebook\obj\Debug\ConsoleLibrary.exe
+D:\Dafi's files\Programirane - 1 godina\Projects - C#\2). Vtori trimestar\PhoneBook\ConsolePhonebook\obj\Debug\ConsoleLibrary.pdb
+D:\Dafi's files\Programirane - 1 godina\Projects - C#\2). Vtori trimestar\PhoneBook\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe
+D:\Dafi's files\Programirane - 1 godina\Projects - C#\2). Vtori trimestar\PhoneBook\ConsolePhonebook\bin\Debug\ConsoleLibrary.pdb
+D:\Dafi's files\Programirane - 1 godina\Projects - C#\2). Vtori trimestar\PhoneBook\ConsolePhonebook\obj\Debug\ConsolePhonebook.csprojResolveAssemblyReference.cache
+D:\uchebnici i drugi\II академична година\I триместър(есенен)\Събитийно програмиране\Допълнително\Dafinka\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe.config
+D:\uchebnici i drugi\II академична година\I триместър(есенен)\Събитийно програмиране\Допълнително\Dafinka\ConsolePhonebook\obj\Debug\ConsoleLibrary.exe
+D:\uchebnici i drugi\II академична година\I триместър(есенен)\Събитийно програмиране\Допълнително\Dafinka\ConsolePhonebook\obj\Debug\ConsoleLibrary.pdb
+D:\uchebnici i drugi\II академична година\I триместър(есенен)\Събитийно програмиране\Допълнително\Dafinka\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe
+D:\uchebnici i drugi\II академична година\I триместър(есенен)\Събитийно програмиране\Допълнително\Dafinka\ConsolePhonebook\bin\Debug\ConsoleLibrary.pdb
+D:\uchebnici i drugi\II академична година\I триместър(есенен)\Събитийно програмиране\Допълнително\Dafinka\ConsolePhonebook\obj\Debug\ConsolePhonebook.csprojResolveAssemblyReference.cache
+D:\uchebnici i drugi\II академична година\I триместър(есенен)\Събитийно програмиране\Допълнително\PhonebookWithACCSESS\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe.config
+D:\uchebnici i drugi\II академична година\I триместър(есенен)\Събитийно програмиране\Допълнително\PhonebookWithACCSESS\ConsolePhonebook\obj\Debug\ConsoleLibrary.exe
+D:\uchebnici i drugi\II академична година\I триместър(есенен)\Събитийно програмиране\Допълнително\PhonebookWithACCSESS\ConsolePhonebook\obj\Debug\ConsoleLibrary.pdb
+D:\uchebnici i drugi\II академична година\I триместър(есенен)\Събитийно програмиране\Допълнително\PhonebookWithACCSESS\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe
+D:\uchebnici i drugi\II академична година\I триместър(есенен)\Събитийно програмиране\Допълнително\PhonebookWithACCSESS\ConsolePhonebook\bin\Debug\ConsoleLibrary.pdb
+D:\uchebnici i drugi\II академична година\I триместър(есенен)\Събитийно програмиране\Допълнително\PhonebookWithACCSESS\ConsolePhonebook\obj\Debug\ConsolePhonebook.csprojResolveAssemblyReference.cache
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe.config
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\obj\Debug\ConsoleLibrary.exe
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\obj\Debug\ConsoleLibrary.pdb
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\bin\Debug\ConsoleLibrary.pdb
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\obj\Debug\ConsolePhonebook.csprojResolveAssemblyReference.cache

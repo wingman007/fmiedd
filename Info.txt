@@ -1,0 +1,15 @@
+Info about my CRUD project
+
+befor you started it , you need to change a few thing 
+
+1. Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\Service
+    there is the " AuthenticationService.cs" file
+    You need to change the "string conectionstring to" to the right filepath where the access file is.
+    It is in folder Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\Service
+
+2.Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD
+   there is the "Web.config" file
+   You need to change the "conectionstring to" to the right filepath where the access file is.
+   For exact info about it , go to Server Explorer where the databases are and look ot the 
+   property "connectionstring" of the Data Connections-> Access file
+ 

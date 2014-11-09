@@ -1,0 +1,70 @@
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\CRUD.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\CRUD.pdb
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\Antlr3.Runtime.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\AspNet.ScriptManager.jQuery.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\DotNetOpenAuth.AspNet.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\DotNetOpenAuth.Core.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\DotNetOpenAuth.OAuth.Consumer.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\DotNetOpenAuth.OAuth.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\DotNetOpenAuth.OpenId.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\EntityFramework.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\Microsoft.AspNet.FriendlyUrls.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\Microsoft.ScriptManager.MSAjax.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\Microsoft.ScriptManager.WebForms.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\Microsoft.Web.Infrastructure.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\System.Web.Optimization.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\System.Web.Providers.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\WebGrease.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\EntityFramework.xml
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\DotNetOpenAuth.Core.xml
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\DotNetOpenAuth.OAuth.xml
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\DotNetOpenAuth.OAuth.Consumer.xml
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\DotNetOpenAuth.OpenId.xml
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\DotNetOpenAuth.AspNet.xml
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\Microsoft.AspNet.FriendlyUrls.xml
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\obj\Debug\CRUD.csprojResolveAssemblyReference.cache
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\obj\Debug\CRUD.dll
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\obj\Debug\CRUD.pdb
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\ConsoleLibrary.exe
+c:\users\pc\documents\visual studio 2012\Projects\CRUD\CRUD\bin\ConsoleLibrary.pdb
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\obj\Debug\CRUD.csprojResolveAssemblyReference.cache
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\obj\Debug\CRUD.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\obj\Debug\CRUD.pdb
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\CRUD.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\CRUD.pdb
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\Antlr3.Runtime.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\ConsoleLibrary.exe
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\DotNetOpenAuth.Core.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\EntityFramework.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\System.Web.Optimization.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\System.Web.Providers.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\WebGrease.dll
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\ConsoleLibrary.pdb
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\EntityFramework.xml
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\DotNetOpenAuth.Core.xml
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\CRUD\bin\Microsoft.AspNet.FriendlyUrls.xml
