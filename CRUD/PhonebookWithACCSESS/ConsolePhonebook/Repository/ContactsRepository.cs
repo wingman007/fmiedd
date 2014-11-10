@@ -74,12 +74,12 @@ namespace ConsolePhonebook.Repository
 
             myCommand.CommandText=
     @"UPDATE Contacts SET userId=@userId,fname=@fname,lname=@lname,email=@email WHERE contactID=@contactID";
-            myCommand.Parameters.Add(myParam0);
+           
             myCommand.Parameters.Add(myParam1);
             myCommand.Parameters.Add(myParam2);
             myCommand.Parameters.Add(myParam3);
             myCommand.Parameters.Add(myParam4);
-
+            myCommand.Parameters.Add(myParam0);
             Console.WriteLine("Contact updated successfully");
 
             try

@@ -13,3 +13,5 @@ befor you started it , you need to change a few thing
    For exact info about it , go to Server Explorer where the databases are and look ot the 
    property "connectionstring" of the Data Connections-> Access file
  
+3.Username: ann
+   Password: annpass
