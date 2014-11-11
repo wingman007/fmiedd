@@ -1,4 +1,7 @@
-﻿using ConsolePhonebook.Service;
+﻿using ConsolePhonebook.Entity;
+using ConsolePhonebook.Repository;
+using ConsolePhonebook.Service;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,11 +80,19 @@ namespace CRUD
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+           
             AuthenticationService authService = new AuthenticationService();
            authService.AuthenticateUser(tbUsername.Text, tbPassword.Text);
+
+           User us = new User();
+            us.Username=tbUsername.Text;
+            us.Password=tbPassword.Text;
+           UsersRepository usr = new UsersRepository();
+           us=usr.GetByUsernameAndPassword(us.Username, us.Password);
+            
             
 
-            if (tbUsername.Text.Equals("ann") && tbPassword.Text.Equals("annpass"))
+           if (us.FirstName != null && us.LastName!=null)
             {
                 Session["authService"] = authService;
                 Response.Redirect("~/Member.aspx");

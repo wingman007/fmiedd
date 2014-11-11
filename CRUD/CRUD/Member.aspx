@@ -11,10 +11,7 @@
     <form id="form1" runat="server">
     <div>
     
-        Welcome
-        <asp:Label ID="lblUsername" runat="server"></asp:Label>
-&nbsp;::
-        <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click">logout</asp:LinkButton>
+        Welcom&nbsp;
        
         <h1>Contact Manager</h1>
         <%--<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderStyle="Solid" Height="240px" Width="448px">
@@ -23,7 +20,7 @@
         </asp:GridView>--%>
     
     </div>
-      <%--  <asp:TextBox ID="TextBox1" runat="server" Height="237px" OnLoad="TextBox1_Load" style="margin-top: 0px" Width="557px"></asp:TextBox>--%>
+        <%--  <asp:TextBox ID="TextBox1" runat="server" Height="237px" OnLoad="TextBox1_Load" style="margin-top: 0px" Width="557px"></asp:TextBox>--%>
         <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" BorderStyle="Inset" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" StaticSubMenuIndent="10px">
             <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
             <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
@@ -39,6 +36,10 @@
             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
             <StaticSelectedStyle BackColor="#FFCC66" />
         </asp:Menu>
+        <p>
+        <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click">logout</asp:LinkButton>
+       
+        </p>
     </form>
 </body>
 </html>

@@ -14,9 +14,9 @@ namespace CRUD.CrudViews
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            AuthenticationService authService = (AuthenticationService)Session["authService"];
             ContactsRepository contactsRepository = new ContactsRepository();
-            List<ConsolePhonebook.Entity.Contact> contacts = contactsRepository.GetAll(1);
+            List<ConsolePhonebook.Entity.Contact> contacts = contactsRepository.GetAll(authService.LoggedUser.Id);
 
             foreach (ConsolePhonebook.Entity.Contact c in contacts)
             {

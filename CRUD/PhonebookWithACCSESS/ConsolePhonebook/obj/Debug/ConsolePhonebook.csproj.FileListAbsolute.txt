@@ -27,4 +27,3 @@ C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\Phonebo
 C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\obj\Debug\ConsoleLibrary.pdb
 C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe
 C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\bin\Debug\ConsoleLibrary.pdb
-C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\obj\Debug\ConsolePhonebook.csprojResolveAssemblyReference.cache

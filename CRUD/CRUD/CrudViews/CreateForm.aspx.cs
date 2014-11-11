@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace CRUD.CrudViews
 {
     public partial class CreateForm : System.Web.UI.Page
@@ -20,9 +21,12 @@ namespace CRUD.CrudViews
 
         protected void submit_Click(object sender, EventArgs e)
         {
+            AuthenticationService authService = (AuthenticationService)Session["authService"];
+          //  tbUsername.Text = authService.LoggedUser.Username;
+
             ContactsRepository contactsRepository = new ContactsRepository();
             ConsolePhonebook.Entity.Contact contact = new ConsolePhonebook.Entity.Contact();
-            contact.ParentUserId = 1;
+            contact.ParentUserId = authService.LoggedUser.Id;
             contact.FirstName = tbfname.Text;
             contact.LastName = tblname.Text;
             contact.Email = tbemail.Text;

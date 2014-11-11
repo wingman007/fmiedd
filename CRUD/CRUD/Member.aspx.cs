@@ -14,7 +14,9 @@ namespace CRUD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //AuthenticationService authService = (AuthenticationService)Session["authService"];
+            //lblUsername.Text = authService.LoggedUser.Username;
+           
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
