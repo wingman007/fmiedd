@@ -13,7 +13,7 @@ namespace Task1
     public partial class WebForm : System.Web.UI.Page
     {
 
-        SqlConnection con = new SqlConnection(@"Server=USER-PC;Database=Project_Users;Trusted_Connection=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=USER-PC;Initial Catalog=Project_Users;Persist Security Info=False;User ID=sa;Password=LitoMed123;");
 
         
         protected void Page_Load(object sender, EventArgs e)
