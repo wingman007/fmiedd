@@ -11,9 +11,8 @@
     <form id="form1" runat="server">
     <div>
     
-        Welcom&nbsp;
-       
-        <h1>Contact Manager</h1>
+        Welcom&nbsp;&nbsp; &nbsp;<asp:Label ID="lblrollename" runat="server" Text="Label"></asp:Label>
+&nbsp;<h1>Contact Manager</h1>
         <%--<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderStyle="Solid" Height="240px" Width="448px">
 
 
@@ -21,22 +20,15 @@
     
     </div>
         <%--  <asp:TextBox ID="TextBox1" runat="server" Height="237px" OnLoad="TextBox1_Load" style="margin-top: 0px" Width="557px"></asp:TextBox>--%>
-        <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" BorderStyle="Inset" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" StaticSubMenuIndent="10px">
-            <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
-            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-            <DynamicMenuStyle BackColor="#FFFBD6" />
-            <DynamicSelectedStyle BackColor="#FFCC66" />
-            <Items>
-                <asp:MenuItem Text="Create"  Value="Create" NavigateUrl="~/CrudViews/CreateForm.aspx"></asp:MenuItem>
-                <asp:MenuItem Text="Read" Value="Read" NavigateUrl="~/CrudViews/ReadForm.aspx"></asp:MenuItem>
-                <asp:MenuItem Text="Update" Value="Update" NavigateUrl="~/CrudViews/UpdateForm.aspx"></asp:MenuItem>
-                <asp:MenuItem Text="Delete" Value="Delete" NavigateUrl="~/CrudViews/DeleteForm.aspx"></asp:MenuItem>
-            </Items>
-            <StaticHoverStyle BackColor="#990000" ForeColor="White" />
-            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-            <StaticSelectedStyle BackColor="#FFCC66" />
-        </asp:Menu>
-        <p>
+        <asp:HyperLink ID="Create" runat="server" BackColor="#FFFBD6" BorderStyle="Inset" CssClass="menu-items" EnableTheming="True" ForeColor="#990000" Height="30px" NavigateUrl="~/CrudViews/CreateForm.aspx" Width="70px" BorderColor="White" Font-Size="Large">Create</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:HyperLink ID="Read" runat="server" Height="30px" NavigateUrl="~/CrudViews/ReadForm.aspx" BackColor="#FFFBD6" BorderColor="White" BorderStyle="Inset" CssClass="menu-items" Font-Size="Large" ForeColor="#990000" Width="70px">Read</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:HyperLink ID="Update" runat="server" Height="30px" NavigateUrl="~/CrudViews/UpdateForm.aspx" BackColor="#FFFBD6" BorderColor="White" BorderStyle="Inset" CssClass="menu-items" Font-Size="Large" ForeColor="#990000" Width="70px">Update</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:HyperLink ID="Delete" runat="server" Height="30px" NavigateUrl="~/CrudViews/DeleteForm.aspx" BackColor="#FFFBD6" BorderColor="White" BorderStyle="Inset" CssClass="menu-items" Font-Size="Large" Font-Underline="False" ForeColor="#990000" Width="70px">Delete</asp:HyperLink>
+        <br />
+&nbsp;<p>
         <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click">logout</asp:LinkButton>
        
         </p>

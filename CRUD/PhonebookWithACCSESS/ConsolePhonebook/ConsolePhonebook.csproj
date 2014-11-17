@@ -42,10 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\Contact.cs" />
+    <Compile Include="Entity\Rolles.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\ContactsRepository.cs" />
+    <Compile Include="Repository\RollesRepository.cs" />
     <Compile Include="Repository\UsersRepository.cs" />
     <Compile Include="Service\AuthenticationService.cs" />
     <Compile Include="Tools\Enumerations.cs" />

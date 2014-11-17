@@ -1,7 +1,8 @@
-﻿using ConsolePhonebook.Entity;
+﻿using ConsoleLibrary.Entity;
+using ConsoleLibrary.Repository;
+using ConsolePhonebook.Entity;
 using ConsolePhonebook.Repository;
 using ConsolePhonebook.Service;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace CRUD
 {
     public partial class SiteMaster : MasterPage
     {
+        public static int rolleId;
+        public static string rollename;
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
@@ -89,6 +92,14 @@ namespace CRUD
             us.Password=tbPassword.Text;
            UsersRepository usr = new UsersRepository();
            us=usr.GetByUsernameAndPassword(us.Username, us.Password);
+           Rolles rolle = new Rolles();
+           rolle.UserId = us.Id;
+           RollesRepository rollerepo = new RollesRepository();
+           rolle.RolleName=rollerepo.GetRolleByUserId(rolle.UserId);
+           
+
+           rolleId=rolle.UserId;
+           rollename = rolle.RolleName;
             
             
 

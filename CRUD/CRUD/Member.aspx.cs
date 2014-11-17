@@ -14,6 +14,18 @@ namespace CRUD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblrollename.Text = SiteMaster.rollename;
+            if (SiteMaster.rolleId == 1 || SiteMaster.rolleId == 2)
+            {
+
+            }
+
+            if (SiteMaster.rolleId == 4)
+            {
+              
+            }
+
+            
             //AuthenticationService authService = (AuthenticationService)Session["authService"];
             //lblUsername.Text = authService.LoggedUser.Username;
            

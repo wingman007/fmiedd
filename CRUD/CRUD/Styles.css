@@ -1,7 +1,9 @@
-﻿body {
-    
+﻿body {    height: 305px;
 }
 .menu-items {
     float:left;
     overflow:hidden;
+    text-align:center;
+    text-decoration:none;
+    vertical-align:bottom;
 }
