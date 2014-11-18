@@ -1,0 +1,6 @@
+C:\Users\NiKi\Desktop\ProjectX\ProjectX\bin\Debug\ProjectX.exe.config
+C:\Users\NiKi\Desktop\ProjectX\ProjectX\bin\Debug\ProjectX.exe
+C:\Users\NiKi\Desktop\ProjectX\ProjectX\bin\Debug\ProjectX.pdb
+C:\Users\NiKi\Desktop\ProjectX\ProjectX\obj\Debug\ProjectX.csprojResolveAssemblyReference.cache
+C:\Users\NiKi\Desktop\ProjectX\ProjectX\obj\Debug\ProjectX.exe
+C:\Users\NiKi\Desktop\ProjectX\ProjectX\obj\Debug\ProjectX.pdb
