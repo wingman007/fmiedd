@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 public partial class DeletePage : System.Web.UI.Page
 {
-    public static OleDbConnection myConnection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Camellia\\Desktop\\CamelliaCRUD\\UsersDB.accdb");
+    public static OleDbConnection myConnection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\UsersDB.accdb");
 
     OleDbCommand myCommand = new OleDbCommand("SELECT * from users", myConnection);
 
