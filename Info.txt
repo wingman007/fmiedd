@@ -16,3 +16,7 @@ befor you started it , you need to change a few thing
 3.Go to the Access Database for info about username and password
     I have created a new Username that can have his own contacts  and it's called "stoyan",
     but he has'n got any contacts in the Contact-table yet .You can add some , if you want :)
+	
+4.There are 3 roles : Admin, Member and Public 
+If you access like Admin, you can Create, Read, Update and Delete Contacts
+If you access like Member you can only Read your Contacts
