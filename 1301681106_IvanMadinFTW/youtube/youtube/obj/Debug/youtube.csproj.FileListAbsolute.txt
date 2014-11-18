@@ -1,0 +1,13 @@
+c:\users\i7\documents\visual studio 2012\Projects\youtube\youtube\bin\Debug\youtube.exe.config
+c:\users\i7\documents\visual studio 2012\Projects\youtube\youtube\bin\Debug\database.sdf
+c:\users\i7\documents\visual studio 2012\Projects\youtube\youtube\bin\Debug\youtube.exe
+c:\users\i7\documents\visual studio 2012\Projects\youtube\youtube\bin\Debug\youtube.pdb
+c:\users\i7\documents\visual studio 2012\Projects\youtube\youtube\obj\Debug\youtube.csprojResolveAssemblyReference.cache
+c:\users\i7\documents\visual studio 2012\Projects\youtube\youtube\obj\Debug\youtube.Form1.resources
+c:\users\i7\documents\visual studio 2012\Projects\youtube\youtube\obj\Debug\youtube.Properties.Resources.resources
+c:\users\i7\documents\visual studio 2012\Projects\youtube\youtube\obj\Debug\youtube.csproj.GenerateResource.Cache
+c:\users\i7\documents\visual studio 2012\Projects\youtube\youtube\obj\Debug\youtube.exe
+c:\users\i7\documents\visual studio 2012\Projects\youtube\youtube\obj\Debug\youtube.pdb
+C:\Users\I7\Source\Repos\fmiedd\1301681106_IvanMadin\youtube\youtube\bin\Debug\youtube.exe.config
+C:\Users\I7\Source\Repos\fmiedd\1301681106_IvanMadin\youtube\youtube\obj\Debug\youtube.exe
+C:\Users\I7\Source\Repos\fmiedd\1301681106_IvanMadin\youtube\youtube\obj\Debug\youtube.pdb
