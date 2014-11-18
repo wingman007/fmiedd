@@ -10,7 +10,7 @@
 <body>
 
     <form id="form1" runat="server">
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Member.aspx" Target="_parent"  CssClass="logoutlink">← Back to Manager</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Member.aspx" Target="_parent"  CssClass="logoutlink" Font-Underline="True">← Back to Manager</asp:HyperLink>
     <div>
         <h1>Create New Contact</h1>
     </div>
