@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head runat="server">
+    <link href="Styles.css" rel="stylesheet" />
     <meta charset="utf-8" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
     <asp:PlaceHolder runat="server">     
@@ -11,37 +12,36 @@
     
     <meta name="viewport" content="width=device-width" />
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <style type="text/css">
+        .h1 {
+            height: 22px;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
-    
-    <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title">
-                    <a runat="server" href="~/">MY CRUD Project</a>
-                </p>
-            </div>
-        </div>
-    </header>
-    <div id="body">
-        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
-        <section class="content-wrapper main-content clear-fix">
-            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+    <h1>MY CRUD Project</h1>
+        <div id="body">
 
             <div>
     
-                Username:
-                <asp:TextBox ID="tbUsername" runat="server"></asp:TextBox>
+               <p class="font">Username:&nbsp;&nbsp; 
+                <asp:TextBox ID="tbUsername" runat="server" CssClass="textboxfont"></asp:TextBox>
+                </p>
+                <p class="font">Password:&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="tbPassword" runat="server" TextMode="Password" CssClass="textboxfont"></asp:TextBox>
+                </p>
+                <asp:Label ID="lblError" runat="server" ForeColor="Red" Font-Size="Larger"></asp:Label>
                 <br />
-                Password:
-                <asp:TextBox ID="tbPassword" runat="server" TextMode="Password"></asp:TextBox>
                 <br />
-                <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
-                <br />
-                <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login" />
+                <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login" Height="36px" Width="130px" CssClass="loginbutton" />
     
              </div>
+
+        <br />
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
 
         </section>
     </div>

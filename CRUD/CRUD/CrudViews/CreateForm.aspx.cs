@@ -24,18 +24,29 @@ namespace CRUD.CrudViews
             AuthenticationService authService = (AuthenticationService)Session["authService"];
           //  tbUsername.Text = authService.LoggedUser.Username;
 
-            ContactsRepository contactsRepository = new ContactsRepository();
-            ConsolePhonebook.Entity.Contact contact = new ConsolePhonebook.Entity.Contact();
-            contact.ParentUserId = authService.LoggedUser.Id;
-            contact.FirstName = tbfname.Text;
-            contact.LastName = tblname.Text;
-            contact.Email = tbemail.Text;
+           
+            
 
-            contactsRepository.Save(contact);
+            if (tbfname.Text != "" && tblname.Text != "" && tbemail.Text != "")
+            {
+                ContactsRepository contactsRepository = new ContactsRepository();
+                ConsolePhonebook.Entity.Contact contact = new ConsolePhonebook.Entity.Contact();
+                contact.ParentUserId = authService.LoggedUser.Id;
+                contact.FirstName = tbfname.Text;
+                contact.LastName = tblname.Text;
+                contact.Email = tbemail.Text;
 
-            tbfname.Text = "";
-            tblname.Text = "";
-            tbemail.Text = "";
+                contactsRepository.Save(contact);
+
+                tbfname.Text = "";
+                tblname.Text = "";
+                tbemail.Text = "";
+            }
+            else
+            {
+                errorlabel.Visible = true;
+                errorlabel.Text = "You must fill all fields!!";
+            }
 
         }
     }

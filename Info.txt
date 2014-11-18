@@ -13,5 +13,6 @@ befor you started it , you need to change a few thing
    For exact info about it , go to Server Explorer where the databases are and look ot the 
    property "connectionstring" of the Data Connections-> Access file
  
-3.Username: ann
-   Password: annpass
+3.Go to the Access Database for info about username and password
+    I have created a new Username that can have his own contacts  and it's called "stoyan",
+    but he has'n got any contacts in the Contact-table yet .You can add some , if you want :)

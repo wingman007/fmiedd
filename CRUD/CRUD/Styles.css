@@ -1,9 +1,46 @@
-﻿body {    height: 305px;
+﻿body {    height: 850px;
 }
 .menu-items {
-    float:left;
-    overflow:hidden;
+    
     text-align:center;
     text-decoration:none;
-    vertical-align:bottom;
+    height: 370px;
+    width: 374px;
+}
+h1 {
+    font-family:'Bell MT';
+    color:#CC6635;
+    width: 807px;
+}
+.font {
+    font-family:'Bell MT';
+    color:#280302;
+    font-size:20px;
+    font-weight:bold;
+    width: 807px;
+}
+.logoutlink {
+    text-align:center;
+    text-decoration:none;
+     color:#280302;
+    font-size:20px;
+    font-weight:bold;
+}
+.site-title {
+    font-family:'Bell MT';
+    color:#280302;
+    width: 877px;
+}
+.loginbutton {
+    font-family:'Bell MT';
+    color:#CC6635;
+    font-size:20px;
+    font-weight:bold;
+    background:#280302;
+}
+.textboxfont {
+    text-align:center;
+    text-decoration:none;
+     color:#280302;
+    font-size:20px;
 }

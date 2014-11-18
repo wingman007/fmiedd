@@ -17,12 +17,14 @@ namespace CRUD
             lblrollename.Text = SiteMaster.rollename;
             if (SiteMaster.rolleId == 1 || SiteMaster.rolleId == 2)
             {
-
+                
             }
 
             if (SiteMaster.rolleId == 4)
             {
-              
+                Create.Enabled = false;
+                Update.Enabled = false;
+                Delete.Enabled = false;
             }
 
             

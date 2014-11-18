@@ -16,7 +16,7 @@ namespace ConsolePhonebook.Service
             LoggedUser = userRepo.GetByUsernameAndPassword(username, password);
          //   Constraint.UserId = LoggedUser.Id;
         }
-		
-		public static string connectionstring=@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\PC\Source\Repos\fmiedd\Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\Service\MyPhonebook.mdb";
+
+        public static string connectionstring = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\PC\Source\Repos\fmiedd\1301681024_Ani_Krivova\Ani_Krivova_1301681024_CRUD_Project\Ani_Krivova_1301681024_CRUD_Project\CRUD\PhonebookWithACCSESS\ConsolePhonebook\Service\MyPhonebook.mdb";
     }
 }
