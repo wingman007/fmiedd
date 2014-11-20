@@ -1,0 +1,57 @@
+c:\users\yaneka\documents\visual studio 2012\Projects\Proekt_Osvobojdenie\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.exe.config
+c:\users\yaneka\documents\visual studio 2012\Projects\Proekt_Osvobojdenie\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.exe
+c:\users\yaneka\documents\visual studio 2012\Projects\Proekt_Osvobojdenie\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.pdb
+c:\users\yaneka\documents\visual studio 2012\Projects\Proekt_Osvobojdenie\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.csprojResolveAssemblyReference.cache
+c:\users\yaneka\documents\visual studio 2012\Projects\Proekt_Osvobojdenie\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmLogin.resources
+c:\users\yaneka\documents\visual studio 2012\Projects\Proekt_Osvobojdenie\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmMain.resources
+c:\users\yaneka\documents\visual studio 2012\Projects\Proekt_Osvobojdenie\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.Properties.Resources.resources
+c:\users\yaneka\documents\visual studio 2012\Projects\Proekt_Osvobojdenie\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.csproj.GenerateResource.Cache
+c:\users\yaneka\documents\visual studio 2012\Projects\Proekt_Osvobojdenie\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.exe
+c:\users\yaneka\documents\visual studio 2012\Projects\Proekt_Osvobojdenie\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.pdb
+C:\Users\Yaneka\documents\visual studio 2012\Projects\Proekt_Osvobojdenie\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmReg.resources
+C:\Users\Yaneka\documents\visual studio 2012\Projects\Proekt_Osvobojdenie\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmUserInfo.resources
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie - Copy\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.exe.config
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie - Copy\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.exe
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie - Copy\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.pdb
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.exe.config
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.exe
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.pdb
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.exe
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.pdb
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.csprojResolveAssemblyReference.cache
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmEdit.resources
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmLogin.resources
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmMain.resources
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmReg.resources
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmUserInfo.resources
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.Properties.Resources.resources
+C:\Users\Yaneka\Documents\Visual Studio 2012\Projects\Proekt_Osvobojdenie10week\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.csproj.GenerateResource.Cache
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.exe.config
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.exe
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.pdb
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.exe
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.pdb
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.csprojResolveAssemblyReference.cache
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmEdit.resources
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmLogin.resources
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmMain.resources
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmReg.resources
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmUserInfo.resources
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.Properties.Resources.resources
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.csproj.GenerateResource.Cache
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.exe.config
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.exe
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.pdb
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.exe
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.pdb
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.csprojResolveAssemblyReference.cache
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmEdit.resources
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmLogin.resources
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmMain.resources
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmReg.resources
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.frmUserInfo.resources
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.Properties.Resources.resources
+C:\Users\Yaneka\Documents\repo123\1301681016_YankoIvanov_Task1Finished\Task1\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.csproj.GenerateResource.Cache
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov LAST EDIT\Proekt_Osvobojdenie\bin\Debug\Proekt_Osvobojdenie.exe.config
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov LAST EDIT\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.exe
+C:\Users\Yaneka\Desktop\gotovi proekti\10week Cheresharov LAST EDIT\Proekt_Osvobojdenie\obj\Debug\Proekt_Osvobojdenie.pdb
