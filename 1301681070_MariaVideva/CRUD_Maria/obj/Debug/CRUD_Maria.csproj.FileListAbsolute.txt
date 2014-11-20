@@ -1,0 +1,14 @@
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\bin\Debug\CRUD_Maria.exe.config
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\bin\Debug\Users.mdf
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\bin\Debug\Users_log.ldf
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\bin\Debug\CRUD_Maria.exe
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\bin\Debug\CRUD_Maria.pdb
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\obj\Debug\CRUD_Maria.csprojResolveAssemblyReference.cache
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\obj\Debug\CRUD_Maria.Add.resources
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\obj\Debug\CRUD_Maria.Form1.resources
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\obj\Debug\CRUD_Maria.Properties.Resources.resources
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\obj\Debug\CRUD_Maria.UpdateForm.resources
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\obj\Debug\CRUD_Maria.View.resources
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\obj\Debug\CRUD_Maria.csproj.GenerateResource.Cache
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\obj\Debug\CRUD_Maria.exe
+C:\Users\Compaq\Desktop\CRUD_Maria\CRUD_Maria\obj\Debug\CRUD_Maria.pdb
