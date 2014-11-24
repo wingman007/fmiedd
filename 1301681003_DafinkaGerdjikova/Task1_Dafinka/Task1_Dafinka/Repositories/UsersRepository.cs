@@ -46,6 +46,7 @@ namespace Task1_Dafinka.Repositories
                 {
                     user = new User();
                     user.ID = (int)reader["ID"];
+                    user.RoleID = (int)reader["RoleID"];
                     user.FirstName = (string)reader["FirstName"];
                     user.LastName = (string)reader["LastName"];
                     user.Username = (string)reader["Username"];
@@ -78,6 +79,7 @@ namespace Task1_Dafinka.Repositories
                     User user = new User();
 
                     user.ID = (int)reader["ID"];
+                    user.RoleID = (int)reader["RoleID"];
                     user.FirstName = (string)reader["FirstName"];
                     user.LastName = (string)reader["LastName"];
                     user.Username = (string)reader["Username"];
@@ -105,7 +107,8 @@ UPDATE Users SET
 [LastName]=@LastName,
 [Username]=@Username,
 [Password]=@Password,
-[Email]=@Email
+[Email]=@Email,
+[RoleID]=@RoleID
 WHERE
 [ID]=@ID
 ";
@@ -135,6 +138,11 @@ WHERE
                 cmd.Parameters.Add(param);
 
                 param = cmd.CreateParameter();
+                param.ParameterName = "@RoleID";
+                param.Value = item.RoleID;
+                cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
                 param.ParameterName = "@ID";
                 param.Value = item.ID;
                 cmd.Parameters.Add(param);
@@ -148,14 +156,17 @@ INSERT INTO Users
 [LastName],
 [Username],
 [Password],
-[Email]
+[Email],
+[RoleID]
+
 )
 VALUES(
 @FirstName,
 @LastName,
 @Username,
 @Password,
-@Email
+@Email,
+@RoleID
 )";
                 IDataParameter param = cmd.CreateParameter();
                 param.ParameterName = "@FirstName";
@@ -181,6 +192,12 @@ VALUES(
                 param.ParameterName = "@Email";
                 param.Value = item.Email;
                 cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
+                param.ParameterName = "@RoleID";
+                param.Value = item.RoleID;
+                cmd.Parameters.Add(param);
+
             }
             try
             {

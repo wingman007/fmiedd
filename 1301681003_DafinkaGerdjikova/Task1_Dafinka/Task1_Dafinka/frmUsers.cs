@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Task1_Dafinka.Entities;
 using Task1_Dafinka.Repositories;
+using Task1_Dafinka.Service;
 
 namespace Task1_Dafinka
 {
@@ -32,7 +33,9 @@ namespace Task1_Dafinka
             {
                 lbUsers.SelectedIndex = 0;
             }
-          
+
+            AdjustControlls();
+
         }
 
         public void AdjustControlls()
@@ -42,13 +45,22 @@ namespace Task1_Dafinka
             this.btnDelete.Enabled = this.lbUsers.SelectedItem != null;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+
+        private void frmUsers_Load(object sender, EventArgs e)
         {
-            
+            RolesRepository rolesRepo = new RolesRepository();
+            Role role = rolesRepo.GetByID(AuthenticationService.LoggedUser.ID);
+
+            if (role.Name != "Administrator")
+            {
+                btnNew.Visible = false;
+                btnEdit.Visible = false;
+                btnDelete.Visible = false;
+            }
             RefreshUsers();
         }
 
-        private void btnNew_Click(object sender, EventArgs e)
+        private void btnNew_Click_1(object sender, EventArgs e)
         {
             User user = new User();
             frmEditUser frm = new frmEditUser(user);
@@ -58,22 +70,7 @@ namespace Task1_Dafinka
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (lbUsers.SelectedIndex >= 0)
-            {
-                UsersRepository usersRepo = new UsersRepository();
-
-                User user = (User)lbUsers.SelectedItem;
-                if (MessageBox.Show("Delete user?", "Delete user", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
-                {
-                    usersRepo.Delete(user);
-                    RefreshUsers();
-                }
-            }
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btnEdit_Click_1(object sender, EventArgs e)
         {
             if (lbUsers.SelectedIndex >= 0)
             {
@@ -90,6 +87,19 @@ namespace Task1_Dafinka
             }
         }
 
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            if (lbUsers.SelectedIndex >= 0)
+            {
+                UsersRepository usersRepo = new UsersRepository();
 
+                User user = (User)lbUsers.SelectedItem;
+                if (MessageBox.Show("Delete user?", "Delete user", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
+                {
+                    usersRepo.Delete(user);
+                    RefreshUsers();
+                }
+            }
+        }
     }
 }

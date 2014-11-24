@@ -44,18 +44,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="frmEditRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditRole.Designer.cs">
+      <DependentUpon>frmEditRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoles.Designer.cs">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStart.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmStart.Designer.cs">
       <DependentUpon>frmStart.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsers.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsers.Designer.cs">
-      <DependentUpon>frmUsers.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEditUser.cs">
       <SubType>Form</SubType>
@@ -63,23 +76,40 @@
     <Compile Include="frmEditUser.Designer.cs">
       <DependentUpon>frmEditUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\RolesRepository.cs" />
     <Compile Include="Repositories\UsersRepository.cs" />
     <Compile Include="Service\AuthenticationService.cs" />
+    <Compile Include="Service\DataBaseConnection.cs" />
     <Compile Include="task1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>task1DataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmEditRole.resx">
+      <DependentUpon>frmEditRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoles.resx">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStart.resx">
       <DependentUpon>frmStart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsers.resx">
-      <DependentUpon>frmUsers.cs</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditUser.resx">
       <DependentUpon>frmEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

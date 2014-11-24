@@ -40,13 +40,15 @@
             this.tbLnama = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.cmbRoles = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(134, 99);
+            this.label1.Location = new System.Drawing.Point(47, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 22);
             this.label1.TabIndex = 0;
@@ -56,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(138, 149);
+            this.label2.Location = new System.Drawing.Point(52, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 22);
             this.label2.TabIndex = 1;
@@ -66,7 +68,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(130, 199);
+            this.label3.Location = new System.Drawing.Point(40, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 22);
             this.label3.TabIndex = 2;
@@ -76,7 +78,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(134, 237);
+            this.label4.Location = new System.Drawing.Point(44, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 22);
             this.label4.TabIndex = 3;
@@ -86,7 +88,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(164, 282);
+            this.label5.Location = new System.Drawing.Point(77, 256);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 22);
             this.label5.TabIndex = 4;
@@ -94,14 +96,14 @@
             // 
             // tbUsername
             // 
-            this.tbUsername.Location = new System.Drawing.Point(233, 99);
+            this.tbUsername.Location = new System.Drawing.Point(150, 90);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(235, 20);
             this.tbUsername.TabIndex = 0;
             // 
             // tbFname
             // 
-            this.tbFname.Location = new System.Drawing.Point(233, 199);
+            this.tbFname.Location = new System.Drawing.Point(150, 176);
             this.tbFname.Name = "tbFname";
             this.tbFname.Size = new System.Drawing.Size(235, 20);
             this.tbFname.TabIndex = 3;
@@ -109,7 +111,7 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(233, 152);
+            this.tbPassword.Location = new System.Drawing.Point(150, 131);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(235, 20);
@@ -117,14 +119,14 @@
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(233, 282);
+            this.tbEmail.Location = new System.Drawing.Point(150, 256);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(235, 20);
             this.tbEmail.TabIndex = 5;
             // 
             // tbLnama
             // 
-            this.tbLnama.Location = new System.Drawing.Point(233, 237);
+            this.tbLnama.Location = new System.Drawing.Point(150, 216);
             this.tbLnama.Name = "tbLnama";
             this.tbLnama.Size = new System.Drawing.Size(235, 20);
             this.tbLnama.TabIndex = 4;
@@ -132,7 +134,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSave.Location = new System.Drawing.Point(180, 366);
+            this.btnSave.Location = new System.Drawing.Point(96, 334);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 36);
             this.btnSave.TabIndex = 6;
@@ -143,7 +145,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCancel.Location = new System.Drawing.Point(338, 366);
+            this.btnCancel.Location = new System.Drawing.Point(248, 334);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(96, 36);
             this.btnCancel.TabIndex = 7;
@@ -151,12 +153,34 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // cmbRoles
+            // 
+            this.cmbRoles.FormattingEnabled = true;
+            this.cmbRoles.Location = new System.Drawing.Point(150, 45);
+            this.cmbRoles.Name = "cmbRoles";
+            this.cmbRoles.Size = new System.Drawing.Size(235, 21);
+            this.cmbRoles.TabIndex = 8;
+            this.cmbRoles.Text = "Select role";
+            this.cmbRoles.SelectedIndexChanged += new System.EventHandler(this.cmbRoles_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(92, 45);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 22);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Role:";
+            // 
             // frmEditUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(601, 493);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ClientSize = new System.Drawing.Size(471, 414);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cmbRoles);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tbLnama);
@@ -191,6 +215,8 @@
         private System.Windows.Forms.TextBox tbLnama;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ComboBox cmbRoles;
+        private System.Windows.Forms.Label label6;
 
 
 

@@ -1,6 +1,6 @@
 ﻿namespace Task1_Dafinka
 {
-    partial class frmUsers
+    partial class frmRoles
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsers));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRoles));
             this.label1 = new System.Windows.Forms.Label();
-            this.lbUsers = new System.Windows.Forms.ListBox();
+            this.lbRoles = new System.Windows.Forms.ListBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNew = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
@@ -42,22 +42,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(199, 63);
+            this.label1.Location = new System.Drawing.Point(180, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 24);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Users";
+            this.label1.Size = new System.Drawing.Size(57, 24);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Roles";
             // 
-            // lbUsers
+            // lbRoles
             // 
-            this.lbUsers.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbUsers.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbUsers.FormattingEnabled = true;
-            this.lbUsers.ItemHeight = 22;
-            this.lbUsers.Location = new System.Drawing.Point(0, 108);
-            this.lbUsers.Name = "lbUsers";
-            this.lbUsers.Size = new System.Drawing.Size(586, 268);
-            this.lbUsers.TabIndex = 6;
+            this.lbRoles.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lbRoles.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbRoles.FormattingEnabled = true;
+            this.lbRoles.ItemHeight = 22;
+            this.lbRoles.Location = new System.Drawing.Point(0, 128);
+            this.lbRoles.Name = "lbRoles";
+            this.lbRoles.Size = new System.Drawing.Size(465, 268);
+            this.lbRoles.TabIndex = 9;
             // 
             // toolStrip1
             // 
@@ -67,8 +67,8 @@
             this.btnDelete});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(586, 25);
-            this.toolStrip1.TabIndex = 5;
+            this.toolStrip1.Size = new System.Drawing.Size(465, 25);
+            this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnNew
@@ -79,7 +79,7 @@
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(35, 22);
             this.btnNew.Text = "New";
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click_1);
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnEdit
             // 
@@ -89,7 +89,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(31, 22);
             this.btnEdit.Text = "Edit";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click_1);
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -99,20 +99,20 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(44, 22);
             this.btnDelete.Text = "Delete";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // frmUsers
+            // frmRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(586, 376);
+            this.ClientSize = new System.Drawing.Size(465, 396);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbUsers);
+            this.Controls.Add(this.lbRoles);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "frmUsers";
-            this.Text = "Users";
-            this.Load += new System.EventHandler(this.frmUsers_Load);
+            this.Name = "frmRoles";
+            this.Text = "Roles";
+            this.Load += new System.EventHandler(this.frmRoles_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -123,7 +123,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox lbUsers;
+        private System.Windows.Forms.ListBox lbRoles;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnNew;
         private System.Windows.Forms.ToolStripButton btnEdit;
