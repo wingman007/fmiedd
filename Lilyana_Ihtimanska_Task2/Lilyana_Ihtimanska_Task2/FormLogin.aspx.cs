@@ -25,9 +25,6 @@ on user_id=role_id";
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    string a = reader.GetString(0);
-                    string b = reader.GetString(1);
-                    string c = reader.GetString(2);
                     if (reader.GetString(0) == TextBox1.Text && reader.GetString(1) == TextBox2.Text)
                     {
                         string role = reader.GetString(2);
@@ -41,10 +38,11 @@ on user_id=role_id";
                             {
                                 Response.Redirect("FormMember.aspx");
                             }
-                            else { lblFail.Text = "Invalid Username or Password!"; }
+                            
                         }
-                        else { lblFail.Text = "Please enter Username and Password!"; }
+                       // else { lblFail.Text = "Please enter Username and Password!"; }
                     }
+                    else { lblFail.Text = "Invalid Username or Password!"; }
                 }
                 reader.Close();
                 try
