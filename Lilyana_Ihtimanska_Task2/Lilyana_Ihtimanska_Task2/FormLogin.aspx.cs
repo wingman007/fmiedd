@@ -4,11 +4,65 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace Lilyana_Ihtimanska_Task2
 {
     public partial class FormLogin : System.Web.UI.Page
     {
+        public void Funkciq() 
+        {
+            SqlConnection conn = new SqlConnection("Server=.\\SQLEXPRESS;Database=WebApplicationDB;Integrated Security=true");
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = @"
+Select username,password,role
+from Users join Roles
+on user_id=role_id";
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string a = reader.GetString(0);
+                    string b = reader.GetString(1);
+                    string c = reader.GetString(2);
+                    if (reader.GetString(0) == TextBox1.Text && reader.GetString(1) == TextBox2.Text)
+                    {
+                        string role = reader.GetString(2);
+                        if (TextBox1.Text != string.Empty && TextBox2.Text != string.Empty)
+                        {
+                            if (role == "admin")
+                            {
+                                Response.Redirect("FormAdmin.aspx");
+                            }
+                            else if (role == "member")
+                            {
+                                Response.Redirect("FormMember.aspx");
+                            }
+                            else { lblFail.Text = "Invalid Username or Password!"; }
+                        }
+                        else { lblFail.Text = "Please enter Username and Password!"; }
+                    }
+                }
+                reader.Close();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (Exception)
+                {
+                    lblFail.Text = "Can't read!";
+                }
+            }
+            catch (Exception)
+            {
+                lblFail.Text = "The connection failed!";
+            }
+
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -16,19 +70,7 @@ namespace Lilyana_Ihtimanska_Task2
 
         protected void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != string.Empty && TextBox2.Text != string.Empty)
-            {
-                if (TextBox1.Text == "admin" && TextBox2.Text == "admin")
-                {
-                    Response.Redirect("FormAdmin.aspx");
-                }
-                else if (TextBox1.Text == "member" && TextBox2.Text == "member")
-                {
-                    Response.Redirect("FormMember.aspx");
-                }
-                else { lblFail.Text = "Invalid Username or Password!"; }
-            }
-            else { lblFail.Text = "Please enter Username and Password!"; }
+            Funkciq();
         }
     }
 }

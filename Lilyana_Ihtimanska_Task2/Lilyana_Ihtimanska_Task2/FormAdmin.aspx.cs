@@ -86,7 +86,8 @@ on user_id=role_id";
                 {
                     conn.Close();
                 }
-            } 
+            }
+            else { lblFinish.Text = "Can't be inserted!"; }
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -113,6 +114,7 @@ on user_id=role_id";
                 }
                 finally { conn.Close(); }
             }
+            else { lblFinish.Text = "Can't be updated!"; }
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
@@ -135,6 +137,7 @@ on user_id=role_id";
                     lblInfo.Text = ex.Message;
                 }
             }
+            else { lblFinish.Text = "Can't be deleted!"; }
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
