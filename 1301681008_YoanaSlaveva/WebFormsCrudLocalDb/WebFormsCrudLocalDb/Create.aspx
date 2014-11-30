@@ -40,6 +40,10 @@
                         <asp:TextBox ID="TextConfirmPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextConfirmPassword" CssClass="alert-danger" ErrorMessage="RequiredFieldValidator">Field is required</asp:RequiredFieldValidator><br />
                         <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextConfirmPassword" ControlToValidate="TextPassword" CssClass="alert-danger">Passwords do not match</asp:CompareValidator>
+                        <br />
+                        <asp:DropDownList ID="Roles" runat="server">
+                            
+                        </asp:DropDownList>
                     </div>
                 </div>
 

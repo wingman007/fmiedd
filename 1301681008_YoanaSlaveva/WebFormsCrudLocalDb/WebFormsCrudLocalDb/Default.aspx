@@ -2,6 +2,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+   
+
     <% if (!String.IsNullOrEmpty(Request.QueryString["ShowMessage"])) { %>
     <div class="alert alert-success" role="alert">User was added successfully</div>
      <%} %>
@@ -35,6 +37,7 @@
                             <th>Username</th>
                             <th>Email</th>
                             <th>Password</th>                            
+                            <th>Role</th>                            
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
@@ -56,11 +59,27 @@
                     </td>
                     <td>
                         <asp:DynamicControl runat="server" DataField="password" ID="pass" Mode="ReadOnly" />
-                    </td>                                         
+                    </td>  
                     <td>
+                        <asp:DynamicControl runat="server" DataField="role" ID="DynamicControl1" Mode="ReadOnly" />
+                    </td> 
+                    
+                    
+                    <% if ((string)(Session["Role"]) == "admin")
+                     { %>
+                        <td>
                         <asp:HyperLink runat="server" NavigateUrl='<%# Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Href("~/Edit?id="+Item.Id) %>' Text="<i class='glyphicon glyphicon-edit'></i> Edit " /> /
                         <asp:HyperLink runat="server" NavigateUrl='<%# Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Href("~/Delete?id="+Item.Id) %>' Text="Delete <i class='glyphicon glyphicon-remove-circle'></i> " />                                                                       
                     </td>
+                    <%}
+                      else
+                       { %>
+                           <td><td>
+                       <% 
+                       }
+                       %>
+                                                       
+                    
                 </tr>
             </ItemTemplate>
         </asp:ListView>
