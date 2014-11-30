@@ -1,9 +1,8 @@
 How to work with CRUD application.
-1. Create a table called roles in acess database, which is in the application folder.
-   -In this table you have to create 3 rows: id(primary key), username(varchar(10), and password(varhcar(10)).
-2. In visual studio click on database in Solution Explorer and in properties you will see the conection string.
+1. Open the Crud application in visual studio and click on database in Solution Explorer. In properties
+    you will see the conection string.
    -Copy the conection string, and paste it in cn.ConnectionString in Main function.
-3. Start the application:
+2. Start the application:
    - First you have to login- (if you enter admin/admin you will log as admin and you can make changes in database.
      With member/member you will only see the database.)
    - If you login as admin, you have to create/update/delete users in database.
