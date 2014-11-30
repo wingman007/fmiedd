@@ -10,17 +10,17 @@ using System.Data.OleDb;
 using System.Collections;
 using System.Collections.Specialized;
 
+
 namespace BookManager
 {
     class BookModel
     {
-        //setting all methods to static because they will be called directly from BookManager.Models.BookModel
+        static OleDbConnection connenction = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\DB\\library.mdb;Persist Security Info=False;");
 
-       static OleDbConnection connenction = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=library.mdb;Persist Security Info=False;");
-
-        public static List<BookEntity> GetAll()
+        public static List<Book> GetAll()
         {
-            List<BookEntity> bookCollection = new List<BookEntity>();
+            
+            List<Book> bookCollection = new List<Book>();
 
             string commandtext = "SELECT * FROM books";
 
@@ -32,8 +32,7 @@ namespace BookManager
                 OleDbDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    //making a new book entity for every record in the DB
-                    BookEntity book = new BookEntity();
+                    Book book = new Book();
                     book.ID = dataReader["ID"].ToString();
                     book.Title = dataReader["title"].ToString();
                     book.Author = dataReader["author"].ToString();
@@ -46,7 +45,7 @@ namespace BookManager
                 dataReader.Close();
             }
 
-            catch (Exception e)
+            catch (Exception)
             { }
 
             finally
@@ -58,9 +57,9 @@ namespace BookManager
 
         }
 
-        public static BookEntity GetByTitle(string title)
+        public static Book GetByTitle(string title)
         {
-            BookEntity book = new BookEntity();
+            Book book = new Book();
 
             string commandtext = "SELECT * FROM books WHERE title = @title";
 
@@ -82,7 +81,7 @@ namespace BookManager
                 dataReader.Close();
             }
 
-            catch (Exception e)
+            catch (Exception)
             { }
 
             finally
@@ -95,7 +94,6 @@ namespace BookManager
 
         public static int Add(OrderedDictionary parameters)
         {
-            //using an ordered dictionary (associative array) to send query parameters
             string commandtext = "INSERT INTO books(title, author, price, isbn) VALUES(@title, @author, @price, @isbn)";
 
             OleDbCommand command = new OleDbCommand(commandtext, connenction);
@@ -110,11 +108,10 @@ namespace BookManager
             {
                 connenction.Open();
                 affectedRows = command.ExecuteNonQuery();
-                //if affectedRows isn't 0, then the query has been successfull
                 return affectedRows;
             }
 
-            catch (Exception e)
+            catch (Exception)
             { }
 
             finally
@@ -128,7 +125,6 @@ namespace BookManager
 
         public static int Edit(OrderedDictionary parameters)
         {
-            //using an ordered dictionary (associative array) to send query parameters
             OleDbCommand command = new OleDbCommand();
             command.Connection = connenction;
 
@@ -148,12 +144,11 @@ namespace BookManager
             {
                 connenction.Open();
                 affectedRows = command.ExecuteNonQuery();
-                //if affectedRows isn't 0, then the query has been successfull
                 return affectedRows;
                 
             }
 
-            catch (Exception e)
+            catch (Exception)
             { }
 
             finally
@@ -177,11 +172,10 @@ namespace BookManager
             {
                 connenction.Open();
                 affectedRows = command.ExecuteNonQuery();
-                //if affectedRows isn't 0, then the query has been successfull
                 return affectedRows;
             }
 
-            catch (Exception e)
+            catch (Exception)
             { }
 
             finally
@@ -191,6 +185,8 @@ namespace BookManager
 
             return affectedRows;
         }
+
+        
 
     }
 }

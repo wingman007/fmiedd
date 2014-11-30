@@ -15,12 +15,18 @@ namespace BookManager
 {
     public partial class AddBook : Form
     {
+        private User LoggedUser = new User();
+        public AddBook(User user)
+        {
+            LoggedUser = user;
+            InitializeComponent();
+        }
+
         public AddBook()
         {
             InitializeComponent();
         }
 
-        //using an ordered dictionary (associative array) to send query parameters
         OrderedDictionary parameters = new OrderedDictionary();
 
         private void UpdateParameters()
@@ -43,7 +49,6 @@ namespace BookManager
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            //checking for correct data input
             if (tb_title.Text == "")
             {
                 MessageBox.Show("You have to input at least a title.");
@@ -51,7 +56,6 @@ namespace BookManager
             }
             else
             {
-                //checking if the previous query contained the previously added data
                 if (parameters.Count!=0 && (parameters["title"].ToString()==tb_title.Text || parameters["isbn"]==tb_isbn))
                 {
                     MessageBox.Show("You have already added a record with the same title/ISBN!", "Information");
@@ -82,22 +86,29 @@ namespace BookManager
 
         private void viewAllBooksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ViewAll viewAllform = new ViewAll();
+            ViewAll viewAllform = new ViewAll(LoggedUser);
             viewAllform.Show();
             this.Hide();
         }
 
         private void editBookDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FindBook addBookform = new FindBook();
+            FindBook addBookform = new FindBook(LoggedUser);
             addBookform.Show();
             this.Hide();
         }
 
         private void splashPageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BookManager bookManagerform = new BookManager();
+            BookManager bookManagerform = new BookManager(LoggedUser);
             bookManagerform.Show();
+            this.Hide();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LogIn loginForm = new LogIn();
+            loginForm.Show();
             this.Hide();
         }
     }

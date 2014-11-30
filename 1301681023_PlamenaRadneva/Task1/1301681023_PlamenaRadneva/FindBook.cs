@@ -15,17 +15,24 @@ namespace BookManager
 {
     public partial class FindBook : Form
     {
-        public FindBook()
+        private User LoggedUser = new User();
+
+        public FindBook(User user)
         {
+            LoggedUser = user;
             InitializeComponent();
         }
 
-        //using an ordered dictionary (associative array) to send query parameters
+        public FindBook()
+        {
+            
+        }
+
         OrderedDictionary parameters = new OrderedDictionary();
 
         private void PopulateTextboxes()
         {
-            BookEntity book = new BookEntity();
+            Book book = new Book();
             book = BookController.GetByTitle(tb_input.Text);
 
             if (book.Title != null)
@@ -60,7 +67,6 @@ namespace BookManager
         {
             HideAndClear();
 
-            //checking if user has input anything first
             if (tb_input.Text == "")
             {
                 MessageBox.Show("You have to input a title.");
@@ -132,22 +138,29 @@ namespace BookManager
 
         private void viewAllBooksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ViewAll viewAllform = new ViewAll();
+            ViewAll viewAllform = new ViewAll(LoggedUser);
             viewAllform.Show();
             this.Hide();
         }
 
         private void addDeleteBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddBook addBookform = new AddBook();
+            AddBook addBookform = new AddBook(LoggedUser);
             addBookform.Show();
             this.Hide();
         }
 
         private void splashPageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BookManager bookManagerform = new BookManager();
+            BookManager bookManagerform = new BookManager(LoggedUser);
             bookManagerform.Show();
+            this.Hide();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LogIn loginForm = new LogIn();
+            loginForm.Show();
             this.Hide();
         }
 

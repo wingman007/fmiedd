@@ -13,28 +13,23 @@ namespace BookManager.Controller
 {
     class BookController
     {
-        //setting all methods to static because they will be called directly from BookManager.Controller.BookController
-
-        public static List<BookEntity> GetBooks()
+        public static List<Book> GetBooks()
         {
-            List<BookEntity> books = new List<BookEntity>();
+            List<Book> books = new List<Book>();
             books = BookModel.GetAll();
             return books;
         }
 
-        public static BookEntity GetByTitle(string title)
+        public static Book GetByTitle(string title)
         {
-            BookEntity book = new BookEntity();
+            Book book = new Book();
             book = BookModel.GetByTitle(title);
             return book;
         }
 
         public static bool Add(OrderedDictionary parameters)
         {
-            //using an ordered dictionary (associative array) to send query parameters
-
             int affectedRows = 0;
-            //if affectedRows isn't 0, then the query has been successfull
             affectedRows = BookModel.Add(parameters);
             if (affectedRows == 0)
             {
@@ -48,10 +43,7 @@ namespace BookManager.Controller
 
         public static bool Edit(OrderedDictionary parameters)
         {
-            //using an ordered dictionary (associative array) to send query parameters
-
             int affectedRows = 0;
-            //if affectedRows isn't 0, then the query has been successfull
             affectedRows = BookModel.Edit(parameters);
             if (affectedRows == 0)
             { 
@@ -66,7 +58,6 @@ namespace BookManager.Controller
         public static bool Delete(string id)
         {
             int affectedRows = 0;
-            //if affectedRows isn't 0, then the query has been successfull
             affectedRows = BookModel.Delete(id);
             if (affectedRows == 0)
             {
@@ -77,5 +68,6 @@ namespace BookManager.Controller
                 return true;
             }
         }
+
     }
 }
