@@ -10,51 +10,78 @@
 namespace WebFormsCrudAccess {
     
     
-    public partial class _Default {
+    public partial class Login {
         
         /// <summary>
-        /// AuthenticatedMessagePanel control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel AuthenticatedMessagePanel;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// LBWelcomeBack control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBWelcomeBack;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// AnonymousMessagePanel control.
+        /// tbuser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel AnonymousMessagePanel;
+        protected global::System.Web.UI.WebControls.TextBox tbuser;
         
         /// <summary>
-        /// lnkLogin control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkLogin;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// ListView1 control.
+        /// tbpass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.WebControls.TextBox tbpass;
+        
+        /// <summary>
+        /// cbRememberMe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbRememberMe;
+        
+        /// <summary>
+        /// lbError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbError;
+        
+        /// <summary>
+        /// btnok control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnok;
     }
 }

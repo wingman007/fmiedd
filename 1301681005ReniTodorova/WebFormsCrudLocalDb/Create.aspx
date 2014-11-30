@@ -40,10 +40,15 @@
                         <asp:TextBox ID="TextConfirmPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextConfirmPassword" CssClass="alert-danger" ErrorMessage="RequiredFieldValidator">Потвърдете паролата!</asp:RequiredFieldValidator><br />
                         <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextConfirmPassword" ControlToValidate="TextPassword" CssClass="alert-danger">Паролите не съвпадат!</asp:CompareValidator>
+                        <br />
+                        <asp:DropDownList ID="Roles" runat="server">
+                            <asp:ListItem Value="2">Потребител</asp:ListItem>
+                            <asp:ListItem Value="1">Администратор</asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </div>
 
-                <asp:Button ID="Add" runat="server" OnClick="Button1_Click" CssClass="btn btn-primary btn-lg pull-right" Text="Създаване" ValidateRequestMode="Disabled" />
+                <asp:Button ID="Add" runat="server" OnClick="Add_Click" CssClass="btn btn-primary btn-lg pull-right" Text="Създаване" ValidateRequestMode="Disabled" />
 
             </form>
           </div>
