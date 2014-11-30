@@ -10,14 +10,14 @@ using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
 
-namespace _1301681029_NikolaiValkov_project
+namespace Николай_Вълков_1301681029_втора_задача
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
 
         private void crudFunc(string zaqvka)
         {
-            SqlConnection sqlc = new SqlConnection(@"Data Source=НИКСАН-PC\SQLEXPRESS;Initial Catalog=users :);Integrated Security=True");
+            SqlConnection sqlc = new SqlConnection(@"Data Source=НИКСАН-PC\SQLEXPRESS;Initial Catalog=users-:);Integrated Security=True");
             try
             {
                 sqlc.Open();
@@ -48,18 +48,18 @@ namespace _1301681029_NikolaiValkov_project
             listBox1.Items.Clear();
             //Data Source=НИКСАН-PC\SQLEXPRESS;Initial Catalog=c-sharp-project;Integrated Security=True"
             //Data Source=НИКСАН-PC\SQLEXPRESS;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False
-            SqlConnection sqlc = new SqlConnection(@"Data Source=НИКСАН-PC\SQLEXPRESS;Initial Catalog=users :);Integrated Security=True");
+            SqlConnection sqlc = new SqlConnection(@"Data Source=НИКСАН-PC\SQLEXPRESS;Initial Catalog=users-:);Integrated Security=True");
             try
             {
                 sqlc.Open();
                 statusLbl.Text = "Connection state succesfully";
                 SqlCommand cmd = sqlc.CreateCommand();
-                cmd.CommandText = @"SELECT ID, NAME, ADDRESS, PASSWORD from Table_1";
+                cmd.CommandText = @"SELECT ID, NAME, ADDRESS, PASSWORD, role from Table_1 join Roles on ID = role_id";
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     int id = reader.GetInt32(0);
-                    listBox1.Items.Add(id.ToString() + " " + reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3));
+                    listBox1.Items.Add(id.ToString() + " " + reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3) + " " + reader.GetString(4));
                 }
                 reader.Close();
                 try
@@ -81,19 +81,13 @@ namespace _1301681029_NikolaiValkov_project
         }
 
 
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            reader();
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //crudFunc("Insert into Table_1( [ID],[NAME],[ADDRESS],[PASSWORD] ) values('" + Convert.ToInt32(txtId.Text) + "','" + txtUserName.Text + "','" + txtEmail.Text + "','" + txtPass.Text + "')");
             if (txtId.Text == null && txtUserName.Text == null && txtPass.Text == null && txtEmail.Text == null)
             {
                 statusLbl.Text = "Не сте попълнили някое поле!";
@@ -107,6 +101,11 @@ namespace _1301681029_NikolaiValkov_project
                     {
                         crudFunc("Insert into Table_1( [ID],[NAME],[ADDRESS],[PASSWORD] ) values('" + Convert.ToInt32(txtId.Text) + "','" + txtUserName.Text + "','" + txtEmail.Text + "','" + txtPass.Text + "')");
                         statusLbl.Text = "Записът е успешен!";
+                        if (comboBox1.Text != "")
+                        {
+                            crudFunc("Insert into Roles( [role_id], role ) values('" + Convert.ToInt32(txtId.Text) + "','" + comboBox1.SelectedItem + "')");
+                            statusLbl.Text = "Записът е успешен!";
+                        }
                         reader();
                     }
                     else
@@ -161,6 +160,12 @@ namespace _1301681029_NikolaiValkov_project
                         crudFunc(@"Update Table_1 
                         SET NAME ='" + txtUserName.Text + "',ADDRESS='" + txtEmail.Text + "', PASSWORD='" + txtPass.Text + "'WHERE (ID='" + selectedItemId + "')");
                         statusLbl.Text = "Ъпдейта е успешен!";
+                        if (comboBox1.Text != "")
+                        {
+                            crudFunc(@"Update Roles 
+                            SET role ='" + comboBox1.SelectedItem + "'WHERE (role_id='" + selectedItemId + "')");
+                            statusLbl.Text = "Ъпдейта е успешен!";
+                        }
                         reader();
                     }
                     else
@@ -175,64 +180,14 @@ namespace _1301681029_NikolaiValkov_project
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtPass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPass_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUserName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblId_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            reader();
         }
     }
 }

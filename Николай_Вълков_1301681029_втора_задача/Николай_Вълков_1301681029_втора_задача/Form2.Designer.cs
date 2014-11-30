@@ -1,6 +1,6 @@
-﻿namespace _1301681029_NikolaiValkov_project
+﻿namespace Николай_Вълков_1301681029_втора_задача
 {
-    partial class Form1
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.statusLbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusLbl = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -44,165 +44,168 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.statusStrip1.SuspendLayout();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.statusLbl.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusLbl});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 228);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(383, 22);
-            this.statusStrip1.TabIndex = 45;
-            this.statusStrip1.Text = "statusStrip1";
-            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // statusLbl
             // 
+            this.statusLbl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusLbl.Location = new System.Drawing.Point(0, 249);
             this.statusLbl.Name = "statusLbl";
-            this.statusLbl.Size = new System.Drawing.Size(118, 17);
-            this.statusLbl.Text = "toolStripStatusLabel1";
+            this.statusLbl.Size = new System.Drawing.Size(610, 22);
+            this.statusLbl.TabIndex = 60;
+            this.statusLbl.Text = "statusStrip1";
+            this.statusLbl.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(215, 10);
+            this.label2.Location = new System.Drawing.Point(225, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 18);
-            this.label2.TabIndex = 44;
+            this.label2.TabIndex = 59;
             this.label2.Text = "View information";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(195, 51);
+            this.listBox1.Location = new System.Drawing.Point(205, 58);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(179, 134);
-            this.listBox1.TabIndex = 43;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBox1.Size = new System.Drawing.Size(278, 134);
+            this.listBox1.TabIndex = 58;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(195, 199);
+            this.btnUpdate.Location = new System.Drawing.Point(205, 206);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(179, 23);
-            this.btnUpdate.TabIndex = 42;
+            this.btnUpdate.Size = new System.Drawing.Size(278, 23);
+            this.btnUpdate.TabIndex = 57;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(114, 199);
+            this.btnDelete.Location = new System.Drawing.Point(124, 206);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 41;
+            this.btnDelete.TabIndex = 56;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(33, 199);
+            this.btnSave.Location = new System.Drawing.Point(43, 206);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 40;
+            this.btnSave.TabIndex = 55;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(89, 166);
+            this.txtPass.Location = new System.Drawing.Point(99, 173);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(100, 20);
-            this.txtPass.TabIndex = 39;
-            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
+            this.txtPass.TabIndex = 54;
             // 
             // lblPass
             // 
             this.lblPass.AutoSize = true;
-            this.lblPass.Location = new System.Drawing.Point(11, 169);
+            this.lblPass.Location = new System.Drawing.Point(21, 176);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(56, 13);
-            this.lblPass.TabIndex = 38;
+            this.lblPass.TabIndex = 53;
             this.lblPass.Text = "Password:";
-            this.lblPass.Click += new System.EventHandler(this.lblPass_Click);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(89, 127);
+            this.txtEmail.Location = new System.Drawing.Point(99, 134);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail.TabIndex = 37;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.TabIndex = 52;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(29, 130);
+            this.lblEmail.Location = new System.Drawing.Point(39, 137);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(38, 13);
-            this.lblEmail.TabIndex = 36;
+            this.lblEmail.TabIndex = 51;
             this.lblEmail.Text = "E-mail:";
-            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(89, 88);
+            this.txtUserName.Location = new System.Drawing.Point(99, 95);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(100, 20);
-            this.txtUserName.TabIndex = 35;
-            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
+            this.txtUserName.TabIndex = 50;
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(6, 91);
+            this.lblUserName.Location = new System.Drawing.Point(16, 98);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(61, 13);
-            this.lblUserName.TabIndex = 34;
+            this.lblUserName.TabIndex = 49;
             this.lblUserName.Text = "User name:";
-            this.lblUserName.Click += new System.EventHandler(this.lblUserName_Click);
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(89, 51);
+            this.txtId.Location = new System.Drawing.Point(99, 58);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
-            this.txtId.TabIndex = 33;
-            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
+            this.txtId.TabIndex = 48;
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(48, 54);
+            this.lblId.Location = new System.Drawing.Point(58, 61);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(19, 13);
-            this.lblId.TabIndex = 32;
+            this.lblId.TabIndex = 47;
             this.lblId.Text = "Id:";
-            this.lblId.Click += new System.EventHandler(this.lblId_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(40, 10);
+            this.label1.Location = new System.Drawing.Point(50, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 18);
-            this.label1.TabIndex = 31;
+            this.label1.TabIndex = 46;
             this.label1.Text = "Input information";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Form1
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Admin",
+            "Member",
+            "Public"});
+            this.comboBox1.Location = new System.Drawing.Point(489, 61);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(109, 21);
+            this.comboBox1.TabIndex = 61;
+            // 
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 250);
-            this.Controls.Add(this.statusStrip1);
+            this.ClientSize = new System.Drawing.Size(610, 271);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.statusLbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnUpdate);
@@ -217,11 +220,11 @@
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.Name = "Form2";
+            this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
+            this.statusLbl.ResumeLayout(false);
+            this.statusLbl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,8 +232,8 @@
 
         #endregion
 
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel statusLbl;
+        private System.Windows.Forms.StatusStrip statusLbl;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnUpdate;
@@ -245,6 +248,6 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
-
