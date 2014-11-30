@@ -13,11 +13,11 @@ namespace danostane
 {
     public partial class LoginForm : Form
     {
-        static bool login = false; // променливата дали можеш да влезеш или не
+        static bool login = false; 
         static OleDbDataReader dr = null; 
         static OleDbCommand cmd = new OleDbCommand(); 
         static OleDbConnection cn = new OleDbConnection();
-        public static bool user; // тип user(admin/member)
+        public static bool user; 
         public LoginForm()
         {
             InitializeComponent();
@@ -65,9 +65,9 @@ namespace danostane
                         {
                             user = false;
                         }
-                        this.Hide(); // скривам си логин формичката
-                        Form1 form1 = new Form1(); // създавам форм1
-                        form1.Show(); // и се пуска
+                        this.Hide();
+                        Form1 form1 = new Form1(); 
+                        form1.Show(); 
                         dr.Close();
                         cn.Close();
                     }

@@ -13,11 +13,11 @@ namespace danostane
     public partial class Form1 : Form
     {
         static int id_main = 0;
-        static OleDbDataReader dr = null; // чете данните от таблицата
-        static OleDbCommand cmd = new OleDbCommand(); // update/ create/ delete
-        static OleDbConnection cn = new OleDbConnection(); // връзката към базата данни
-        static string txtdelete = ""; // приема стойността на ид-то на листбокса и го трие
-        static string txtupdate = ""; // приема стойността на ид-то на листбокса и го ъпдейтва
+        static OleDbDataReader dr = null; 
+        static OleDbCommand cmd = new OleDbCommand(); 
+        static OleDbConnection cn = new OleDbConnection(); 
+        static string txtdelete = ""; 
+        static string txtupdate = ""; 
         public Form1()
         {
             InitializeComponent();
@@ -34,11 +34,11 @@ namespace danostane
             txtEmail.Text = "";
         }
         public static void Cud(String u, OleDbConnection cn, OleDbCommand cmd)
-        {// u = стринг с командата
+        {
             try
             {
-                cn.Open(); // отваря връзката към базата
-                cmd.CommandText = u; // изпълнява u 
+                cn.Open(); 
+                cmd.CommandText = u; 
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }
@@ -56,7 +56,7 @@ namespace danostane
             listBox4.Items.Clear();
             try
             {
-                string q = "select * from users"; // взима * от таблицата
+                string q = "select * from users";
                 cmd.CommandText = q;
                 cn.Open();
                 dr = cmd.ExecuteReader();
@@ -68,9 +68,9 @@ namespace danostane
                         listBox2.Items.Add(dr[1].ToString());
                         listBox3.Items.Add(dr[2].ToString());
                         listBox4.Items.Add(dr[3].ToString());
-                        id_main = Convert.ToInt32(dr[0]); //приема стойността на последното ид
+                        id_main = Convert.ToInt32(dr[0]); 
                     }
-                } // добавя в листбоксовете редовете от таблицата
+                } 
                 dr.Close();
                 cn.Close();
             }
@@ -98,18 +98,18 @@ namespace danostane
                 
                 
             }
-            Read(cn, cmd, dr); // заредена база
+            Read(cn, cmd, dr); 
         }
         private void button2_Click_1(object sender, EventArgs e)
         {
-            txtdelete = listBox1.SelectedItem.ToString();// приема ид-то
+            txtdelete = listBox1.SelectedItem.ToString();
             Delete(cn, cmd);
         }
         public void Delete(OleDbConnection cn, OleDbCommand cmd)
         {
             string u = "delete from Users where id='" + txtdelete + "'";
-            Cud(u, cn, cmd); // изпълнява u
-            Read(cn, cmd, dr); // refresh the table
+            Cud(u, cn, cmd); 
+            Read(cn, cmd, dr); 
         }
         public void Update(OleDbConnection cn, OleDbCommand cmd)
         {
