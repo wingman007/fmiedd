@@ -25,7 +25,7 @@ values (1,'admin')
 INSERT INTO Users 
 VALUES ('galq','galqpass','Galq','galq@gmail.com');
 Insert into Roles
-values (2,'mamber')
+values (2,'member')
 
 INSERT INTO Users 
 VALUES ('valq','valqpass','valq','valq@gmail.com');
