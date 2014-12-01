@@ -4,8 +4,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AFDF38E5-7939-414A-AF54-269736BD7AF4}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{38DE79C0-D895-45A2-9537-9D3219870665}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAL</RootNamespace>
     <AssemblyName>DAL</AssemblyName>
@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -41,8 +44,10 @@
   <ItemGroup>
     <Compile Include="Model\Users.cs" />
     <Compile Include="Persistance\Connection.cs" />
-    <Compile Include="Persistance\UserDAL.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Persistance\UsersDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

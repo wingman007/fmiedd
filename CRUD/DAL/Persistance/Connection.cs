@@ -18,7 +18,7 @@ namespace DAL.Persistence
         {
             try
             {
-                conn = new SqlConnection("Data Source=.\\SQLExpress;Initial Catalog=alexander;Integrated Security=True");  // connectionString
+                conn = new SqlConnection("Data Source=.\\SQLExpress;Initial Catalog=ALEX;Integrated Security=True");  // connectionString
                 conn.Open();
             }
             catch (Exception e)

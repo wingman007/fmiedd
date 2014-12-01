@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{55328EC7-22E0-4A28-BD44-40998B96CA45}</ProjectGuid>
+    <ProjectGuid>{374B0155-33C2-4329-ADD1-417B00457BE5}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -70,7 +70,9 @@
     <Content Include="Home.aspx" />
     <Content Include="Insert.aspx" />
     <Content Include="Update.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Delete.aspx.cs">
@@ -105,7 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{afdf38e5-7939-414a-af54-269736bd7af4}</Project>
+      <Project>{38de79c0-d895-45a2-9537-9d3219870665}</Project>
       <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
@@ -122,9 +124,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51131</DevelopmentServerPort>
+          <DevelopmentServerPort>51362</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51131/</IISUrl>
+          <IISUrl>http://localhost:51362/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

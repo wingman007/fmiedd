@@ -20,30 +20,22 @@
     <div id="headertext"style="  font-size: 30px; font-weight: bold; font-style: normal; background-color: #C0C0C0;">
         Read </div>
 
-        <asp:GridView ID="gridUsers" runat="server" GridLines="None" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" Height="190px" ShowFooter="True" style="margin-top: 25px; margin-left: 186px;" Width="970px" >
+        <asp:GridView ID="gridUsers" runat="server" GridLines="None" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" Height="190px" ShowFooter="True" style="margin-top: 25px; margin-left: 186px;" Width="970px" DataKeyNames="ID" DataSourceID="SqlDataSource1" >
             <AlternatingRowStyle BackColor="White" />
             <Columns>
-                <asp:BoundField DataField="ID" HeaderText="ID">
-                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID">
                 </asp:BoundField>
-                <asp:BoundField DataField="Username" HeaderText="Username" >
-                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                <asp:BoundField DataField="Username" HeaderText="Username" SortExpression="Username" >
                 </asp:BoundField>
-                <asp:BoundField DataField="Firstname" HeaderText="Firstname" >
-                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                <asp:BoundField DataField="Firstname" HeaderText="Firstname" SortExpression="Firstname" >
                 </asp:BoundField>
-                <asp:BoundField DataField="Lastname" HeaderText="Lastname" >
-                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                <asp:BoundField DataField="Lastname" HeaderText="Lastname" SortExpression="Lastname" >
                 </asp:BoundField>
-                <asp:BoundField DataField="Email" HeaderText="Email" >
-                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" >
                 </asp:BoundField>
-                <asp:BoundField DataField="Address" HeaderText="Address" >
+                <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" >
                
-                <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                 </asp:BoundField>
-                <asp:CommandField />
-                <asp:BoundField />
                
             </Columns>
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -58,6 +50,9 @@
             <SortedDescendingHeaderStyle BackColor="#820000" />
 
         </asp:GridView>
+        
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ALEXConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [ID], [Username], [Firstname], [Lastname], [Email], [Address] FROM [Users]">
+        </asp:SqlDataSource>
         
         <a href="Home.aspx"><input id="Button2" type="button" value="Back" /></a>
     </form>
