@@ -20,6 +20,9 @@ namespace Console_SQL
         
         static void Main(string[] args)
         {
+            LoginView loginView = new LoginView();
+            loginView.Show();
+
             Menu();
             UserRepository userRepo =new UserRepository();
             ConsoleKeyInfo cki;
