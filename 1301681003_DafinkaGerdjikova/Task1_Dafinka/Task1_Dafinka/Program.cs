@@ -20,7 +20,7 @@ namespace Task1_Dafinka
             frmStart frm = new frmStart();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new frmUsers());
+                Application.Run(new frmMain());
             }
         }
     }
