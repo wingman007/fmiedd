@@ -82,6 +82,7 @@ namespace SpaceInvader.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult SaveGameScore(int score) 
         {
             if (SecurityService.LoggedUser.MaxScore < score)
