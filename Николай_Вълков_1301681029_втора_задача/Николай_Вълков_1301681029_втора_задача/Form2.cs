@@ -17,7 +17,7 @@ namespace Николай_Вълков_1301681029_втора_задача
 
         private void crudFunc(string zaqvka)
         {
-            SqlConnection sqlc = new SqlConnection(@"Data Source=НИКСАН-PC\SQLEXPRESS;Initial Catalog=users-:);Integrated Security=True");
+            SqlConnection sqlc = new SqlConnection("Data Source=FMI-532-0\\SQLEXPRESS;User ID=sa;Password = sa;Initial Catalog=users-:)");
             try
             {
                 sqlc.Open();
@@ -48,7 +48,7 @@ namespace Николай_Вълков_1301681029_втора_задача
             listBox1.Items.Clear();
             //Data Source=НИКСАН-PC\SQLEXPRESS;Initial Catalog=c-sharp-project;Integrated Security=True"
             //Data Source=НИКСАН-PC\SQLEXPRESS;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False
-            SqlConnection sqlc = new SqlConnection(@"Data Source=НИКСАН-PC\SQLEXPRESS;Initial Catalog=users-:);Integrated Security=True");
+            SqlConnection sqlc = new SqlConnection("Data Source=FMI-532-0\\SQLEXPRESS;User ID=sa;Password = sa;Initial Catalog=users-:)");
             try
             {
                 sqlc.Open();

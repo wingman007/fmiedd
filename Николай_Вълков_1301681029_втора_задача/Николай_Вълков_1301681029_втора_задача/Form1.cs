@@ -45,7 +45,7 @@ namespace Николай_Вълков_1301681029_втора_задача
         public void reader()
         {
             //"Provider=SQLNCLI11;Data Source=FMI-532-0\\SQLEXPRESS;User ID=sa;Password = sa;Initial Catalog=Users";
-            SqlConnection sqlc = new SqlConnection(@"Data Source=НИКСАН-PC\SQLEXPRESS;Initial Catalog=users-:);Integrated Security=True");
+            SqlConnection sqlc = new SqlConnection("Data Source=FMI-532-0\\SQLEXPRESS;User ID=sa;Password = sa;Initial Catalog=users-:)");
             try
             {
                 sqlc.Open();
@@ -112,6 +112,11 @@ namespace Николай_Вълков_1301681029_втора_задача
         private void btnJoin_Click(object sender, EventArgs e)
         {
             reader();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

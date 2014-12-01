@@ -10,7 +10,7 @@ namespace CRUD
 {
     class UserRepository
     {
-        private static readonly string dataString = "Server=.\\SQLEXPRESS;Database=users;Trusted_Connection=True;";
+        private static readonly string dataString = @"Server=FMI-532-0\SQLEXPRESS;Initial Catalog=users;User ID=sa;Password=sa;";
         private static SqlConnection conn = null;
         public UserRepository()
         {            

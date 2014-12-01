@@ -27,7 +27,7 @@ namespace danostane
         private void LoginForm_Load(object sender, EventArgs e)
         {
             //"Provider=SQLNCLI11;Data Source=FMI-532-0\\SQLEXPRESS;User ID=sa;Password = sa;Initial Catalog=Users";
-            cn.ConnectionString = @"Provider=SQLNCLI11;Data Source=DANY-PC\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Users";
+            cn.ConnectionString = "Provider=SQLNCLI11;Data Source=FMI-532-0\\SQLEXPRESS;User ID=sa;Password = sa;Initial Catalog=Users_dani";
             cmd.Connection = cn; 
         }
         public void Authentication()

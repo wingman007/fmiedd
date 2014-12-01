@@ -1,5 +1,5 @@
 create database SpaceInvaderDB
-
+use SpaceInvaderDB
 create table Ranks(
 	id varchar(10) primary key,
 	title varchar(50) not null
