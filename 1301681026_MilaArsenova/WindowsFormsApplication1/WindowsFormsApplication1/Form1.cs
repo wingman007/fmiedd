@@ -20,14 +20,16 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bazaDataSet1.Tablic' table. You can move, or remove it, as needed.
+          
             // TODO: This line of code loads data into the 'bazaDataSet.Tablic' table. You can move, or remove it, as needed.
-            this.tablicTableAdapter.Fill(this.bazaDataSet.Tablic);
+           
 
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            SqlConnection mysqlcon = new SqlConnection("Server=USER-PC\\SQLEXPRESS; Database=Baza; Integrated Security=true; Persist Security Info=false;");
+            SqlConnection mysqlcon  = new SqlConnection(@"Server=FMI-532-0\SQLEXPRESS;Initial Catalog=WebApplicationDB;User ID=sa;Password=sa");
             mysqlcon.Open();
 
             while (tbID.Text != "" && tbUsername.Text != "" && tbPassword.Text != "" && tbEmail.Text != "")

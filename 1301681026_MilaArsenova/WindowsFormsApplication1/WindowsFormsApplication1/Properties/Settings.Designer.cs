@@ -32,5 +32,15 @@ namespace WindowsFormsApplication1.Properties {
                 return ((string)(this["BazaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FMI-532-0\\SQLEXPRESS;Initial Catalog=Baza;User ID=sa;Password=sa")]
+        public string BazaConnectionString1 {
+            get {
+                return ((string)(this["BazaConnectionString1"]));
+            }
+        }
     }
 }

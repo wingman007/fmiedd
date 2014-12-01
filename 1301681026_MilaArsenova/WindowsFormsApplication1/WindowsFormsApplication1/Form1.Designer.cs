@@ -34,7 +34,6 @@
             this.uSERNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pASSWORDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tablicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bazaDataSet = new WindowsFormsApplication1.BazaDataSet();
             this.tablicTableAdapter = new WindowsFormsApplication1.BazaDataSetTableAdapters.TablicTableAdapter();
             this.btnInsert = new System.Windows.Forms.Button();
@@ -58,9 +57,13 @@
             this.usernameLb = new System.Windows.Forms.Label();
             this.btnSingIn = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.bazaDataSet1 = new WindowsFormsApplication1.BazaDataSet1();
+            this.tablicBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tablicTableAdapter1 = new WindowsFormsApplication1.BazaDataSet1TableAdapters.TablicTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablicBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bazaDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablicBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -73,12 +76,13 @@
             this.uSERNAMEDataGridViewTextBoxColumn,
             this.pASSWORDDataGridViewTextBoxColumn,
             this.eMAILDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.tablicBindingSource;
+            this.dataGridView1.DataSource = this.tablicBindingSource1;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.dataGridView1.Location = new System.Drawing.Point(2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(446, 359);
+            this.dataGridView1.Size = new System.Drawing.Size(334, 292);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -106,11 +110,6 @@
             this.eMAILDataGridViewTextBoxColumn.HeaderText = "EMAIL";
             this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
             // 
-            // tablicBindingSource
-            // 
-            this.tablicBindingSource.DataMember = "Tablic";
-            this.tablicBindingSource.DataSource = this.bazaDataSet;
-            // 
             // bazaDataSet
             // 
             this.bazaDataSet.DataSetName = "BazaDataSet";
@@ -123,9 +122,10 @@
             // btnInsert
             // 
             this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(454, 225);
+            this.btnInsert.Location = new System.Drawing.Point(340, 183);
+            this.btnInsert.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(78, 37);
+            this.btnInsert.Size = new System.Drawing.Size(58, 30);
             this.btnInsert.TabIndex = 1;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
@@ -135,9 +135,10 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(538, 225);
+            this.btnUpdate.Location = new System.Drawing.Point(404, 183);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(78, 37);
+            this.btnUpdate.Size = new System.Drawing.Size(58, 30);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -147,9 +148,10 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(622, 225);
+            this.btnDelete.Location = new System.Drawing.Point(466, 183);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(73, 37);
+            this.btnDelete.Size = new System.Drawing.Size(55, 30);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -160,9 +162,10 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(478, 27);
+            this.lbID.Location = new System.Drawing.Point(358, 22);
+            this.lbID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(24, 18);
+            this.lbID.Size = new System.Drawing.Size(21, 15);
             this.lbID.TabIndex = 4;
             this.lbID.Text = "ID";
             this.lbID.Visible = false;
@@ -171,9 +174,10 @@
             // 
             this.lbUsername.AutoSize = true;
             this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsername.Location = new System.Drawing.Point(478, 67);
+            this.lbUsername.Location = new System.Drawing.Point(358, 54);
+            this.lbUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(85, 18);
+            this.lbUsername.Size = new System.Drawing.Size(73, 15);
             this.lbUsername.TabIndex = 5;
             this.lbUsername.Text = "Username";
             this.lbUsername.Visible = false;
@@ -182,9 +186,10 @@
             // 
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPassword.Location = new System.Drawing.Point(478, 113);
+            this.lbPassword.Location = new System.Drawing.Point(358, 92);
+            this.lbPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(83, 18);
+            this.lbPassword.Size = new System.Drawing.Size(69, 15);
             this.lbPassword.TabIndex = 6;
             this.lbPassword.Text = "Password";
             this.lbPassword.Visible = false;
@@ -193,69 +198,77 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(478, 161);
+            this.lbEmail.Location = new System.Drawing.Point(358, 131);
+            this.lbEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(50, 18);
+            this.lbEmail.Size = new System.Drawing.Size(44, 15);
             this.lbEmail.TabIndex = 7;
             this.lbEmail.Text = "Email";
             this.lbEmail.Visible = false;
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(581, 161);
+            this.tbEmail.Location = new System.Drawing.Point(436, 131);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(100, 22);
+            this.tbEmail.Size = new System.Drawing.Size(76, 20);
             this.tbEmail.TabIndex = 8;
             this.tbEmail.Visible = false;
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(581, 113);
+            this.tbPassword.Location = new System.Drawing.Point(436, 92);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(100, 22);
+            this.tbPassword.Size = new System.Drawing.Size(76, 20);
             this.tbPassword.TabIndex = 9;
             this.tbPassword.Visible = false;
             // 
             // tbUsername
             // 
-            this.tbUsername.Location = new System.Drawing.Point(581, 67);
+            this.tbUsername.Location = new System.Drawing.Point(436, 54);
+            this.tbUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(100, 22);
+            this.tbUsername.Size = new System.Drawing.Size(76, 20);
             this.tbUsername.TabIndex = 10;
             this.tbUsername.Visible = false;
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(581, 27);
+            this.tbID.Location = new System.Drawing.Point(436, 22);
+            this.tbID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(100, 22);
+            this.tbID.Size = new System.Drawing.Size(76, 20);
             this.tbID.TabIndex = 11;
             this.tbID.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(135, 263);
+            this.label1.Location = new System.Drawing.Point(101, 214);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 12;
             // 
             // roleLb
             // 
             this.roleLb.AutoSize = true;
             this.roleLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roleLb.Location = new System.Drawing.Point(749, 139);
+            this.roleLb.Location = new System.Drawing.Point(562, 113);
+            this.roleLb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.roleLb.Name = "roleLb";
-            this.roleLb.Size = new System.Drawing.Size(48, 18);
+            this.roleLb.Size = new System.Drawing.Size(41, 15);
             this.roleLb.TabIndex = 20;
             this.roleLb.Text = "Role:";
             // 
             // rbUser
             // 
             this.rbUser.AutoSize = true;
-            this.rbUser.Location = new System.Drawing.Point(900, 184);
+            this.rbUser.Location = new System.Drawing.Point(675, 150);
+            this.rbUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbUser.Name = "rbUser";
-            this.rbUser.Size = new System.Drawing.Size(59, 21);
+            this.rbUser.Size = new System.Drawing.Size(47, 17);
             this.rbUser.TabIndex = 19;
             this.rbUser.TabStop = true;
             this.rbUser.Text = "User";
@@ -264,9 +277,10 @@
             // rbArministrator
             // 
             this.rbArministrator.AutoSize = true;
-            this.rbArministrator.Location = new System.Drawing.Point(900, 135);
+            this.rbArministrator.Location = new System.Drawing.Point(675, 110);
+            this.rbArministrator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbArministrator.Name = "rbArministrator";
-            this.rbArministrator.Size = new System.Drawing.Size(112, 21);
+            this.rbArministrator.Size = new System.Drawing.Size(85, 17);
             this.rbArministrator.TabIndex = 18;
             this.rbArministrator.TabStop = true;
             this.rbArministrator.Text = "Administrator";
@@ -274,27 +288,30 @@
             // 
             // usernameTb
             // 
-            this.usernameTb.Location = new System.Drawing.Point(878, 26);
+            this.usernameTb.Location = new System.Drawing.Point(658, 21);
+            this.usernameTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.usernameTb.Multiline = true;
             this.usernameTb.Name = "usernameTb";
-            this.usernameTb.Size = new System.Drawing.Size(159, 35);
+            this.usernameTb.Size = new System.Drawing.Size(120, 29);
             this.usernameTb.TabIndex = 17;
             // 
             // passwordTb
             // 
-            this.passwordTb.Location = new System.Drawing.Point(878, 79);
+            this.passwordTb.Location = new System.Drawing.Point(658, 64);
+            this.passwordTb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.passwordTb.Multiline = true;
             this.passwordTb.Name = "passwordTb";
-            this.passwordTb.Size = new System.Drawing.Size(159, 34);
+            this.passwordTb.Size = new System.Drawing.Size(120, 28);
             this.passwordTb.TabIndex = 16;
             // 
             // passwordLb
             // 
             this.passwordLb.AutoSize = true;
             this.passwordLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLb.Location = new System.Drawing.Point(734, 96);
+            this.passwordLb.Location = new System.Drawing.Point(550, 78);
+            this.passwordLb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passwordLb.Name = "passwordLb";
-            this.passwordLb.Size = new System.Drawing.Size(88, 18);
+            this.passwordLb.Size = new System.Drawing.Size(73, 15);
             this.passwordLb.TabIndex = 15;
             this.passwordLb.Text = "Password:";
             // 
@@ -302,18 +319,20 @@
             // 
             this.usernameLb.AutoSize = true;
             this.usernameLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLb.Location = new System.Drawing.Point(734, 43);
+            this.usernameLb.Location = new System.Drawing.Point(550, 35);
+            this.usernameLb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.usernameLb.Name = "usernameLb";
-            this.usernameLb.Size = new System.Drawing.Size(90, 18);
+            this.usernameLb.Size = new System.Drawing.Size(77, 15);
             this.usernameLb.TabIndex = 14;
             this.usernameLb.Text = "Username:";
             // 
             // btnSingIn
             // 
             this.btnSingIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSingIn.Location = new System.Drawing.Point(869, 225);
+            this.btnSingIn.Location = new System.Drawing.Point(652, 183);
+            this.btnSingIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSingIn.Name = "btnSingIn";
-            this.btnSingIn.Size = new System.Drawing.Size(90, 37);
+            this.btnSingIn.Size = new System.Drawing.Size(68, 30);
             this.btnSingIn.TabIndex = 13;
             this.btnSingIn.Text = "Sing in";
             this.btnSingIn.UseVisualStyleBackColor = true;
@@ -322,21 +341,36 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(518, 305);
+            this.btnBack.Location = new System.Drawing.Point(388, 248);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(118, 35);
+            this.btnBack.Size = new System.Drawing.Size(88, 28);
             this.btnBack.TabIndex = 21;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Visible = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // bazaDataSet1
+            // 
+            this.bazaDataSet1.DataSetName = "BazaDataSet1";
+            this.bazaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tablicBindingSource1
+            // 
+            this.tablicBindingSource1.DataMember = "Tablic";
+            this.tablicBindingSource1.DataSource = this.bazaDataSet1;
+            // 
+            // tablicTableAdapter1
+            // 
+            this.tablicTableAdapter1.ClearBeforeFill = true;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1071, 373);
+            this.ClientSize = new System.Drawing.Size(803, 303);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.roleLb);
             this.Controls.Add(this.rbUser);
@@ -359,12 +393,14 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablicBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bazaDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablicBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,7 +410,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private BazaDataSet bazaDataSet;
-        private System.Windows.Forms.BindingSource tablicBindingSource;
         private BazaDataSetTableAdapters.TablicTableAdapter tablicTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uSERNAMEDataGridViewTextBoxColumn;
@@ -401,6 +436,9 @@
         private System.Windows.Forms.Label usernameLb;
         private System.Windows.Forms.Button btnSingIn;
         private System.Windows.Forms.Button btnBack;
+        private BazaDataSet1 bazaDataSet1;
+        private System.Windows.Forms.BindingSource tablicBindingSource1;
+        private BazaDataSet1TableAdapters.TablicTableAdapter tablicTableAdapter1;
     }
 }
 

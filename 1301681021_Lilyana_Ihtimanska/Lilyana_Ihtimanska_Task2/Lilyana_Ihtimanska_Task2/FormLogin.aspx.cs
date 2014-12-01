@@ -13,7 +13,8 @@ namespace Lilyana_Ihtimanska_Task2
     {
         public void Funkciq() 
         {
-            SqlConnection conn = new SqlConnection("Server=.\\SQLEXPRESS;Database=WebApplicationDB;Integrated Security=true");
+            SqlConnection conn = new SqlConnection(@"Data Source=FMI-532-0\SQLEXPRESS;Initial Catalog=WebApplicationDB;User ID=sa;Password=sa");
+            //SqlConnection conn = new SqlConnection("Server=.\\SQLEXPRESS;Database=WebApplicationDB;Integrated Security=true");
             try
             {
                 conn.Open();

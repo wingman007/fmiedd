@@ -49,6 +49,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BazaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BazaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BazaDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +93,17 @@
     </None>
     <None Include="BazaDataSet.xss">
       <DependentUpon>BazaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BazaDataSet1.xsc">
+      <DependentUpon>BazaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BazaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BazaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BazaDataSet1.xss">
+      <DependentUpon>BazaDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

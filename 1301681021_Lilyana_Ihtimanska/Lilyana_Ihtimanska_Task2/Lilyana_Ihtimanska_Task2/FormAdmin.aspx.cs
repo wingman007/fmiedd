@@ -11,7 +11,8 @@ namespace Lilyana_Ihtimanska_Task2
 {
     public partial class FormAdmin : System.Web.UI.Page
     {
-        SqlConnection conn = new SqlConnection("Server=.\\SQLEXPRESS;Database=WebApplicationDB;Integrated Security=true");
+        SqlConnection conn = new SqlConnection(@"Data Source=FMI-532-0\SQLEXPRESS;Initial Catalog=WebApplicationDB;User ID=sa;Password=sa");
+        //SqlConnection conn = new SqlConnection("Server=.\\SQLEXPRESS;Database=WebApplicationDB;Integrated Security=true");
         SqlCommand cmd = new SqlCommand();
         private void Clear()
         {
