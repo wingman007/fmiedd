@@ -38,7 +38,7 @@ namespace CRUDDummySQLServerConsole
                 Console.WriteLine("Error: {0}", e.Errors[0].Message);
                 aConnection.Close();
             }
-            int input = 0;
+            /*int input = 0;*/
             while (true)
             {
                 Console.WriteLine("");
@@ -80,18 +80,20 @@ namespace CRUDDummySQLServerConsole
                         Console.WriteLine("Please select a number");
                         break;
                 }
-                input++;
+                /*input++;
                 if (input < 20)
                     continue;
                 else
-                    break;
+                    break;*/
             }
 
         }
         public static void Insert()
         {
+            
             try
             {
+
                 aConnection.Open();
                 OleDbCommand aCommand = new OleDbCommand("INSERT INTO users (fname,lname, `password`, email) VALUES ('Stela', 'Karamanova','nevidima',  'stelsi@abv.bg')", aConnection);
                 int numAffectedRows = aCommand.ExecuteNonQuery();
