@@ -5,55 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CRUD
-{
-    public enum choice
-    {
-        Insert = 1,
-        Delete = 2,
-        Update = 3,
-        Select = 4,
-        Exit = 5
-    }
+{   
     class Menu
     {
         public void Show()
         {
+            Console.BackgroundColor = ConsoleColor.DarkRed;
+            Console.Clear();
             while (true)
             {
-                choice choice = RenderMenu();
-
-                switch (choice)
+                if (AuthenticationService.LoggedUser.Role == "admin")
+                    AdminMenu();
+                if (AuthenticationService.LoggedUser.Role == "member")
+                    MemberMenu();
+                else
                 {
-
-                    case choice.Select:
-                    {
-                        GetAll();
-                        break;
-                    }
-                    case choice.Update:
-                    {
-                        Edit();
-                        break;
-                    }
-                    case choice.Insert:
-                    {
-                        Add();
-                        break;
-                    }
-                    case choice.Delete:
-                    {
-                        Delete();
-                        break;
-                    }
-                    case choice.Exit:
-                    {
-                        return;
-                    }
+                   Console.WriteLine("Hello " + AuthenticationService.LoggedUser.Full_Name);
+                   break;
                 }
             }
         }
 
-        private choice RenderMenu()
+        private void AdminMenu()
         {
             while (true)
             {
@@ -70,23 +43,28 @@ namespace CRUD
                 {
                     case "G":
                         {
-                            return choice.Select;
+                            GetAll();
+                            break;
                         }
                     case "A":
                         {
-                            return choice.Insert;
+                            Add();
+                            break;
                         }
                     case "D":
                         {
-                            return choice.Delete;
+                            Delete();
+                            break;
                         }
                     case "X":
                         {
-                            return choice.Exit;
+                            Environment.Exit(0);
+                            break;
                         }
                     case "E":
                         {
-                            return choice.Update;
+                            Edit();
+                            break; 
                         }
                     default:
                         {
@@ -98,8 +76,38 @@ namespace CRUD
             }
         }
 
-        private void GetAll()
+        private void MemberMenu()
         {
+            Console.Clear();
+            Console.WriteLine("Users management:");
+            Console.WriteLine("[G]et all users");
+            Console.WriteLine("E[x]it");
+
+            string key = Console.ReadLine();
+            switch (key.ToUpper())
+            {
+                case "G":
+                    {
+                        GetAll();
+                        break;
+                    }
+                case "X":
+                    {
+                        Environment.Exit(0);
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("Invalid choice.");
+                        Console.ReadKey(true);
+                        break;
+                    }
+            }
+        }
+
+        private void GetAll()
+        {           
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.Clear();
 
             UserRepository UserRepository = new UserRepository();
@@ -119,6 +127,7 @@ namespace CRUD
 
         private void Add()
         {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.Clear();
 
             User user = new User();
@@ -140,9 +149,10 @@ namespace CRUD
 
         private void Delete()
         {
-            UserRepository userRepository = new UserRepository();
-
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.Clear();
+
+            UserRepository userRepository = new UserRepository();
 
             Console.WriteLine("Delete User:");
             Console.Write("Username: ");
@@ -154,10 +164,12 @@ namespace CRUD
 
         private void Edit()
         {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.Clear();
+
             User user = new User();
             UserRepository userRepository = new UserRepository();
 
-            Console.Clear();
 
             Console.WriteLine("Edit User:");
             Console.Write("Username: ");

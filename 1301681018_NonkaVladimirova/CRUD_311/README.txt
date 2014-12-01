@@ -1,12 +1,11 @@
-Консолно приложение със SQL Server  за четене, писане, редактиране, и изтриване (CRUD) на потребители (users).
 
-class UserRepository
-    {
-        private readonly string dataString = "Server=.\\SQLEXPRESS;Database=users;Trusted_Connection=True;";
-    }
+Step by step :)
 
-Името на съвъра трябва да бъде променане за да работи програмата 
-и базата да се attach-не в sql server
+1-download
+2-Execute users.sql
+3-Build project
 
+5-change connection string in UserRepository.cs -> dataString = ".."
+for FMI dataString = @"Data Source=FMI-532-0\SQLEXPRESS;Initial Catalog=users;User ID=sa;Password=sa;Integrated Security=false"
 
-attach -> CRUD_311\CRUD\bin\Debug\users.mdf in Sql Server 
+4-f5
