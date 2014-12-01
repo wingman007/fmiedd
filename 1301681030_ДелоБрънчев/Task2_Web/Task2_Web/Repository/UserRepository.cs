@@ -9,7 +9,7 @@ namespace Task2_Web.Repository
 {
     public class UserRepository
     {
-        SqlConnection conn = new SqlConnection("Data Source=DEZARO-PC\\SQLEXPRESS;Initial Catalog=Users;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=FMI-532-0\SQLEXPRESS;Initial Catalog=Users;User ID=sa;Password=sa");
         SqlCommand cmd = new SqlCommand();
         public void Insert(User user)
         {
