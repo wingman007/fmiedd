@@ -7,22 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
+using System.Data.OleDb; 
 namespace danostane
 {
     public partial class Form1 : Form
     {
         static int id_main = 0;
-        static OleDbDataReader dr = null;
-        static OleDbCommand cmd = new OleDbCommand();
-        static OleDbConnection cn = new OleDbConnection();
-        static string txtdelete = "";
-        static string txtupdate = "";
+        static OleDbDataReader dr = null; 
+        static OleDbCommand cmd = new OleDbCommand(); 
+        static OleDbConnection cn = new OleDbConnection(); 
+        static string txtdelete = ""; 
+        static string txtupdate = ""; 
         public Form1()
         {
             InitializeComponent();
+            //"Provider=SQLNCLI11;Data Source=FMI-532-0\\SQLEXPRESS;User ID=sa;Password = sa;Initial Catalog=Users";
             cn.ConnectionString = @"Provider=SQLNCLI11;Data Source=DANY-PC\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Users";
-            cmd.Connection = cn;
+            cmd.Connection = cn; 
             
         }
         private void button1_Click(object sender, EventArgs e)
@@ -36,8 +37,8 @@ namespace danostane
         {
             try
             {
-                cn.Open();
-                cmd.CommandText = u;
+                cn.Open(); 
+                cmd.CommandText = u; 
                 cmd.ExecuteNonQuery();
                 cn.Close();
             }
@@ -47,7 +48,7 @@ namespace danostane
                 MessageBox.Show(e.Message.ToString());
             }
         }
-        public void Read(OleDbConnection cn, OleDbCommand cmd, OleDbDataReader dr)
+            public void Read(OleDbConnection cn, OleDbCommand cmd, OleDbDataReader dr)
         {
             listBox1.Items.Clear();
             listBox2.Items.Clear();
@@ -67,9 +68,9 @@ namespace danostane
                         listBox2.Items.Add(dr[1].ToString());
                         listBox3.Items.Add(dr[2].ToString());
                         listBox4.Items.Add(dr[3].ToString());
-                        id_main = Convert.ToInt32(dr[0]);
+                        id_main = Convert.ToInt32(dr[0]); 
                     }
-                }
+                } 
                 dr.Close();
                 cn.Close();
             }
@@ -81,7 +82,23 @@ namespace danostane
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Read(cn, cmd, dr);
+            bool user_role = LoginForm.user;
+            if(user_role == false)
+            {
+                button1.Hide();
+                button2.Hide();
+                button3.Hide();
+                label1.Hide();
+                label2.Hide();
+                label3.Hide();
+                txtUsername.Hide();
+                txtPassword.Hide();
+                txtEmail.Hide();
+
+                
+                
+            }
+            Read(cn, cmd, dr); 
         }
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -91,8 +108,8 @@ namespace danostane
         public void Delete(OleDbConnection cn, OleDbCommand cmd)
         {
             string u = "delete from Users where id='" + txtdelete + "'";
-            Cud(u, cn, cmd);
-            Read(cn, cmd, dr);
+            Cud(u, cn, cmd); 
+            Read(cn, cmd, dr); 
         }
         public void Update(OleDbConnection cn, OleDbCommand cmd)
         {
@@ -128,3 +145,4 @@ namespace danostane
         }
     }
 }
+
