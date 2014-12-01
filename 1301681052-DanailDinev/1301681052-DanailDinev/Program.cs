@@ -417,6 +417,8 @@ namespace EDD
 
         static void EditUserMenu()
         {
+            string targetUsername ="";
+
             try
             {
                 ReadAllUsers();
@@ -442,6 +444,7 @@ namespace EDD
                         {
                             Console.WriteLine("7) role: member");
                         }
+                        targetUsername = myReader.GetString(1);
                     }
                     myReader.Close();
                     myConnection.Close();
@@ -492,9 +495,32 @@ namespace EDD
                         }
                         else if (choice == 7)
                         {
-                            Console.Write("\nChange user role ([m]ember/[a]dmin): ");
-                            do { newValue = Console.ReadLine(); } while (newValue == "");
-                            EditUserCommand("role", newValue, id);
+                            //check if you want to make yourself from admin to member
+                            if (UserRole == "admin" && loginUsername == targetUsername)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.WriteLine("\nYou can't change your user role while logged in with this account!");
+                                Console.ForegroundColor = ConsoleColor.Gray;
+                                Console.ReadKey();
+                                EditUserMenu();
+                            }
+                            else
+                            {
+                                Console.Write("\nChange user role ([m]ember/[a]dmin): ");
+                                do
+                                {
+                                    newValue = Console.ReadLine();
+                                    if (newValue == "m")
+                                    {
+                                        newValue = "2";
+                                    }
+                                    else if (newValue == "a")
+                                    {
+                                        newValue = "1";
+                                    }
+                                } while (newValue == "");
+                                EditUserCommand("role", newValue, id);
+                            }
                         }
                         else if (choice == 0)
                         {
@@ -509,8 +535,7 @@ namespace EDD
             {
                 myConnection.Close();
                 ErrorDisplay(e.Message);
-                ErrorDisplay(e.StackTrace);
-                Menu();
+                EditUserMenu();
             }
         }
 
@@ -559,6 +584,7 @@ namespace EDD
             try
             {
                 bool isBanned = false;
+                string targetUsername = "";
 
                 ReadAllUsers();
 
@@ -582,52 +608,65 @@ namespace EDD
                         {
                             isBanned = false;
                         }
-                        Console.Write("\nid: {0} usrname: {1} \n\n ", myReader.GetInt32(0).ToString(), myReader.GetString(1));
+                        Console.Write("'ID: {0} usrname: {1} \n\n ", myReader.GetInt32(0).ToString(), myReader.GetString(1));
+                        targetUsername = myReader.GetString(1);
                     }
                     myReader.Close();
                     myConnection.Close();
 
-
-                    if(isBanned == true)
+                    //you cannot BAN yourself
+                    if (loginUsername == targetUsername)
                     {
-                        Console.Write("Do you want to UNBAN this user? (y/n) ");
-                        string choice = Console.ReadLine();
-                        do
-                        {
-                            if(choice == "y")
-                            {
-                                EditUserCommand("banned", "false", id);
-                                Console.ReadLine();
-                                BanUserMenu();
-                            } 
-                            else if(choice == "n")
-                            {
-                                Console.WriteLine("\nYour choice was 'NO'. Press any key to continue ...");
-                                Console.ReadLine();
-                                BanUserMenu();
-                            }
-                        } while (choice == "");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write("You can't ban yourself!");
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.ReadKey();
+                        BanUserMenu();
                     }
-                    else if(isBanned == false)
+                    else
                     {
-                        Console.Write("Do you want to BAN this user? (y/n) ");
-                        string choice = Console.ReadLine();
-                        do
+
+                        if (isBanned == true)
                         {
-                            if (choice == "y")
+                            Console.Write("Do you want to UNBAN this user? (y/n) ");
+                            string choice = Console.ReadLine();
+                            do
                             {
-                                EditUserCommand("banned", "true", id);
-                                Console.WriteLine("");
-                                Console.ReadKey();
-                                BanUserMenu();
-                            }
-                            else if (choice == "n")
+                                if (choice == "y")
+                                {
+                                    EditUserCommand("banned", "false", id);
+                                    Console.ReadLine();
+                                    BanUserMenu();
+                                }
+                                else if (choice == "n")
+                                {
+                                    Console.WriteLine("\nYour choice was 'NO'. Press any key to continue ...");
+                                    Console.ReadLine();
+                                    BanUserMenu();
+                                }
+                            } while (choice == "");
+                        }
+                        else if (isBanned == false)
+                        {
+                            Console.Write("Do you want to BAN this user? (y/n) ");
+                            string choice = Console.ReadLine();
+                            do
                             {
-                                Console.WriteLine("\nYour choice was 'NO'. Press any key to continue ...");
-                                Console.ReadLine();
-                                BanUserMenu();
-                            }
-                        } while (choice == "");
+                                if (choice == "y")
+                                {
+                                    EditUserCommand("banned", "true", id);
+                                    Console.WriteLine("");
+                                    Console.ReadKey();
+                                    BanUserMenu();
+                                }
+                                else if (choice == "n")
+                                {
+                                    Console.WriteLine("\nYour choice was 'NO'. Press any key to continue ...");
+                                    Console.ReadLine();
+                                    BanUserMenu();
+                                }
+                            } while (choice == "");
+                        }
                     }
                 }
                 else { Menu(); }
