@@ -53,6 +53,19 @@
                     <ul class="nav navbar-nav">
                          <li><a runat="server" href="~/"><b>Всички потребители</b></a></li>
                         <li><a runat="server" href="~/Create"><b>Нов потребител</b></a></li>
+
+                    </ul>
+                     <ul class="nav navbar-nav navbar-right">                                                                                                  
+                        <% if ((string)Session["Username"] == null)
+                           {%>
+                            <li><a href="Login">Вход</a></li>                        
+                            <%}
+                           else
+                           {%>
+                                <li class="profile" style="padding-top:15px;"> <i class="glyphicon glyphicon-user"></i> <% Response.Write(Session["Username"]); %></li>                              
+                               <li><a href="Logout.aspx">Изход <i class="glyphicon glyphicon-log-out"></i></a></li>
+                           <%}                                                          
+                        %>
                     </ul>
                 </div>
             </div>

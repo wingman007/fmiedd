@@ -139,6 +139,15 @@ namespace WebFormsCrudAccess {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
+        /// Roles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Roles;
+        
+        /// <summary>
         /// Add control.
         /// </summary>
         /// <remarks>

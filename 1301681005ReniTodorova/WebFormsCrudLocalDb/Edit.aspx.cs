@@ -13,6 +13,11 @@ namespace WebFormsCrudAccess
         UserRepository repo = new UserRepository();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((string)(Session["Role"]) != "администратор")
+            {
+                Response.Redirect("/");
+            }
+
             var User = repo.GetById(Convert.ToInt32(Request.QueryString["id"]));
          
             this.ID.Value = Request.QueryString["id"];

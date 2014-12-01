@@ -13,6 +13,10 @@ namespace WebFormsCrudAccess
         UserRepository repo = new UserRepository();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((string)(Session["Role"]) != "администратор")
+            {
+                Response.Redirect("/");
+            }
            repo.Delete(Convert.ToInt32(Request.QueryString["id"]));
            Response.Redirect("/?ShowMessageDelete=true");      
         }
