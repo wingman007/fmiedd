@@ -7,7 +7,7 @@ A project by: Plamena Radneva (rhythmxholic@gmail.com)
 * Should work with Visual Studio 2010 - 2013 (possible breakdowns though)
 * A WinForms - based project, implementing simple CRUD using Access DB
 * Four forms to operate with
-* Five data attributes for a single DB record (book): id, title, author, price and ISBN
+* Five data attributes for a single DB record (book): id, title, author, price and ISBN.
 	
 #DESCRIPTION: 
 ##Functions/Forms:
