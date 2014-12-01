@@ -135,5 +135,39 @@ namespace CRUD
             Console.ReadKey(true);
 
         }
+
+
+        public void Member()
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("Users management:");
+                Console.WriteLine("Press G to get all users");
+                Console.WriteLine("Press X to exit");
+
+                string key = Console.ReadLine();
+                switch (key.ToUpper())
+                {
+                    case "G":
+                        {
+                            GetAll();
+                            break;
+                        }
+                   
+                    case "X":
+                        {
+                            System.Environment.Exit(0);
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Wrong.");
+                            Console.ReadKey(true);
+                            break;
+                        }
+                }
+            }
+        }
     }
 }
