@@ -11,8 +11,23 @@ namespace ConsoleCrudProject
     {
         static void Main(string[] args)
         {
-            LoginView loginView = new LoginView();
-            loginView.Show();
+            Console.Write("Username : ");
+            string uname = Console.ReadLine();
+            Console.Write("Password : ");
+            string pass = Console.ReadLine();
+            Console.Clear();
+
+            if (uname == "admin" && pass == "admin")
+            {
+                LoginView loginView = new LoginView();
+                loginView.Show();
+            }
+            else
+            {
+                LoginViewUser userLogin = new LoginViewUser();
+                userLogin.Show();
+            }
+
         }
     }
 }
