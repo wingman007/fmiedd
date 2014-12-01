@@ -15,4 +15,4 @@ How to run without errors.
 For example:
 @"Data source=C:\User\projectfolder\projectfolder\database.sdf"
 
-3) Start the program. Have a nice day!
+3) Start the program. Have a nice day!.
