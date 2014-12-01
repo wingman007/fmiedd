@@ -13,7 +13,7 @@ namespace Console_SQL
        
         public SqlConnection getConnectionString()
         {
-            return new SqlConnection("Data Source=ASUS\\SQLEXPRESS;Initial Catalog=DataBaseUsers;Integrated Security=True");
+            return new SqlConnection("Data Source=(localdb)\\Projects;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False");
         }
         
         public  void Read() 

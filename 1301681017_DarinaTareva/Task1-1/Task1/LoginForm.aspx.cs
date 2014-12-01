@@ -13,8 +13,8 @@ namespace Task1
     {
         //private string username;
         //private string password;
-        
-        SqlConnection con = new SqlConnection(@"Data Source=USER-PC;Initial Catalog=Project_Users;Persist Security Info=False;User ID=sa;Password=LitoMed123;");
+
+        SqlConnection con = new SqlConnection(@"Data Source=FMI-532-0\SQLEXPRESS;Database=Project_Users;Persist Security Info=False;User ID=sa;Password=sa;");
         protected void Page_Load(object sender, EventArgs e)
         {
 
