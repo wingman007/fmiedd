@@ -1,7 +1,15 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Create.aspx.cs" Inherits="webCrud.About" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h1>Create</h1>
+    <h1>Create</h1> 
+     <nav>
+                    <ul id="menu">
+                       
+                      
+                        
+                        <li><a runat="server" href="~/View">View</a></li>
+                    </ul>
+                </nav>
      <script "javascript" type="text/javascript">
 
          function empty() {

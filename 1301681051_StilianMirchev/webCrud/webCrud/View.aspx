@@ -1,7 +1,14 @@
 ﻿<%@ Page Title="View" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="View.aspx.cs" Inherits="webCrud.View" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h1>View</h1>
+    <h1>View</h1>  <nav>
+                    <ul id="menu">
+                       
+                        <li><a runat="server" href="~/Create">Create</a></li>
+                        
+                        
+                    </ul>
+                </nav>
 <div>
 
 

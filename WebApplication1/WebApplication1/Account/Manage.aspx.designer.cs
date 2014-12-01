@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace webCrud.Account
+namespace WebApplication1.Account
 {
 
 

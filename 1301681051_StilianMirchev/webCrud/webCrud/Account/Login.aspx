@@ -2,46 +2,74 @@
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <hgroup class="title">
-        <h1><%: Title %>.</h1>
-    </hgroup>
-    <section id="loginForm">
-        <h2>Use a local account to log in.</h2>
-        <asp:Login runat="server" ViewStateMode="Disabled" RenderOuterTable="false">
-            <LayoutTemplate>
-                <p class="validation-summary-errors">
-                    <asp:Literal runat="server" ID="FailureText" />
-                </p>
-                <fieldset>
-                    <legend>Log in Form</legend>
-                    <ol>
-                        <li>
-                            <asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>
-                            <asp:TextBox runat="server" ID="UserName" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="The user name field is required." />
-                        </li>
-                        <li>
-                            <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
-                            <asp:TextBox runat="server" ID="Password" TextMode="Password" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="field-validation-error" ErrorMessage="The password field is required." />
-                        </li>
-                        <li>
-                            <asp:CheckBox runat="server" ID="RememberMe" />
-                            <asp:Label runat="server" AssociatedControlID="RememberMe" CssClass="checkbox">Remember me?</asp:Label>
-                        </li>
-                    </ol>
-                    <asp:Button runat="server" CommandName="Login" Text="Log in" />
-                </fieldset>
-            </LayoutTemplate>
-        </asp:Login>
-        <p>
-            <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink>
-            if you don't have an account.
-        </p>
-    </section>
-
-    <section id="socialLoginForm">
-        <h2>Use another service to log in.</h2>
-        <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
-    </section>
+    <div style="font-family:Arial">
+<table style="border: 1px solid black">
+    <tr>
+        <td colspan="2">
+            <b>User Login</b>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            User Name
+        </td>    
+        <td>
+            :<asp:TextBox ID="txtUserName" runat="server">
+            </asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorusername" 
+            runat="server" ErrorMessage="User Name required" Text="*"
+            ControlToValidate="txtUserName" ForeColor="Red">
+            </asp:RequiredFieldValidator>
+        </td>    
+    </tr>
+    <tr>
+        <td>
+            Password
+        </td>    
+        <td>
+            :<asp:TextBox ID="txtPassword" TextMode="Password" runat="server">
+            </asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" 
+            runat="server" ErrorMessage="Password required" Text="*"
+            ControlToValidate="txtPassword" ForeColor="Red">
+            </asp:RequiredFieldValidator>
+        </td>    
+    </tr>
+    <tr>
+        <td>
+            &nbsp;</td>    
+        <td>
+            &nbsp;</td>    
+    </tr>
+    <tr>
+        <td>
+            &nbsp;</td>    
+        <td>
+            &nbsp;</td>    
+    </tr>
+    <tr>
+        <td>
+                   
+            <asp:Label ID="Label1" runat="server" Text="Remember me"></asp:Label>
+            <asp:CheckBox ID="CheckBox1" runat="server" />
+                   
+        </td>    
+        <td>
+            <asp:Button ID="btnRegister" runat="server" Text="Login" 
+            onclick="btnRegister_Click"/>
+        </td>    
+    </tr>
+    <tr>
+        <td colspan="2">
+            <asp:Label ID="lblMessage" runat="server" ForeColor="Red">
+            </asp:Label>
+        </td>    
+    </tr>
+    <tr>
+        <td colspan="2">
+            <asp:ValidationSummary ID="ValidationSummary1" ForeColor="Red" runat="server" />
+        </td>    
+    </tr>
+</table>
+</div>
 </asp:Content>
