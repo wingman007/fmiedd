@@ -34,7 +34,7 @@ namespace StudentInformationSystemCRUDWinForms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            dba.update_students(txtRegNo.Text, txtFname.Text, txtLname.Text, txtPhoneNo.Text);
+            dba.update_students("[RegNo]", "[Fname]", "[Lname]", "[Phone], [Password]");
             MessageBox.Show("Successfully updated");
         }
     }
