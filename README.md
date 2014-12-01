@@ -1,12 +1,8 @@
 fmiedd
 ======
 
-This repo is for my students FMI Event Driven Development
-==============================
-
 This is winform with ms SQLCE database project.
-
-==================================================
+==============================
 
 How to run without errors.
 
