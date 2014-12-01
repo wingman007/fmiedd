@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CRUD.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <link href="Styles.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <asp:PlaceHolder runat="server">     
+          
+    </asp:PlaceHolder>  
+    
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <style type="text/css">
+        .h1 {
+            height: 22px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <h1>MY CRUD Project</h1>
+        <div id="body">
+
+            <div>
+    
+               <p class="font">Username:&nbsp;&nbsp; 
+                <asp:TextBox ID="tbUsername" runat="server" CssClass="textboxfont"></asp:TextBox>
+                </p>
+                <p class="font">Password:&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="tbPassword" runat="server" TextMode="Password" CssClass="textboxfont"></asp:TextBox>
+                </p>
+                <asp:Label ID="lblError" runat="server" ForeColor="Red" Font-Size="Larger"></asp:Label>
+                <br />
+                <br />
+                <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login" Height="36px" Width="130px" CssClass="loginbutton" />
+    
+             </div>
+
+        <br />
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; <%: DateTime.Now %> - My ASP.NET Application</p>
+            </div>
+        </div>
+    </footer>
+    </form>
+</body>
+</html>

@@ -13,7 +13,7 @@ namespace Database_5
 
         public static void Select()
         {
-            SqlConnection sqlcon = new SqlConnection("Server=STANISLAV-PC; Database=PROJECT; Integrated Security=true; Persist Security Info=false;");
+            SqlConnection sqlcon = new SqlConnection("Server=FMI-532-0\\SQLEXPRESS (sa); Database=PROJECT; Integrated Security=true; Persist Security Info=false;");
             sqlcon.Open();
 
             SqlCommand scom = new SqlCommand("SELECT * " + "FROM [PROJECT].[dbo].[USERS]", sqlcon);
@@ -41,7 +41,7 @@ namespace Database_5
             if (usr != "")
             {
 
-                SqlConnection sqlcon = new SqlConnection("Server=STANISLAV-PC; Database=PROJECT; Integrated Security=true; Persist Security Info=false;");
+                SqlConnection sqlcon = new SqlConnection("Server=FMI-532-0\\SQLEXPRESS (sa); Database=PROJECT; Integrated Security=true; Persist Security Info=false;");
                 sqlcon.Open();
 
               
@@ -71,7 +71,7 @@ namespace Database_5
             Console.Write("\n Enter the ID of the row and press 'Delete':");
             id = Console.ReadLine();
 
-            SqlConnection sqlcon = new SqlConnection("Server=STANISLAV-PC; Database=PROJECT; Integrated Security=true; Persist Security Info=false;");
+            SqlConnection sqlcon = new SqlConnection("Server=FMI-532-0\\SQLEXPRESS (sa); Database=PROJECT; Integrated Security=true; Persist Security Info=false;");
             sqlcon.Open();
 
             if (id != "")
@@ -159,7 +159,7 @@ namespace Database_5
                                             if (role_id == 1 || role_id == 2)
                                             {
 
-                                                SqlConnection sqlcon = new SqlConnection("Server=STANISLAV-PC; Database=PROJECT; Integrated Security=true; Persist Security Info=false;");
+                                                SqlConnection sqlcon = new SqlConnection("Server=FMI-532-0\\SQLEXPRESS (sa); Database=PROJECT; Integrated Security=true; Persist Security Info=false;");
                                                 sqlcon.Open();
 
 
@@ -234,7 +234,7 @@ namespace Database_5
                 if (id_reg != "" && username_reg != "" && password_reg != "" && email_reg != "" && role_reg == 1 || role_reg == 2)
                 {
 
-                    SqlConnection sqlcon = new SqlConnection("Server=STANISLAV-PC; Database=PROJECT; Integrated Security=true; Persist Security Info=false;");
+                    SqlConnection sqlcon = new SqlConnection("Server=FMI-532-0\\SQLEXPRESS (sa); Database=PROJECT; Integrated Security=true; Persist Security Info=false;");
                     sqlcon.Open();
 
 
