@@ -160,7 +160,7 @@ namespace CRUD
         }
         static void Main(string[] args)
         {
-            cn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Pavel\Source\Repos\fmiedd\1301681031_Pavel_Bogdanov\CRUD\CRUD\Database1.accdb;Persist Security Info=True";
+            cn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\fmi\Source\Repos\fmiedd\1301681031_Pavel_Bogdanov\CRUD\CRUD\Database1.accdb;Persist Security Info=True";
             cmd.Connection = cn;
             while (flag == false)
             { LogIn(cn, cmd, dr); }
