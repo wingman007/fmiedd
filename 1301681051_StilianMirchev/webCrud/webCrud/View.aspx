@@ -20,6 +20,7 @@
             <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
             <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
             <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
+            <asp:BoundField DataField="User_id" HeaderText="User_id" SortExpression="User_id" />
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
