@@ -13,6 +13,12 @@ namespace WebFormsCrudLocalDb
         UserRepository repo = new UserRepository();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((string)(Session["Role"]) != "admin")
+            {
+                Response.Redirect("/");
+            }
+
+
            repo.Delete(Convert.ToInt32(Request.QueryString["id"]));
            Response.Redirect("/?ShowMessageDelete=true");      
         }

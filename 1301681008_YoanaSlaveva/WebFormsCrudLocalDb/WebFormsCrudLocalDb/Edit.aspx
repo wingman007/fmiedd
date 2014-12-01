@@ -39,6 +39,12 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <asp:DropDownList ID="Roles" runat="server">
+                            
+                     </asp:DropDownList>
+                </div>
+
                 <asp:Button ID="Update" runat="server" OnClick="UpdateUser" Text="Update" ValidateRequestMode="Disabled" CssClass="btn btn-primary btn-lg pull-right" />
 
             </form>

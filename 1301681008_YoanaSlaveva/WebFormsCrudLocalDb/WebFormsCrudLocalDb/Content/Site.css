@@ -12,8 +12,26 @@ body {
     padding-right: 15px;
 }
 
+.profile {
+     margin: 15px;
+    color: #fff;
+}
 
-
+.loginbtn {
+    margin: 15px;
+    
+}
+    .inklogin {
+        color: white;
+    }
+.welcometext {
+    display:block;
+    font-size: 18px;
+    margin: 40px ;
+}
+#WelcomeBackMessage {
+    color:white;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {

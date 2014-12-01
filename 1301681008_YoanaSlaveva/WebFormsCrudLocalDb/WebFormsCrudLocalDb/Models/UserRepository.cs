@@ -31,11 +31,12 @@ namespace WebFormsCrudLocalDb.Models
                     connection.Open();
                     using (SqlCommand command = connection.CreateCommand())
                     {
-                        command.CommandText = "INSERT INTO Users (username, password,email) VALUES (@username,@password,@email)";
+                        command.CommandText = "INSERT INTO Users (username, password,email, roleId) VALUES (@username,@password,@email, @roleId)";
 
                         command.Parameters.AddWithValue("@username", User.Username);
                         command.Parameters.AddWithValue("@password", User.Password);
                         command.Parameters.AddWithValue("@email", User.Email);
+                        command.Parameters.AddWithValue("@roleId", User.Role);
                         command.ExecuteNonQuery();
                     }
                 }
@@ -62,7 +63,7 @@ namespace WebFormsCrudLocalDb.Models
                     using (SqlCommand command = connection.CreateCommand())
                     {
 
-                        command.CommandText = "SELECT id, username, password, email FROM Users";
+                        command.CommandText = "SELECT u.id, u.username, u.password, u.email, r.role FROM Users u JOIN Roles r ON u.roleId = r.id";
                         SqlDataReader reader = command.ExecuteReader();
                         while (reader.Read())
                         {
@@ -71,7 +72,8 @@ namespace WebFormsCrudLocalDb.Models
                             user.Username = reader.GetString(1);
                             user.Password = reader.GetString(2);
                             user.Email = reader.GetString(3);
-
+                            user.Role = reader.GetString(4);
+                                
                             result.Add(user);
                         }
                     }
@@ -92,7 +94,8 @@ namespace WebFormsCrudLocalDb.Models
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT id, username, password, email FROM Users WHERE id = @id";
+
+                    command.CommandText = "SELECT u.id, u.username, u.password, u.email, r.role FROM Users u JOIN Roles r ON u.roleId = r.id WHERE u.id = @id";
                     command.Parameters.AddWithValue("@id", id);
 
                     SqlDataReader reader = command.ExecuteReader();
@@ -102,6 +105,7 @@ namespace WebFormsCrudLocalDb.Models
                         user.Username = reader.GetString(1);
                         user.Password = reader.GetString(2);
                         user.Email = reader.GetString(3);
+                        user.Role = reader.GetString(4);
                     }
                 }
             }
@@ -118,10 +122,11 @@ namespace WebFormsCrudLocalDb.Models
                     connection.Open();
                     using (SqlCommand command = connection.CreateCommand())
                     {
-                        command.CommandText = "UPDATE Users SET username = @username, password = @pass, email = @email WHERE id = @id";
+                        command.CommandText = "UPDATE Users SET username = @username, password = @pass, email = @email, roleId = @roleId WHERE id = @id";
                         command.Parameters.AddWithValue("@username", user.Username);
                         command.Parameters.AddWithValue("@pass", user.Password);
                         command.Parameters.AddWithValue("@email", user.Email);
+                        command.Parameters.AddWithValue("@roleId", user.Role);
                         command.Parameters.AddWithValue("@id", user.Id);
                         command.ExecuteNonQuery();
                     }
@@ -155,5 +160,63 @@ namespace WebFormsCrudLocalDb.Models
             }
 
         }
+
+        public User isValidUser(string username, string password)
+        {
+            var user = new User();
+            using (SqlConnection connection = conn)
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT u.id, u.username, u.password, u.email, r.role FROM Users u JOIN Roles r ON u.roleId = r.id WHERE username = @username AND password = @password";
+                    command.Parameters.AddWithValue("@username", username);
+                    command.Parameters.AddWithValue("@password", password);
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        user.Id = reader.GetInt32(0);
+                        user.Username = reader.GetString(1);
+                        user.Password = reader.GetString(2);
+                        user.Email = reader.GetString(3);
+                        user.Role = reader.GetString(4);
+                    }
+                }
+            }
+            return user;
+        }
+
+        public List<Role> getRoles()
+        {
+            List<Role> roles = new List<Role>();
+
+            try
+            {
+                using (SqlConnection connection = getConnectionString())
+                {
+                    connection.Open();
+                    using (SqlCommand command = connection.CreateCommand())
+                    {
+
+                        command.CommandText = "SELECT id, role FROM Roles";
+                        SqlDataReader reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            var role = new Role();
+                            role.Id = reader.GetInt32(0);
+                            role.RoleName = reader.GetString(1);                            
+                            roles.Add(role);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+            }
+            return roles;
+        }
+        
     }
 }
