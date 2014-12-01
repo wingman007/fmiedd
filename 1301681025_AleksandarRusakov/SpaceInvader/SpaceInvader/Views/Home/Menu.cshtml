@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "";
+}
+<div class="wrap">
+    <header>
+        <div class="hello-message">
+            <span>Hello, <b>@SpaceInvader.Models.SecurityService.LoggedUser.Username</b>! <a href="/Home/Logout" class="logout-link">(Logout)</a></span>
+        </div>
+        @if (@SpaceInvader.Models.SecurityService.LoggedUser.Rank == @SpaceInvader.Tools.Ranks.Administrator)
+        {
+            <div class="admin-message">
+                <span>AHA! You are admin! But I don't have any administrator privilages for you ;(</span>
+            </div>
+        }
+        <h1 class="header-one">Space Invaders</h1>
+    </header>
+    <section>
+        <ul class="menu">
+            <li><a href="/Home/Game">PLAY</a></li>
+            <li class="score">.:Score:.
+                <ul>
+                    @model List<SpaceInvader.Models.User>
+                    @foreach (SpaceInvader.Models.User user in Model) 
+                    { 
+                        <li>@user.Username : @user.MaxScore</li>
+                    }
+                </ul>
+            </li>
+        </ul>
+    </section>
+</div>
+

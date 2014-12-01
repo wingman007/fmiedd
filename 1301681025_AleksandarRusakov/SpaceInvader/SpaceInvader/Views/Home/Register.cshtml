@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="wrap">
+    <form method="POST" action="/Home/Register" class="login-form">
+        <span class="error">@Html.ValidationMessage("fail")</span>
+        <fieldset>
+            <input type="text" name="username" placeholder="Username" class="input-style" />
+        </fieldset>
+        <fieldset>
+            <input type="password" name="password" placeholder="Password" class="input-style" />
+        </fieldset>
+        <input type="submit" value="Register" class="form-button" />
+    </form>
+</div>
+

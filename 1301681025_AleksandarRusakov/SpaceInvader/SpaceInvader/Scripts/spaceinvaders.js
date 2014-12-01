@@ -227,14 +227,14 @@ function WelcomeState() {};
 WelcomeState.prototype.enter = function(game) {
     // Preload images
     game.images = new Image();
-    game.images.src = "img/invaders.png";
+    game.images.src = "/img/invaders.png";
 
     // Create and load the sounds.
     game.sounds = new Sounds();
     game.sounds.init();
-    game.sounds.loadSound('shoot', 'sounds/shoot.wav');
-    game.sounds.loadSound('bang', 'sounds/bang.wav');
-    game.sounds.loadSound('explosion', 'sounds/explosion.wav');
+    game.sounds.loadSound('shoot', '/sounds/shoot.wav');
+    game.sounds.loadSound('bang', '/sounds/bang.wav');
+    game.sounds.loadSound('explosion', '/sounds/explosion.wav');
 };
 
 WelcomeState.prototype.update = function (game, dt) {};
@@ -285,7 +285,19 @@ GameOverState.prototype.draw = function(game, dt, ctx) {
 };
 
 GameOverState.prototype.keyDown = function(game, keyCode) {
-    if(keyCode == 32) /*space*/ {
+    if (keyCode == 32) /*space*/ {
+        //  To save the score to the server
+        var req = new XMLHttpRequest();
+        req.open("POST", "/Home/SaveGameScore", true);
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        try {
+            req.send("score=" + game.score);
+        }
+        catch (e) {
+            console.log("The score didn't save!");
+            console.log(e);
+        }
+        
         //  Space restarts the game.
         game.lives = 3;
         game.score = 0;
