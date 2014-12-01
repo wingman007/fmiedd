@@ -21,10 +21,11 @@ namespace UsersManager.Repositories
             using (dbConnection)
             {
                 OleDbCommand command = new OleDbCommand(
-                    "INSERT INTO Users([Username],[Password],[Email]) " +
-                    "VALUES (@Username, @Password, @Email)",
+                    "INSERT INTO Users([RoleID],[Username],[Password],[Email]) " +
+                    "VALUES (@RoleID, @Username, @Password, @Email)",
                     dbConnection);
 
+                command.Parameters.AddWithValue("@RoleID", item.RoleID);
                 command.Parameters.AddWithValue("@Username", item.Username);
                 command.Parameters.AddWithValue("@Password", item.Password);
                 command.Parameters.AddWithValue("@Email", item.Email);
@@ -47,10 +48,11 @@ namespace UsersManager.Repositories
             using (dbConnection)
             {
                 OleDbCommand command = new OleDbCommand(
-                    "UPDATE Users SET Username = @Username, `Password` = @Password, Email = @Email " +
+                    "UPDATE Users SET RoleID = @RoleID, Username = @Username, `Password` = @Password, Email = @Email " +
                     "WHERE ID = @id",
                     dbConnection);
 
+                command.Parameters.AddWithValue("@RoleID", item.RoleID);
                 command.Parameters.AddWithValue("@Username", item.Username);
                 command.Parameters.AddWithValue("@Password", item.Password);
                 command.Parameters.AddWithValue("@Email", item.Email);
@@ -84,6 +86,7 @@ namespace UsersManager.Repositories
                     {
                         User user = new User();
                         user.ID = (int)reader["ID"];
+                        user.RoleID = (int)reader["RoleID"];
                         user.Username = (string)reader["Username"];
                         user.Password = (string)reader["Password"];
                         user.Email = (string)reader["Email"];
@@ -114,6 +117,7 @@ namespace UsersManager.Repositories
                     {
                         User user = new User();
                         user.ID = (int)reader["ID"];
+                        user.RoleID = (int)reader["RoleID"];
                         user.Username = (string)reader["Username"];
                         user.Password = (string)reader["Password"];
                         user.Email = (string)reader["Email"];
@@ -179,6 +183,7 @@ namespace UsersManager.Repositories
                     {
                         User user = new User();
                         user.ID = (int)reader["ID"];
+                        user.RoleID = (int)reader["RoleID"];
                         user.Username = (string)reader["Username"];
                         user.Password = (string)reader["Password"];
                         user.Email = (string)reader["Email"];
