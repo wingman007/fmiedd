@@ -27,13 +27,5 @@ namespace BookManager
                 return true;
             }
         }
-
-        public override Size MinimumSize
-        {
-            get
-            {
-                return new Size(100, 10);
-            }
-        }
     }
 }

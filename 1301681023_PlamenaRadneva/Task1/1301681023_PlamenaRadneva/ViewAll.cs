@@ -13,24 +13,34 @@ namespace BookManager
 {
     public partial class ViewAll : Form
     {
-        public ViewAll()
+        private User LoggedUser = new User();
+        public ViewAll(User user)
         {
+            LoggedUser = user;
             InitializeComponent();
         }
 
-        private void btn_show_Click(object sender, EventArgs e)
+        public ViewAll()
+        {
+        }
+
+        private void DeactivateMenuOptions()
+        {
+            editBookDetailsToolStripMenuItem.Visible = false;
+            addDeleteBookToolStripMenuItem.Visible = false;
+        }
+
+        private void PopulateTable()
         {
             this.titlePanel.Controls.Clear();
             this.authorPanel.Controls.Clear();
             this.pricePanel.Controls.Clear();
             this.isbnPanel.Controls.Clear();
 
-            List<BookEntity> books = new List<BookEntity>();
+            List<Book> books = new List<Book>();
             books = BookController.GetBooks();
-            foreach (BookEntity singleBook in books)
+            foreach (Book singleBook in books)
             {
-                /*create a separate label for every property
-                  in each record in books list*/
                 ViewLabel titleLabel = new ViewLabel();
                 ViewLabel authorLabel = new ViewLabel();
                 ViewLabel priceLabel = new ViewLabel();
@@ -41,7 +51,6 @@ namespace BookManager
                 priceLabel.Text = singleBook.Price;
                 isbnLabel.Text = singleBook.ISBN;
 
-                //add each label to its separate flow panel
                 this.titlePanel.Controls.Add(titleLabel);
                 this.authorPanel.Controls.Add(authorLabel);
                 this.pricePanel.Controls.Add(priceLabel);
@@ -51,22 +60,44 @@ namespace BookManager
 
         private void editBookDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FindBook addBookform = new FindBook();
+            FindBook addBookform = new FindBook(LoggedUser);
             addBookform.Show();
             this.Hide();
         }
 
         private void addDeleteBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddBook addBookform = new AddBook();
+            AddBook addBookform = new AddBook(LoggedUser);
             addBookform.Show();
             this.Hide();
         }
 
         private void splashPageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BookManager bookManagerform = new BookManager();
+            BookManager bookManagerform = new BookManager(LoggedUser);
             bookManagerform.Show();
+            this.Hide();
+        }
+
+        private void viewAllBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PopulateTable();
+        }
+
+        private void ViewAll_Load(object sender, EventArgs e)
+        {
+            if (LoggedUser.role_id == 2)
+            {
+                DeactivateMenuOptions();
+            }
+
+            PopulateTable();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LogIn loginForm = new LogIn();
+            loginForm.Show();
             this.Hide();
         }
 
