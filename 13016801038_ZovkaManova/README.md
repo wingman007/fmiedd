@@ -1,0 +1,1 @@
+This project is a CRUD with WinForms + MS SQL Server.
