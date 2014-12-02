@@ -1,6 +1,0 @@
-C:\Users\Coko\Source\Repos\fmiedd\1301681108_CokoBurmov\ConsoleCrudProject\ConsoleCrudProject\bin\Debug\ConsoleCrudProject.exe.config
-C:\Users\Coko\Source\Repos\fmiedd\1301681108_CokoBurmov\ConsoleCrudProject\ConsoleCrudProject\bin\Debug\ConsoleCrudProject.exe
-C:\Users\Coko\Source\Repos\fmiedd\1301681108_CokoBurmov\ConsoleCrudProject\ConsoleCrudProject\bin\Debug\ConsoleCrudProject.pdb
-C:\Users\Coko\Source\Repos\fmiedd\1301681108_CokoBurmov\ConsoleCrudProject\ConsoleCrudProject\obj\Debug\ConsoleCrudProject.csprojResolveAssemblyReference.cache
-C:\Users\Coko\Source\Repos\fmiedd\1301681108_CokoBurmov\ConsoleCrudProject\ConsoleCrudProject\obj\Debug\ConsoleCrudProject.exe
-C:\Users\Coko\Source\Repos\fmiedd\1301681108_CokoBurmov\ConsoleCrudProject\ConsoleCrudProject\obj\Debug\ConsoleCrudProject.pdb

@@ -1,8 +1,0 @@
-INSERT INTO Persons(PersonID, FirstName, Lastname, City)
-values ('3', 'Ivan', 'Petrov', 'Stara Zagora')
-INSERT INTO Persons(PersonID, FirstName, Lastname, City)
-values ('4', 'Marko', 'Markov', 'Pirdop')
-INSERT INTO Persons(PersonID, FirstName, Lastname, City)
-values ('5', 'Georgi', 'Nikolov', 'Tulovo')
-INSERT INTO Persons(PersonID, FirstName, Lastname, City)
-values ('6', 'Evgeni', 'Petrov', 'Novi Han')

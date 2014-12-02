@@ -56,19 +56,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataConnection.cs" />
+    <Compile Include="Data\DataConnection.cs" />
     <Compile Include="Login.cs" />
-    <Compile Include="MemberView.cs" />
+    <Compile Include="View\MemberView.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Operations.cs" />
+    <Compile Include="Data\Operations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AdminView.cs" />
-    <Compile Include="Roles.cs" />
+    <Compile Include="View\AdminView.cs" />
+    <Compile Include="Data\Roles.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -95,10 +95,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="UserDataBase.mdf">
+    <Content Include="Data\UserDataBase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="UserDataBase_log.ldf">
+    <Content Include="Data\UserDataBase_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>UserDataBase.mdf</DependentUpon>
     </Content>
