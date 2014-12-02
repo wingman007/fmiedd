@@ -114,3 +114,12 @@ HOW TO USE!
 2.Log in.
 
 3.Dependending on the fact if you registerd as a normal user or an admin you will get different priviliges.
+
+Credit:
+
+#References
+  - [https://www.youtube.com/watch?v=AoRWKBbc6QI] [1]
+
+[1]:https://www.youtube.com/watch?v=AoRWKBbc6QI
+
+
