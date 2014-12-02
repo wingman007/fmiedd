@@ -8,6 +8,7 @@
 
 # Build results
 
+
 [Dd]ebug/
 [Rr]elease/
 x64/
@@ -78,6 +79,8 @@ _TeamCity*
 
 # Installshield output folder
 [Ee]xpress/
+
+Project_111/bin/Debug
 
 # DocProject is a documentation generator add-in
 DocProject/buildhelp/
