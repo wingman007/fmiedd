@@ -15,7 +15,7 @@ namespace ProjectWinForm
 {
     public partial class Form1 : Form
     {
-        SqlConnection cn = new SqlConnection(@"Data Source=FMI-431-11\SQLEXPRESS;Initial Catalog=Ju2;User ID=sa;Password=sa");
+        SqlConnection cn = new SqlConnection(@"Data Source=FMI-431-2\SQLEXPRESS;Initial Catalog=yourDatabaseName;User ID=sa;Password=sa");
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
         public Form1()

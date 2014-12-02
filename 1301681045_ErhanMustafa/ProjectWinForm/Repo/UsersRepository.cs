@@ -12,7 +12,7 @@ namespace ProjectWinForm.Repo
         public UsersRepository()
         {
             this.cn = new SqlConnection();
-            this.cn.ConnectionString = @"Data Source=FMI-431-11\SQLEXPRESS;Initial Catalog=Ju2;User ID=sa;Password=sa";
+            this.cn.ConnectionString = @"Data Source=FMI-431-2\SQLEXPRESS;Initial Catalog=yourDatabaseName;User ID=sa;Password=sa";
         }
 
 

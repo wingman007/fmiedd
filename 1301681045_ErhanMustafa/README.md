@@ -28,6 +28,8 @@ Step 1: Open SQL Management Studio
 	)
 	insert into roles
 	values(1,'admin')
+	insert into roles
+	values(2,'member')
 
 	insert into users
 	values(1,'admin','admin','admin@mail.com','1')
