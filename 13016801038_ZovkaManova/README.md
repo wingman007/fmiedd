@@ -1,3 +1,18 @@
 This project is a CRUD with WinForms + MS SQL Server.
+--------------------
 
-Attach the database to the MS SQL Server. (ProjectEED\ProjectEED\DataUsersDB.mdf)
+Star the project
+----------------
+
+1) Attach the database to the MS SQL Server. (ProjectEED\ProjectEED\DataUsersDB.mdf)
+
+Note: Move the file accessable for the Server
+
+
+the password and user name for login as admin:
+username: zovka
+password: zovkapass
+
+the password and user name for login as member:
+username: mariana
+password: marianapass
