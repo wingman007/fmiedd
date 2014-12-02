@@ -1,7 +1,14 @@
 ﻿<%@ Page Title="View" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="View.aspx.cs" Inherits="webCrud.View" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h1>View</h1>
+    <h1>View</h1>  <nav>
+                    <ul id="menu">
+                       
+                        <li><a runat="server" href="~/Create">Create</a></li>
+                        
+                        
+                    </ul>
+                </nav>
 <div>
 
 
@@ -13,6 +20,7 @@
             <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
             <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
             <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
+            <asp:BoundField DataField="User_id" HeaderText="User_id" SortExpression="User_id" />
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
