@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CRUD
 {
-    class InputView
+    class AdminView
     {
         Operations oprarations = new Operations();
         private string name;
         private string email;
         private string pass;
         private int id;
-
+        private int role_id;
 
         public void Start()
         {
@@ -23,7 +23,7 @@ namespace CRUD
                 Console.WriteLine("Choose operation: 1 for adding, 2 for Edit,3 for deleting, Esc for closing the program");
                 switch (Console.ReadKey().Key)
                 {
-                    case ConsoleKey.Escape: Environment.Exit(0);
+                    case ConsoleKey.Escape: Exit();
                         break;
                     case ConsoleKey.D1: Add();
                         break;
@@ -45,32 +45,39 @@ namespace CRUD
             Console.Clear();
 	        Console.WriteLine("Enter username");
             name = Console.ReadLine();
-            if(name=="")
+            while (name == "")
             {
                 Console.WriteLine("user name is empty");
                 Console.WriteLine("Enter username");
+                name = Console.ReadLine();
             }
-            
+
             Console.WriteLine("Enter email");
             email = Console.ReadLine();
-            if(email=="")
+            while(email=="")
             {
                 Console.WriteLine("email is empty");
                 Console.WriteLine("Enter email");
+                email = Console.ReadLine();
             }
- 
+
 	        Console.WriteLine("Enter password");
             pass = Console.ReadLine();	
-            if (pass == "")
+            while (pass == "")
             {
                 Console.WriteLine("pass is empty");
                 Console.WriteLine("Enter password");
+                pass = Console.ReadLine();	
+            }
+
+            while(!RoleCheck())
+            {
             }
 
 	        Console.WriteLine("Press 'Enter' to add the info or press 'Esc' to cancel");
             switch(Console.ReadKey().Key)
             {
-                case ConsoleKey.Enter: oprarations.Add(name, email, pass); Start();
+                case ConsoleKey.Enter: oprarations.Add(name, email, pass,role_id); Start();
                     break;
                 case ConsoleKey.Escape: Start();
                     break;
@@ -78,6 +85,7 @@ namespace CRUD
                     break;
             }
         }
+
         private void Update()
         {
             Console.WriteLine("Enter the id of the person you want to edint");
@@ -130,37 +138,69 @@ namespace CRUD
         {
             Console.WriteLine("Enter username");
             name = Console.ReadLine();
-            if (name == "")
+            while (name == "")
             {
                 Console.WriteLine("user name is empty");
                 Console.WriteLine("Enter username");
+                name = Console.ReadLine();
             }
 
             Console.WriteLine("Enter email");
             email = Console.ReadLine();
-            if (email == "")
+            while (email == "")
             {
                 Console.WriteLine("email is empty");
                 Console.WriteLine("Enter email");
+                email = Console.ReadLine();
             }
 
             Console.WriteLine("Enter password");
             pass = Console.ReadLine();
-            if (pass == "")
+            while (pass == "")
             {
                 Console.WriteLine("pass is empty");
                 Console.WriteLine("Enter password");
+                pass = Console.ReadLine();
+            }
+
+            while (!RoleCheck())
+            {
             }
 
             Console.WriteLine("Press 'Enter' to finish editing the info or press 'Esc' to cancel");
             switch (Console.ReadKey().Key)
             {
-                case ConsoleKey.Enter: oprarations.Update(id,name ,email, pass); Start();
+                case ConsoleKey.Enter: oprarations.Update(id,name ,email, pass,role_id); Start();
                     break;
                 case ConsoleKey.Escape: Start();
                     break;
                 default: Console.WriteLine("Press 'Enter' to add the info or press 'Esc' to cancel");
                     break;
+            }
+        }
+        private void Exit()
+        {
+            oprarations.UpdateDataBase();
+            Environment.Exit(0);
+        }
+        private bool RoleCheck()
+        {
+            Console.WriteLine("Enter role: 1 for Admin, 2 for Member, 3 for Public");
+            string a = Console.ReadLine();
+            try
+            {
+                role_id = int.Parse(a);
+                switch(role_id)
+                {
+                    case 1:return true;
+                    case 2:return true;
+                    case 3:return true;
+                }
+                return false;
+            }
+            catch(FormatException)
+            {
+                return false;
             }
         }
    }      

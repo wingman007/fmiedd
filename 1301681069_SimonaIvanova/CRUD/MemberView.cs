@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace CRUD
 {
-    class Program
+    class MemberView
     {
-        static void Main(string[] args)
+        Operations oprarations = new Operations();
+        public void Read()
         {
-            Login login = new Login();
-            login.LogIn();
+            oprarations.Read();
+            Console.ReadKey(true);
         }
     }
 }

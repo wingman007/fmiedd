@@ -10,88 +10,75 @@ namespace CRUD
 {
     class Operations
     {
-        private static string connstring="Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\UserDataBase.mdf;Integrated Security=True";
+        private static DataConnection dataconnection=new DataConnection();
+        private static string connstring = dataconnection.ConnString();
         private SqlConnection connection=new SqlConnection(connstring);
         private SqlCommand command;
         private SqlDataAdapter adapter=new SqlDataAdapter();
-        private DataSet data = new DataSet();
+        private SqlCommandBuilder objCommandBuilder;
+        private DataSet data = new DataSet("Users");
         private DataRow rowdata;
-        private DataColumn column;
         private DataTable table;
         private int id;
         private string name;
         private string pass;
         private string email;
+        private int role_id;
 
 
-        public void Add(string Name, string Email, string Password)
+        public void Add(string Name, string Email, string Password,int role)
         {
             this.name = Name;
             this.email = Email;
             this.pass = Password;
+            this.role_id = role;
 
-            command = new SqlCommand("INSERT INTO [User](Username, Password,Email) VALUES (@name,@pass,@meil)", connection);
-            command.Parameters.AddWithValue("@name",name);
-            command.Parameters.AddWithValue("@meil", email);
-            command.Parameters.AddWithValue("@pass", pass); 
-
-            connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
-
+            DataRow row = table.NewRow();
+            row["ID"] = int.Parse(table.Rows.Count.ToString()) + 1;
+            row["Username"] = name;
+            row["Password"] = pass;
+            row["Email"] = email;
+            row["Role_Id"] = role_id;
+            table.Rows.Add(row);
+         //   UpdateDataBase();
         }
         public void Delete(int id)
         {
             this.id = id;
-            command = new SqlCommand("DELETE FROM [User] WHERE Id=@id", connection);
-            command.Parameters.AddWithValue("@id", id);
-            try
-            {
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-
-            }
+            rowdata = data.Tables[0].Rows.Find(id);
+            rowdata.Delete();
+            data.AcceptChanges();
         }
-        public void Update(int id, string name, string email, string password)
+        public void Update(int id, string name, string email, string password, int role)
         {
             this.id = id;
             this.name = name;
             this.email = email;
             this.pass = password;
+            this.role_id = role;
 
-            command = new SqlCommand("UPDATE [User] SET Username=@name, Password=@pass,Email=@meil WHERE ID=@id", connection);
-            command.Parameters.AddWithValue("@name",name);
-            command.Parameters.AddWithValue("@meil", email);
-            command.Parameters.AddWithValue("@pass", pass); 
-            command.Parameters.AddWithValue("@id",id);
-
-            connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
+            rowdata = data.Tables["User"].Rows.Find(id);
+            rowdata["Username"] = this.name;
+            rowdata["Password"] = this.pass;
+            rowdata["Email"] = this.email;
+            rowdata["Role_Id"] = this.role_id;
+            data.AcceptChanges();
+           // UpdateDataBase();
         }
         public void getByID(int id)
         {
             this.id = id;
-            table= data.Tables[0];
-            table.PrimaryKey = new DataColumn[] { table.Columns["ID"] };
             rowdata = data.Tables[0].Rows.Find(id);
-            Console.WriteLine("Username: "+rowdata[1].ToString()+ " Password: "+rowdata[2].ToString()+" Email:"+rowdata[3].ToString());
-
-
+            Console.WriteLine("Username: "+rowdata["Username"].ToString()+ " Password: "+rowdata["Password"].ToString()+" Email:"+rowdata["Email"].ToString()+" Role:"+rowdata["Role"]);
         }
         public void Read()
         {
             if(getData())
             {
-                for(int i=0;i<data.Tables[0].Rows.Count;i++)
+                for (int i = 0; i < data.Tables["User"].Rows.Count; i++)
                 {
                     Console.WriteLine(data.Tables[0].Rows[i]["ID"].ToString() + " " + data.Tables[0].Rows[i]["Username"].ToString()+" "+
-                        data.Tables[0].Rows[i]["Email"].ToString() + " " + data.Tables[0].Rows[i]["Password"].ToString());
+                        data.Tables[0].Rows[i]["Email"].ToString() + " "+data.Tables[0].Rows[i]["Role"]);
                 }
             }  
         }
@@ -99,18 +86,32 @@ namespace CRUD
         {
             try
             {
-                command = new SqlCommand("SELECT * FROM [User]", connection);
-                data = new DataSet();
-                adapter.InsertCommand = command;
-                adapter.SelectCommand = command;
-                adapter.Fill(data);
-                return true;
+                if(data.Tables.Count.Equals(0))
+                {
+                    command = new SqlCommand("SELECT u.Id,u.Username,u.Email,u.Password,u.Role_Id,r.ID,r.Role FROM [User] u left join [Roles] r on u.Role_Id=r.ID", connection);
+                    data = new DataSet();
+                    adapter.InsertCommand = command;
+                    adapter.SelectCommand = command;
+                    adapter.Fill(data,"User");
+                    table = data.Tables["User"];
+                    table.PrimaryKey = new DataColumn[] { table.Columns["ID"] };
+                    return true;
+                }
+               else
+               {
+                    return true;
+               }
             }
            catch(Exception e)
             {
                 Console.WriteLine(e);
                 return false;
             }
+        }
+        public void UpdateDataBase()
+        {
+            objCommandBuilder = new SqlCommandBuilder(adapter);
+            adapter.Update(data, "User"); // not working becouse the identity column ID in User
         }
     }
 }
