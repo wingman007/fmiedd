@@ -15,7 +15,7 @@ namespace SQLCRUD_AsenTanev
 
             //1.Creating the Connection, Change the Connection string to your PC's Data Source.
             myConnection =
-                new SqlConnection("Data Source=IVO-PC\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Users");
+                new SqlConnection("Data Source=FMI-431-2\\SQLEXPRESS;Initial Catalog=users;User ID=sa;Password=sa");
             bool identification = true;
             while (identification)
           {
