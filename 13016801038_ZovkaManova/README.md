@@ -6,6 +6,8 @@ Star the project
 
 1) Attach the database to the MS SQL Server. (ProjectEED\ProjectEED\DataUsersDB.mdf)
 
+Right mose click "Attach" in the MS SQL Server Management Studio -> "Add"
+
 Note: Move the file accessable for the Server
 
 
