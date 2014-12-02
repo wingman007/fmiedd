@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Project_111.View;
-using Project_111.Model;
+using System.Timers;
 
 namespace Project_111.Controllers
 {
@@ -35,11 +35,21 @@ namespace Project_111.Controllers
                 }
                 if (logUser.Admin == 0)
                 {
-                    Console.Clear();
+                    
                     Console.WriteLine("Hello {0}", logUser.Username);
-                    Console.WriteLine("I have no idea what to put here");
-                    Console.ReadKey();
+                    do
+                    {
+                        DateTime now = DateTime.Now;
+                        Console.Clear();
+                       
+                        Console.WriteLine("Hello {0}", logUser.Username);
+                       
+                        Console.WriteLine("");
+                        Console.WriteLine("Current time is : {0}", now.ToString());
+                        System.Threading.Thread.Sleep(1000);
                    
+                    } while (true);
+
                 }
             }
 

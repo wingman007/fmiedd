@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Model\Actions.cs" />
+    <Compile Include="Model\Connection.cs" />
+    <Compile Include="Model\Roles.cs" />
     <Compile Include="Model\VIewA\AdminInfo.cs" />
     <Compile Include="Model\LogCheck.cs" />
     <Compile Include="Model\User.cs" />

@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace Project_111.Model
 {
-    class Actions
+    class Actions : Connection
     {
         private AdminInfo aView = new AdminInfo();
+        //private OleDbConnection connection = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Ico-PC\Source\Repos\fmiedd\1301681093_HristoEnchev\Project_111\Project_111\Data\usersDB.accdb;Persist Security Info=False;");
+        
         public void uAction()
         {
             Console.Clear();
@@ -33,9 +35,8 @@ namespace Project_111.Model
                 if (cki.Key == ConsoleKey.D1)
                 {
                     Console.WriteLine(" - Selected");
-                    OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\usersDB.accdb;Persist Security Info=False;");
-                    OleDbCommand command = new OleDbCommand("select * from users", connection);
-
+                  OleDbCommand command = new OleDbCommand("select * from users", connection);
+                    
                     try
                     {
                         Console.Clear();
@@ -52,7 +53,6 @@ namespace Project_111.Model
                         if (username != "" && password != "")
                         {
                             command.CommandText = "insert into users(userName, userPassword, Email) values('" + username + "','" + password + "','" + Email + "')";
-
                         }
                         if (username == "" || password == "")
                         {
@@ -102,8 +102,7 @@ namespace Project_111.Model
                         uAction();
                     }
                     
-                    OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\usersDB.accdb;Persist Security Info=False;");
-                    OleDbCommand command = new OleDbCommand("select * from users", connection);
+                   OleDbCommand command = new OleDbCommand("select * from users", connection);
                     try
                     {
                         connection.Open();
@@ -204,8 +203,6 @@ namespace Project_111.Model
 
                 if (cki.Key == ConsoleKey.D3)
                 {
-                    OleDbConnection connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\usersDB.accdb;Persist Security Info=False;");
-
                     Console.Clear();
                     Console.WriteLine("Select User ID which you want to delete", Console.ForegroundColor = ConsoleColor.Red);
                     Console.WriteLine("Or ESC to return in main screen");
