@@ -71,7 +71,7 @@ namespace ProjectEED
                 RefreshTasks();
                 RefreshLoggedTasks();
             }
-            toolStripButton4.Visible = false;
+            toolStripButton4.Visible = true;
             RefreshAllTasks();
             RefreshAllLoggedTasks();
         }

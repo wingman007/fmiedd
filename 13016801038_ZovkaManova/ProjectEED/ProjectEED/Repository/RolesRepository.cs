@@ -16,7 +16,7 @@ namespace ProjectEED.Repository
         public RolesRepository()
         {
             this.conn = new SqlConnection();
-            this.conn.ConnectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=UsersDB;Integrated Security=True";
+            this.conn.ConnectionString = "Data Source=FMI-431-2\\SQLEXPRESS;Initial Catalog=UsersDB;Integrated Security=False; User ID=sa; Password=sa";
         }
 
        
