@@ -19,6 +19,7 @@ namespace CRUD
         private DataSet data = new DataSet("Users");
         private DataRow rowdata;
         private DataTable table;
+        private DataColumn idUser;
         private int id;
         private string name;
         private string pass;
@@ -33,14 +34,15 @@ namespace CRUD
             this.pass = Password;
             this.role_id = role;
 
+            
+
             DataRow row = table.NewRow();
-            row["ID"] = int.Parse(table.Rows.Count.ToString()) + 1;
             row["Username"] = name;
             row["Password"] = pass;
             row["Email"] = email;
             row["Role_Id"] = role_id;
             table.Rows.Add(row);
-         //   UpdateDataBase();
+            UpdateDataBase();
         }
         public void Delete(int id)
         {
@@ -62,8 +64,9 @@ namespace CRUD
             rowdata["Password"] = this.pass;
             rowdata["Email"] = this.email;
             rowdata["Role_Id"] = this.role_id;
+            
             data.AcceptChanges();
-           // UpdateDataBase();
+          //  UpdateDataBase();
         }
         public void getByID(int id)
         {
@@ -94,7 +97,14 @@ namespace CRUD
                     adapter.SelectCommand = command;
                     adapter.Fill(data,"User");
                     table = data.Tables["User"];
-                    table.PrimaryKey = new DataColumn[] { table.Columns["ID"] };
+                    idUser = new DataColumn();
+                    idUser = table.Columns["ID"];
+                    idUser.DataType = System.Type.GetType("System.Int32");
+                    idUser.AutoIncrement = true;
+                    long value =(long.Parse(table.Rows[table.Rows.Count-1]["ID"].ToString())) +1;
+                    idUser.AutoIncrementSeed = value ;
+                    idUser.AutoIncrementStep = 1;
+                    table.PrimaryKey = new DataColumn[] { idUser };
                     return true;
                 }
                else
@@ -111,7 +121,10 @@ namespace CRUD
         public void UpdateDataBase()
         {
             objCommandBuilder = new SqlCommandBuilder(adapter);
-            adapter.Update(data, "User"); // not working becouse the identity column ID in User
+            adapter.DeleteCommand = new SqlCommand("");
+            adapter.UpdateCommand = objCommandBuilder.GetUpdateCommand(true);
+            adapter.InsertCommand = objCommandBuilder.GetInsertCommand(true);
+            adapter.Update(data, "User");
         }
     }
 }

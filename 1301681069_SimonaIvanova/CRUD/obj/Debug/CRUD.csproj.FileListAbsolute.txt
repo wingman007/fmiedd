@@ -32,3 +32,11 @@ C:\Users\Compaq\Source\Repos\fmiiedd\1301681069_SimonaIvanova\CRUD\bin\Debug\Use
 C:\Users\Compaq\Source\Repos\fmiiedd\1301681069_SimonaIvanova\CRUD\bin\Debug\CRUD.exe
 C:\Users\Compaq\Source\Repos\fmiiedd\1301681069_SimonaIvanova\CRUD\bin\Debug\CRUD.pdb
 C:\Users\Compaq\Source\Repos\fmiiedd\1301681069_SimonaIvanova\CRUD\obj\Debug\CRUD.csprojResolveAssemblyReference.cache
+C:\Users\fmi\Source\Repos\fmiedd\1301681069_SimonaIvanova\CRUD\bin\Debug\CRUD.exe.config
+C:\Users\fmi\Source\Repos\fmiedd\1301681069_SimonaIvanova\CRUD\obj\Debug\CRUD.exe
+C:\Users\fmi\Source\Repos\fmiedd\1301681069_SimonaIvanova\CRUD\obj\Debug\CRUD.pdb
+C:\Users\fmi\Source\Repos\fmiedd\1301681069_SimonaIvanova\CRUD\bin\Debug\UserDataBase.mdf
+C:\Users\fmi\Source\Repos\fmiedd\1301681069_SimonaIvanova\CRUD\bin\Debug\UserDataBase_log.ldf
+C:\Users\fmi\Source\Repos\fmiedd\1301681069_SimonaIvanova\CRUD\bin\Debug\CRUD.exe
+C:\Users\fmi\Source\Repos\fmiedd\1301681069_SimonaIvanova\CRUD\bin\Debug\CRUD.pdb
+C:\Users\fmi\Source\Repos\fmiedd\1301681069_SimonaIvanova\CRUD\obj\Debug\CRUD.csprojResolveAssemblyReference.cache
