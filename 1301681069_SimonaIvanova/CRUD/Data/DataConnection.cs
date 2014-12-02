@@ -8,8 +8,7 @@ namespace CRUD
 {
     class DataConnection
     {
-        protected static string connstring ="Data Source=(localdb)\\Projects;Initial Catalog=Users;Integrated Security=True";
-            //"Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\Data\\UserDataBase.mdf;Integrated Security=True";
+        protected static string connstring = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\Data\\UserDataBase.mdf;Integrated Security=True";
         public string ConnString()
         {
             return connstring;
