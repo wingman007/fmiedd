@@ -12,7 +12,6 @@ namespace Project_111
         {
             LoginScreen log = new LoginScreen();
             log.LogScreen();
-            log.LogScreen();
         }
     }
 }
