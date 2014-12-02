@@ -31,8 +31,12 @@ namespace ProjectEED
             AuthenticationService.AuthenticateUser(txtUsername.Text, txtPassword.Text);
             if (AuthenticationService.LoggedUser != null)
             {
-                ManageUsers manageUsersForm = new ManageUsers();
-                manageUsersForm.Show();
+                MainMenu mainMenu = new MainMenu();
+                mainMenu.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password!");
             }
             this.Hide();
         }

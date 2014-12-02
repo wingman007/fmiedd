@@ -12,201 +12,271 @@ namespace ProjectEED.Repository
 {
     class UsersRepository
     {
-        static SqlConnection connection;
-        static SqlCommand command;
-
-        private void ConnectTo()
-        {
-            connection = new SqlConnection(@"Data Source=(LOCAL)\SQLEXPRESS;Initial Catalog=UsersDB;Integrated Security=True");
-            command = connection.CreateCommand();
-        }
+         public SqlConnection conn = null;
 
         public UsersRepository()
         {
-            ConnectTo();
-
+            this.conn = new SqlConnection();
+            this.conn.ConnectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=UsersDB;Integrated Security=True";
         }
 
-        public void Insert(User user)
+        public User GetByUserNameandPassword(string username, string password)
         {
+            User user = null;
+
+
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SELECT*FROM[users] WHERE [username]=@username AND [password]=@password";
+
+            IDataParameter param = cmd.CreateParameter();
+            param.ParameterName = "username";
+            param.Value = username;
+            cmd.Parameters.Add(param);
+
+            param = cmd.CreateParameter();
+            param.ParameterName = "password";
+            param.Value = password;
+            cmd.Parameters.Add(param);
+
             try
             {
-                command.CommandText = "INSERT INTO [users] ([username],[password],[email],[firstname],[lastname]) VALUES ('" + user.Username + "','" + user.Password + "','" + user.Email + "','" + user.Firstname + "','" + user.Lastname + "')";
-                command.CommandType = CommandType.Text;
-                connection.Open();
-
-                command.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
+                conn.Open();
+                IDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    user = new User();
+                    user.ID = (int)reader["id"];
+                    user.Firstname = (string)reader["firstname"];
+                    user.Lastname = (string)reader["lastname"];
+                    user.Username = (string)reader["username"];
+                    user.Password = (string)reader["password"];
+                    user.Email = (string)reader["email"];
+                    user.RoleID = (int)reader["roleid"];
+                }
             }
             finally
             {
-                if (connection != null)
+                conn.Close();
+            }
+            return user;
+        }
+        public User GetByID(int id)
+        {
+            User user = null;
+
+
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SELECT*FROM[Users] WHERE [id]=@id";
+
+            IDataParameter param = cmd.CreateParameter();
+            param.ParameterName = "id";
+            param.Value = id;
+            cmd.Parameters.Add(param);
+
+            try
+            {
+                conn.Open();
+                IDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
                 {
-                    connection.Close();
+                    user = new User();
+                    user.ID = (int)reader["id"];
+                    user.Firstname = (string)reader["firstname"];
+                    user.Lastname = (string)reader["lastname"];
+                    user.Username = (string)reader["username"];
+                    user.Password = (string)reader["password"];
+                    user.Email = (string)reader["email"];
+                    user.RoleID = (int)reader["roleid"];
                 }
             }
+            finally
+            {
+                conn.Close();
+            }
+            return user;
         }
-
         public List<User> GetAll()
         {
-            List<User> listUsers = new List<User>();
+
+            List<User> result = new List<User>();
+
+            IDbCommand cmd = conn.CreateCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SELECT * FROM [users]";
 
             try
             {
-                command.CommandText = "SELECT * FROM users";
-                command.CommandType = CommandType.Text;
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    User user = new User();
-                    user.ID = int.Parse(reader["id"].ToString());
-                    user.Username = reader["username"].ToString();
-                    user.Password = reader["password"].ToString();
-                    user.Email = reader["email"].ToString();
-                    user.Firstname = reader["firstname"].ToString();
-                    user.Lastname = reader["lastname"].ToString();
-
-                    listUsers.Add(user);
-                }
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                if (connection != null)
-                {
-                    connection.Close();
-                }
-            }
-            return listUsers;
-
-        }
-
-        public void Update(User oldUser)
-        {
-            try
-            {
-                command.CommandText = "UPDATE [users] SET [username]='" + oldUser.Username + "',[password]='" + oldUser.Password + "',[email]='" + oldUser.Email + "',[firstName]='" + oldUser.Firstname + "',[LastName]='" + oldUser.Lastname + "'where [id]=" + oldUser.ID;
-                command.CommandType = CommandType.Text;
-                connection.Open();
-
-                command.ExecuteNonQuery();
-            }
-            catch (OleDbException ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                if (connection != null)
-                {
-                    connection.Close();
-                }
-            }
-        }
-        public void Delete(User user)
-        {
-            try
-            {
-                command.CommandText = "DELETE FROM [users] WHERE [id]=" + user.ID;
-                command.CommandType = CommandType.Text;
-                connection.Open();
-
-                command.ExecuteNonQuery();
-
-            }
-            finally
-            {
-                if (connection != null)
-                {
-                    connection.Close();
-                }
-            }
-        }
-        public User GetByID(int ID)
-        {
-            try
-            {
-                command.CommandText = "SELECT * FROM Users";
-                command.CommandType = CommandType.Text;
-
-                SqlDataReader reader = command.ExecuteReader();
+                conn.Open();
+                IDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
                     User user = new User();
 
-                    user.ID = int.Parse(reader["id"].ToString());
-                    user.Username = reader["username"].ToString();
-                    user.Password = reader["password"].ToString();
-                    user.Email = reader["email"].ToString();
-                    user.Firstname = reader["firstname"].ToString();
-                    user.Lastname = reader["lastname"].ToString();
-
-                    if (user.ID == ID)
-                    {
-                        return user;
-                    }
+                    user.ID = (int)reader["id"];  
+                    user.Firstname = (string)reader["firstname"];
+                    user.Lastname = (string)reader["lastname"];
+                    user.Username = (string)reader["username"];
+                    user.Password = (string)reader["password"];
+                    user.Email = (string)reader["email"];
+                    user.RoleID = (int)reader["roleid"];
+                    result.Add(user);
                 }
-                return null;
-
             }
             finally
             {
-                if (connection != null)
-                {
-                    connection.Close();
-                }
+                conn.Close();
             }
 
+            return result;
         }
-        public User GetByUsernameAndPassword(string username, string password)
+
+        public void EditUser(User item)
         {
+            IDbCommand cmd = this.conn.CreateCommand();
+            if (item.ID > 0)
+            {
+                cmd.CommandText = @"
+UPDATE users SET
+[firstName]=@firstName,
+[lastName]=@lastName,
+[username]=@username,
+[password]=@password,
+[email]=@email,
+[roleid]=@roleid
+WHERE
+[id]=@id
+";
+                IDataParameter param = cmd.CreateParameter();
+                param.ParameterName = "@firstname";
+                param.Value = item.Firstname;
+                cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
+                param.ParameterName = "@lastname";
+                param.Value = item.Lastname;
+                cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
+                param.ParameterName = "@username";
+                param.Value = item.Username;
+                cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
+                param.ParameterName = "@password";
+                param.Value = item.Password;
+                cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
+                param.ParameterName = "@email";
+                param.Value = item.Email;
+                cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
+                param.ParameterName = "@roleid";
+                param.Value = item.RoleID;
+                cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
+                param.ParameterName = "@id";
+                param.Value = item.ID;
+                cmd.Parameters.Add(param);
+            }
+            else
+            {
+                cmd.CommandText = @"
+INSERT INTO Users
+(
+[firstName],
+[lastName],
+[username],
+[password],
+[email],
+[roleid]
+)
+VALUES(
+@firstName,
+@lastName,
+@username,
+@password,
+@email,
+@roleid
+)";
+                IDataParameter param = cmd.CreateParameter();
+                param.ParameterName = "@firstname";
+                param.Value = item.Firstname;
+                cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
+                param.ParameterName = "@lastname";
+                param.Value = item.Lastname;
+                cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
+                param.ParameterName = "@username";
+                param.Value = item.Username;
+                cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
+                param.ParameterName = "@password";
+                param.Value = item.Password;
+                cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
+                param.ParameterName = "@email";
+                param.Value = item.Email;
+                cmd.Parameters.Add(param);
+
+                param = cmd.CreateParameter();
+                param.ParameterName = "@roleid";
+                param.Value = item.RoleID;
+                cmd.Parameters.Add(param);
+
+
+            }
             try
             {
-                command.CommandText = "SELECT * FROM Users";
-                command.CommandType = CommandType.Text;
-
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    User user = new User();
-
-                    user.ID = int.Parse(reader["id"].ToString());
-                    user.Username = reader["username"].ToString();
-                    user.Password = reader["password"].ToString();
-                    user.Email = reader["email"].ToString();
-                    user.Firstname = reader["firstname"].ToString();
-                    user.Lastname = reader["lastname"].ToString();
-
-                    if (user.Username.TrimEnd() == username && user.Password.TrimEnd() == password)
-                    {
-                        return user;
-                    }
-                }
-                return null;
-
+                this.conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return;
             }
             finally
             {
-                if (connection != null)
-                {
-                    connection.Close();
-                }
+                this.conn.Close();
             }
-
         }
+
+        public void Delete(User item)
+        {
+
+            IDbCommand cmd = conn.CreateCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = @"
+DELETE FROM[Users]
+WHERE
+id=@id
+";
+            IDataParameter param = cmd.CreateParameter();
+            param.ParameterName = "@id";
+            param.Value = item.ID;
+            cmd.Parameters.Add(param);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+    }
      
     }
-}
+

@@ -40,6 +40,8 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -97,28 +99,28 @@
             this.txtUsername.Location = new System.Drawing.Point(124, 62);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(291, 20);
-            this.txtUsername.TabIndex = 5;
+            this.txtUsername.TabIndex = 1;
             // 
             // txtFirstname
             // 
             this.txtFirstname.Location = new System.Drawing.Point(124, 217);
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(291, 20);
-            this.txtFirstname.TabIndex = 6;
+            this.txtFirstname.TabIndex = 4;
             // 
             // txtLastname
             // 
             this.txtLastname.Location = new System.Drawing.Point(124, 269);
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(291, 20);
-            this.txtLastname.TabIndex = 7;
+            this.txtLastname.TabIndex = 5;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(124, 168);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(291, 20);
-            this.txtEmail.TabIndex = 8;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtPassword
             // 
@@ -126,16 +128,16 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(291, 20);
-            this.txtPassword.TabIndex = 9;
+            this.txtPassword.TabIndex = 2;
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.Snow;
             this.btnSave.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(31, 326);
+            this.btnSave.Location = new System.Drawing.Point(31, 379);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 34);
-            this.btnSave.TabIndex = 10;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -144,20 +146,40 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Snow;
             this.button1.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(324, 326);
+            this.button1.Location = new System.Drawing.Point(324, 379);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 34);
-            this.button1.TabIndex = 11;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(124, 331);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(291, 21);
+            this.comboBox1.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 334);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 18);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Role:";
             // 
             // EditUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(436, 389);
+            this.ClientSize = new System.Drawing.Size(436, 442);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtPassword);
@@ -192,5 +214,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

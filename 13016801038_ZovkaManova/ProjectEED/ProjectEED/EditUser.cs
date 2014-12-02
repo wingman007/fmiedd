@@ -35,10 +35,11 @@ namespace ProjectEED
         {
            
              UsersRepository repo = new UsersRepository();
-
+             Role role = (Role)comboBox1.SelectedItem;
                 if (txtUsername.Text == "")
                 {
                     MessageBox.Show("The textbox can't be empty!");
+                    return;
                 }
                 else
                 {
@@ -47,6 +48,7 @@ namespace ProjectEED
                 if (txtPassword.Text == "")
                 {
                     MessageBox.Show("The textbox can't be empty!");
+                    return;
                 }
                 else
                 {
@@ -55,6 +57,7 @@ namespace ProjectEED
                 if (txtFirstname.Text == "")
                 {
                     MessageBox.Show("The textbox can't be empty!");
+                    return;
                 }
                 else
                 {
@@ -63,6 +66,7 @@ namespace ProjectEED
                 if (txtEmail.Text == "")
                 {
                     MessageBox.Show("The textbox can't be empty!");
+                    return;
                 }
                 else
                 {
@@ -71,12 +75,22 @@ namespace ProjectEED
                 if (txtLastname.Text == "")
                 {
                     MessageBox.Show("The textbox can't be empty!");
+                    return;
                 }
                 else
                 {
                     user.Lastname = txtLastname.Text.TrimEnd();
                 }
-                repo.Update(user);
+                if (comboBox1.Text == "")
+                {
+                    MessageBox.Show("The textbox can't be empty!");
+                    return;
+                }
+                else
+                {
+                    user.RoleID = role.ID;
+                }
+                repo.EditUser(user);
             
        
             ManageUsers mngUsers = new ManageUsers();
@@ -86,6 +100,8 @@ namespace ProjectEED
 
         private void EditUser_Load(object sender, EventArgs e)
         {
+            RolesRepository rolesRepo = new RolesRepository();
+            Role role = rolesRepo.GetByID(user.RoleID);
             if(user!=null)
             {
                 txtUsername.Text = user.Username.TrimEnd();
@@ -93,6 +109,13 @@ namespace ProjectEED
                 txtFirstname.Text = user.Firstname.TrimEnd();
                 txtLastname.Text = user.Lastname.TrimEnd();
                 txtEmail.Text = user.Email.TrimEnd();
+                comboBox1.SelectedItem = role;
+                comboBox1.SelectedText = role.Name;
+                
+                foreach(Role r in rolesRepo.GetAll())
+                {
+                    comboBox1.Items.Add(r);
+                }
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using ProjectEED.Entity;
 using ProjectEED.Repository;
+using ProjectEED.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,8 +30,24 @@ namespace ProjectEED
         private void ManageUsers_Load(object sender, EventArgs e)
         {
             RefreshUsers();
+            if(AuthenticationService.LoggedUser.RoleID!=1)
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                btnEdit.Visible = false;
+                
+            }
         }
-
+        private void RefreshTasks()
+        {
+            listBox1.Items.Clear();
+            User user = (User)lbUsers.SelectedItem;
+            TasksRepository tasksRepo = new TasksRepository();
+            foreach(Tassk task in tasksRepo.GetAll(user.ID))
+            {
+                listBox1.Items.Add(task);
+            }
+        }
         private void RefreshUsers()
         {
             lbUsers.Items.Clear();
@@ -82,6 +99,18 @@ namespace ProjectEED
                 }
             }
 
+        }
+
+        private void lbUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshTasks();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            MainMenu main = new MainMenu();
+            main.Show();
+            this.Close();
         }
     }
 }

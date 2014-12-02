@@ -15,7 +15,7 @@ namespace ProjectEED.Service
         public static void AuthenticateUser(string username, string password)
         {
             UsersRepository userRepo = new UsersRepository();
-            AuthenticationService.LoggedUser = userRepo.GetByUsernameAndPassword(username, password);
+            AuthenticationService.LoggedUser = userRepo.GetByUserNameandPassword(username, password);
         }
     }
 }
