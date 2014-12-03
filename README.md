@@ -28,3 +28,4 @@ How to install it :
   3. In folder "toInsert" exist SQL Query file, called "zaQvkataDLG.sql" , which you have to import into your database server.
   
 After doing thissteps, feel free to use the application!
+Congratulations!
