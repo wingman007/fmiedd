@@ -1,4 +1,5 @@
 STARTING
+
 EXECUTE THIS IN NEW QUERY:
 
 create database [alexander]
