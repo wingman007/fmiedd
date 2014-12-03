@@ -6,6 +6,8 @@ Simple application which uses console interface to change user details from acce
 
 Features: login screen, user roles(admin, member, guest), add, edit, ban, delete users.
 
+Changelog: too lazy...
+
 No need to configure anything! 
 
 If you try to move your program or accessdb file, make sure after that you have changed the 'DataSourceURL' 
@@ -18,6 +20,8 @@ user: ff    / pass: ff   - banned user
 or leave empty for guest session
 
 Warning! Some parts of the parts are hard coded(user roles, rows names and position), so be carefull when editing!
+
+SECOND WARNING! After tonight's last "developement" (3-12-2014) is possible some parts of the program to be buggy. Sorry .. peace! :D
 
 Happy coding!
 
