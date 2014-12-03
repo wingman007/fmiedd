@@ -4,6 +4,7 @@ create table Students
 	Fname varchar(50),
 	Lname varchar(50),
 	Phone char(10),
+	Password char(50),
 	Primary key (RegNo)
 )
 
