@@ -15,13 +15,13 @@ namespace StudentInformationSystemCRUDWinForms
         public void addstudent(string regNo, string Fname, string Lname, string phoneNo, string password)
         {
             conn.Open();
-            SqlCommand newCmd = new SqlCommand("INSERT INTO Students ([RegNo], [Fname], [Lname], [Phone], [Password]) VALUES (@par1, @par2, @par3, @par4, @par5)", conn);
+            SqlCommand newCmd = new SqlCommand("INSERT INTO Students ([RegNo], [Fname], [Lname], [Phone], [Password]) VALUES (@par1, @par2, @par3, @par4, @par5, @par6)", conn);
             newCmd.Parameters.AddRange(new[] {
                     new SqlParameter("@par1", regNo),
                     new SqlParameter("@par2", Fname),
                     new SqlParameter("@par3", Lname),
                     new SqlParameter("@par4", phoneNo),
-                    new SqlParameter("@par5", phoneNo)
+                    new SqlParameter("@par5", password)
                     });
             newCmd.ExecuteNonQuery();
             conn.Close();
@@ -119,6 +119,5 @@ namespace StudentInformationSystemCRUDWinForms
             }
             return status;
         }
-
     }
 }

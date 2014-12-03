@@ -43,7 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -183,17 +183,17 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Role";
             // 
-            // comboBox1
+            // cmbRole
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Items.AddRange(new object[] {
             "Administator",
             "Member",
             "Public"});
-            this.comboBox1.Location = new System.Drawing.Point(225, 403);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(221, 21);
-            this.comboBox1.TabIndex = 15;
+            this.cmbRole.Location = new System.Drawing.Point(225, 403);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(221, 21);
+            this.cmbRole.TabIndex = 15;
             // 
             // FrmNewStudnet
             // 
@@ -201,7 +201,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(485, 553);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbRole);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label6);
@@ -242,6 +242,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbRole;
     }
 }
