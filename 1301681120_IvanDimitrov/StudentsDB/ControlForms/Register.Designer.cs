@@ -92,6 +92,7 @@
             this.tbPass.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tbPass.Location = new System.Drawing.Point(181, 173);
             this.tbPass.Name = "tbPass";
+            this.tbPass.PasswordChar = '*';
             this.tbPass.Size = new System.Drawing.Size(150, 20);
             this.tbPass.TabIndex = 9;
             // 

@@ -1254,7 +1254,7 @@ namespace StudentsDB.rolesDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::StudentsDB.Properties.Settings.Default.STUDENTS;
+            this._connection.ConnectionString = global::StudentsDB.Properties.Settings.Default.connectString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

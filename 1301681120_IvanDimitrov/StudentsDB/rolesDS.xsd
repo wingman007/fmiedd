@@ -2,14 +2,15 @@
 <xs:schema id="rolesDS" targetNamespace="http://tempuri.org/rolesDS.xsd" xmlns:mstns="http://tempuri.org/rolesDS.xsd" xmlns="http://tempuri.org/rolesDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="STUDENTS" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="STUDENTS (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.StudentsDB.Properties.Settings.GlobalReference.Default.STUDENTS" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="connectString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="connectString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.StudentsDB.Properties.Settings.GlobalReference.Default.connectString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RolesTableAdapter" GeneratorDataComponentClassName="RolesTableAdapter" Name="Roles" UserDataComponentName="RolesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="STUDENTS (Settings)" DbObjectName="STUDENTS.dbo.Roles" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="connectString (Settings)" DbObjectName="STUDENTS.dbo.Roles" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Roles] WHERE (([id] = @Original_id) AND ([role] = @Original_role))</CommandText>
@@ -30,7 +31,7 @@ SELECT id, role FROM Roles WHERE (id = @id)</CommandText>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT id, role FROM dbo.Roles</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -127,7 +128,7 @@ SELECT id, username, password, email, role_id FROM Users WHERE (id = @id)</Comma
   <xs:element name="rolesDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="rolesDS" msprop:Generator_UserDSName="rolesDS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Roles" msprop:Generator_TableClassName="RolesDataTable" msprop:Generator_TableVarName="tableRoles" msprop:Generator_TablePropName="Roles" msprop:Generator_RowDeletingName="RolesRowDeleting" msprop:Generator_RowChangingName="RolesRowChanging" msprop:Generator_RowEvHandlerName="RolesRowChangeEventHandler" msprop:Generator_RowDeletedName="RolesRowDeleted" msprop:Generator_UserTableName="Roles" msprop:Generator_RowChangedName="RolesRowChanged" msprop:Generator_RowEvArgName="RolesRowChangeEvent" msprop:Generator_RowClassName="RolesRow">
+        <xs:element name="Roles" msprop:Generator_TableClassName="RolesDataTable" msprop:Generator_TableVarName="tableRoles" msprop:Generator_RowChangedName="RolesRowChanged" msprop:Generator_TablePropName="Roles" msprop:Generator_RowDeletingName="RolesRowDeleting" msprop:Generator_RowChangingName="RolesRowChanging" msprop:Generator_RowEvHandlerName="RolesRowChangeEventHandler" msprop:Generator_RowDeletedName="RolesRowDeleted" msprop:Generator_RowClassName="RolesRow" msprop:Generator_UserTableName="Roles" msprop:Generator_RowEvArgName="RolesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -141,7 +142,7 @@ SELECT id, username, password, email, role_id FROM Users WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_UserTableName="Users" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_RowEvArgName="UsersRowChangeEvent" msprop:Generator_RowClassName="UsersRow">
+        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_RowClassName="UsersRow" msprop:Generator_UserTableName="Users" msprop:Generator_RowEvArgName="UsersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
