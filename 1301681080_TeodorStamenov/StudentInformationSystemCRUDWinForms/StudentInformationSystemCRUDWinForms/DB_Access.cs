@@ -12,16 +12,17 @@ namespace StudentInformationSystemCRUDWinForms
     class DB_Access
     {
         SqlConnection conn = new SqlConnection("Data Source=SANSAAE-PC\\SQLEXPRESS;Initial Catalog=Students;Integrated Security=True");
-        public void addstudent(string regNo, string Fname, string Lname, string phoneNo, string password)
+        public void addstudent(string regNo, string Fname, string Lname, string phoneNo, string password, int role_id)
         {
             conn.Open();
-            SqlCommand newCmd = new SqlCommand("INSERT INTO Students ([RegNo], [Fname], [Lname], [Phone], [Password]) VALUES (@par1, @par2, @par3, @par4, @par5, @par6)", conn);
+            SqlCommand newCmd = new SqlCommand("INSERT INTO Students ([RegNo], [Fname], [Lname], [Phone], [Password], [Role_Id]) VALUES (@par1, @par2, @par3, @par4, @par5, @par6)", conn);
             newCmd.Parameters.AddRange(new[] {
                     new SqlParameter("@par1", regNo),
                     new SqlParameter("@par2", Fname),
                     new SqlParameter("@par3", Lname),
                     new SqlParameter("@par4", phoneNo),
-                    new SqlParameter("@par5", password)
+                    new SqlParameter("@par5", password),
+                    new SqlParameter("@par6", role_id)
                     });
             newCmd.ExecuteNonQuery();
             conn.Close();

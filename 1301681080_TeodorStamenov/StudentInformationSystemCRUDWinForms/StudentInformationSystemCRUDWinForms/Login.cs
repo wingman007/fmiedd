@@ -34,7 +34,16 @@ namespace StudentInformationSystemCRUDWinForms
 
         private void btnLog_Click(object sender, EventArgs e)
         {
-            
+            Authentication.Check(txtName.Text, txtPassword.Text);
+            if (Authentication.IsLog)
+            {
+                Form1 form1 = new Form1();
+                form1.Show();
+            }
+            else
+            {
+                MessageBox.Show("Wrong name or password");
+            }
         }
     }
 }
