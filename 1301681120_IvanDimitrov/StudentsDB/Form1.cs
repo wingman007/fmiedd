@@ -17,7 +17,7 @@ namespace StudentsDB
 {
     public partial class formLoading : Form
     {
-        SqlConnection dataConnect = new SqlConnection(ConfigurationManager.ConnectionStrings["connectString"].ConnectionString);
+        SqlConnection dataConnect = new SqlConnection(ConfigurationManager.ConnectionStrings["StudentsDB.Properties.Settings.STUDENTS"].ConnectionString);
         DBSheet dbForm = new DBSheet();
         ControlForms.UserPanel uPanel = new ControlForms.UserPanel();
         Register regForm = new Register();
