@@ -14,7 +14,7 @@ namespace StudentsDB
 {
     public partial class Register : Form
     {
-        SqlConnection dataConnect = new SqlConnection(ConfigurationManager.ConnectionStrings["connectString"].ConnectionString);
+        SqlConnection dataConnect = new SqlConnection(ConfigurationManager.ConnectionStrings["StudentsDB.Properties.Settings.STUDENTS"].ConnectionString);
 
         public Register()
         {
