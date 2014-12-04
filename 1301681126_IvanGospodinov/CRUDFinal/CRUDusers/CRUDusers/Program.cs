@@ -13,7 +13,7 @@ namespace CRUDusers
         public static int role = 0;
         static void Main(string[] args)
         {
-            aConnection = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\fmi\Desktop\Ivan-Gospodinov\CRUDFinal\CRUDusers\CRUDusers\data\users.accdb");
+            aConnection = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\fmi\Source\Repos\fmiedd\1301681126_IvanGospodinov\CRUDFinal\CRUDusers\CRUDusers\data\users.accdb");
             //(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\users.accdb");
                Action(); 
             
@@ -166,8 +166,13 @@ namespace CRUDusers
                     Read();
                     while (true)
                     {
+                        int action = 0;
                         Console.WriteLine("Choose action: 1-Add 2-Update 3-Delete 0-Exit 10-Log out");
-                        int action = int.Parse(Console.ReadLine());
+                        if (Console.ReadLine() != null)
+                        {
+                             action = int.Parse(Console.ReadLine());
+                        }
+                       
                         Console.WriteLine();
                         switch (action)
                         {
@@ -187,9 +192,9 @@ namespace CRUDusers
                                     Console.WriteLine();
                                     Add(userAdd, passAdd, emailAdd,roleAdd);
                                 }
-                                catch (OleDbException e)
+                                catch (Exception e)
                                 {
-                                    Console.WriteLine(e.Message);
+                                   Console.WriteLine(e.Message);
                                 }
                                 break;
 
