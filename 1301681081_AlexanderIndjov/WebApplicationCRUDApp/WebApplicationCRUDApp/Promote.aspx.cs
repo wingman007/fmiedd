@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.Configuration;
-using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.Configuration;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace WebApplicationCRUDApp
 {
-    public partial class Delete : System.Web.UI.Page
+    public partial class Promote : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-         
+
         }
 
-        protected void ButtonDelete_Click(object sender, EventArgs e)
+        protected void BtnPromote_Click(object sender, EventArgs e)
         {
             string str = WebConfigurationManager.ConnectionStrings["ALEXANDERBase1ConnectionString"].ConnectionString;
             SqlConnection connection = null;
@@ -26,12 +26,12 @@ namespace WebApplicationCRUDApp
                 connection = new SqlConnection(str);
                 SqlCommand cmd = new SqlCommand();
                 connection.Open();
-              
                 cmd.Connection = connection;
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = @"DELETE FROM Users WHERE ID = @ID";
-                cmd.Parameters.AddWithValue("@ID", TxtID.Text);
-                
+                cmd.CommandText = "UPDATE Users SET RoleID= @RoleID where  @Username=Username and @Password = Password";
+                cmd.Parameters.AddWithValue("@RoleID", TxtRole.Text);
+                cmd.Parameters.AddWithValue("@Password", TxtPass.Text);
+                cmd.Parameters.AddWithValue("@Username", TxtName.Text);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -42,14 +42,7 @@ namespace WebApplicationCRUDApp
             {
                 connection.Close();
             }
-            Response.Redirect("~/CRUD.aspx");
+            Response.Redirect("~/Authentication.aspx");        
         }
-
-        protected void BtnDelete_Click(object sender, ImageClickEventArgs e)
-        {
-            RequiredFieldValidatorID.Visible = true;
-            LblID.Visible = true;
-            TxtID.Visible = true;
-        } 
-      }
     }
+}

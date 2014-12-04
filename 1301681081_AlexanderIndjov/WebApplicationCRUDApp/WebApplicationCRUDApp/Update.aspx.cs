@@ -36,21 +36,16 @@ namespace WebApplicationCRUDApp
             TxtEmail.Visible = true;
             RequiredFieldValidatorEmail.Visible = false;
             RequiredFieldValidatorPass.Visible = false;
-           
-
         }
-
         protected void BtnUpdate_Click(object sender, EventArgs e)
         {
-            string str = WebConfigurationManager.ConnectionStrings["UsersConnectionString"].ConnectionString;
+            string str = WebConfigurationManager.ConnectionStrings["ALEXANDERBase1ConnectionString"].ConnectionString;
             SqlConnection connection = null;
             try
             {
                 connection = new SqlConnection(str);
                 SqlCommand cmd = new SqlCommand();
                 connection.Open();
-
-
                 cmd.Connection = connection;
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = @"UPDATE Users SET Password=@Password, Email=@Email where @ID = ID";

@@ -36,8 +36,8 @@ namespace WebApplicationCRUDApp
         }
         protected void BtnSave_Click(object sender, EventArgs e)
         {
-           
-            string str = WebConfigurationManager.ConnectionStrings["UsersConnectionString"].ConnectionString;
+
+            string str = WebConfigurationManager.ConnectionStrings["ALEXANDERBase1ConnectionString"].ConnectionString;
             SqlConnection connection = null;
             try
             {
@@ -48,10 +48,11 @@ namespace WebApplicationCRUDApp
 
                 cmd.Connection = connection;
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = @"INSERT INTO Users Values (@Username, @Password, @Email)";
+                cmd.CommandText = @"INSERT INTO Users Values (@Username, @Password, @Email, @RoleID)";
                 cmd.Parameters.AddWithValue("@Username", TextBox1.Text);
                 cmd.Parameters.AddWithValue("@Password", TextBox2.Text);
                 cmd.Parameters.AddWithValue("@Email", TextBox3.Text);
+                cmd.Parameters.AddWithValue("@RoleID", TextBox4.Text);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
