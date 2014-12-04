@@ -30,7 +30,7 @@ add RoleID int foreign key
  insert into Users
  Values(2,'Sasho','20071994','Sashe944@abv.bg',1)
   insert into Users
- Values(1,'Alex','AlexPass','Alex94@abv.bg',2)
+ Values(1,'Alex','AlexPass','Alex94@abv.bg',2)**
  
   # Working and adding SQL Server to the project 
  First we open the project via Visual Studio, reommended 2013's version
