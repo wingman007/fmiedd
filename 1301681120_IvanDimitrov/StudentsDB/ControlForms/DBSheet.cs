@@ -16,7 +16,7 @@ namespace StudentsDB
     public partial class DBSheet : Form
     {
         SqlCommandBuilder sqlcmb;
-        SqlConnection dataConnect = new SqlConnection(ConfigurationManager.ConnectionStrings["connectString"].ConnectionString);
+        SqlConnection dataConnect = new SqlConnection(ConfigurationManager.ConnectionStrings["1301681120_IvanDimitrov/StudentsDB/ControlForms/AddNewUser.cs"].ConnectionString);
         AddNewUser add = new AddNewUser();
 
         public DBSheet()
