@@ -10,3 +10,15 @@ c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\ob
 c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.RegistrationForm.resources
 c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.CRUDeditorForm.resources
 c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\bin\Debug\database.sdf
+C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\bin\Debug\CRUDdbProject.exe.config
+C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.exe
+C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.pdb
+C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\bin\Debug\database.sdf
+C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\bin\Debug\CRUDdbProject.exe
+C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\bin\Debug\CRUDdbProject.pdb
+C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.csprojResolveAssemblyReference.cache
+C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.CRUDeditorForm.resources
+C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.LoginForm.resources
+C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.Properties.Resources.resources
+C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.RegistrationForm.resources
+C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.csproj.GenerateResource.Cache

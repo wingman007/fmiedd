@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CRUD_111VasilMinchev1301681102")]
+[assembly: AssemblyTitle("CRUDusers")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CRUD_111VasilMinchev1301681102")]
+[assembly: AssemblyProduct("CRUDusers")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e60681cc-c5f9-4182-b287-e3233098a833")]
+[assembly: Guid("1203ec1f-afda-4738-ba48-e3bcc34e2662")]
 
 // Version information for an assembly consists of the following four values:
 //

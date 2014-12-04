@@ -13,7 +13,7 @@ namespace CRUDdbProject
 {
     public partial class CRUDeditorForm : Form
     {
-        public SqlCeConnection cn = new SqlCeConnection(@"Data Source = c:\users\i7\documents\visual studio 2012\Projects\youtube\youtube\database.sdf");
+        public SqlCeConnection cn = new SqlCeConnection(@"Data Source = C:\Users\fmi\Source\Repos\fmiedd\1301681106_IvanMadinFTW\CRUDdbProject\CRUDdbProject\database.sdf");
 
         public CRUDeditorForm()
         {
