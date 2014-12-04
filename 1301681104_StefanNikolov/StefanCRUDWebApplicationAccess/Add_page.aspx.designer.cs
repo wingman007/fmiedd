@@ -49,6 +49,15 @@ namespace StefanCRUDWebApplicationAccess {
         protected global::System.Web.UI.WebControls.TextBox email_box;
         
         /// <summary>
+        /// type control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox type;
+        
+        /// <summary>
         /// add_btn control.
         /// </summary>
         /// <remarks>

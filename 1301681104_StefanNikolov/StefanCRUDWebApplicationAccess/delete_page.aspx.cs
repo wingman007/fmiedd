@@ -10,7 +10,7 @@ namespace StefanCRUDWebApplicationAccess
 {
     public partial class delete_page : System.Web.UI.Page
     {
-        public static OleDbConnection myConnection = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Stefan\Desktop\StefanCRUDWebApplicationAccess\StefanCRUDWebApplicationAccess\database_access\users.accdb");
+        public static OleDbConnection myConnection = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Stefan\Desktop\1301681104_StefanNikolov\StefanCRUDWebApplicationAccess\database_access\users.accdb");
 
         OleDbCommand myCommand = new OleDbCommand("SELECT * from users", myConnection);
         protected void Page_Load(object sender, EventArgs e)

@@ -28,6 +28,10 @@
         <asp:TextBox ID="email_box" runat="server" Width="143px"></asp:TextBox>
         <br />
         <br />
+        Type
+        <asp:TextBox ID="type" runat="server"></asp:TextBox>
+        <br />
+        <br />
         <asp:Button ID="add_btn" class="btn btn-primary" runat="server" OnClick="add_btn_Click" Text="Add" />
         <br />
         <br />

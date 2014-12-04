@@ -34,6 +34,10 @@
         <asp:TextBox ID="email_box" runat="server" Width="148px"></asp:TextBox>
         <br />
         <br />
+        Type
+        <asp:TextBox ID="type" runat="server"></asp:TextBox>
+        <br />
+        <br />
         <asp:Button ID="update_btn" class="btn btn-primary" runat="server" OnClick="update_btn_Click" Text="Edit" />
         <br />
         <br />
