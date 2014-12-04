@@ -3,9 +3,7 @@ c:\users\hristy\documents\visual studio 2012\Projects\ConsoleApplication43\Conso
 c:\users\hristy\documents\visual studio 2012\Projects\ConsoleApplication43\ConsoleApplication43\bin\Debug\ConsoleApplication43.pdb
 c:\users\hristy\documents\visual studio 2012\Projects\ConsoleApplication43\ConsoleApplication43\obj\Debug\ConsoleApplication43.exe
 c:\users\hristy\documents\visual studio 2012\Projects\ConsoleApplication43\ConsoleApplication43\obj\Debug\ConsoleApplication43.pdb
+C:\Users\Hristy\Documents\Visual Studio 2012\Projects\ConsoleApplication43\ConsoleApplication43\obj\Debug\ConsoleApplication43.csprojResolveAssemblyReference.cache
 C:\Users\fmi\Desktop\ConsoleApplication43\ConsoleApplication43\bin\Debug\ConsoleApplication43.exe.config
 C:\Users\fmi\Desktop\ConsoleApplication43\ConsoleApplication43\obj\Debug\ConsoleApplication43.exe
 C:\Users\fmi\Desktop\ConsoleApplication43\ConsoleApplication43\obj\Debug\ConsoleApplication43.pdb
-C:\Users\fmi\Desktop\ConsoleApplication43\ConsoleApplication43\bin\Debug\ConsoleApplication43.exe
-C:\Users\fmi\Desktop\ConsoleApplication43\ConsoleApplication43\bin\Debug\ConsoleApplication43.pdb
-C:\Users\fmi\Desktop\ConsoleApplication43\ConsoleApplication43\obj\Debug\ConsoleApplication43.csprojResolveAssemblyReference.cache

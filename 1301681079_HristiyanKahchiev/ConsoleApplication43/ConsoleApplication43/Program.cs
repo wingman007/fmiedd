@@ -18,9 +18,71 @@ namespace ConsoleApplication43
                 new SqlConnection("Data Source=HRISTY-PC;Initial Catalog=Users;Integrated Security=True");
             Console.SetWindowSize(110, 25);
             Console.ResetColor();
-            bool loop = true;
 
-            while (loop)
+            bool pool = true;
+            while (pool)
+            {
+                int Ch1 = MenuChoice1();
+                int id;
+                switch (Ch1)
+                {
+                    case 1:
+                        Identify();
+                        break;
+                    case 2:
+                        Console.WriteLine("Please note that the ID must be UNIQUE");
+                        Console.ResetColor();
+                        Console.Write("Type ID: ");
+                        while (!int.TryParse(Console.ReadLine(), out id))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.BackgroundColor = ConsoleColor.Gray;
+                            Console.WriteLine("\nINVALID OPTION..PLEASE INSERT ID");
+                            Console.ResetColor();
+                        }
+                        string username;
+                        Console.Write("Type Username: ");
+                        username = Console.ReadLine();
+                        string password;
+                        Console.Write("Type Password: ");
+                        password = Console.ReadLine();
+                        string email;
+                        Console.Write("Type Email: ");
+                        email = Console.ReadLine();
+                        Console.Write("Type role ID(1 for member,3 for admin):");
+                        int Roles_id = int.Parse(Console.ReadLine());
+                        if (Roles_id != 1 && Roles_id != 3)
+                        {
+                            Console.WriteLine("Type the number 1 or 3");
+                        }
+                        Add(ID: id, username: username, password: password, email: email);
+
+                        if (username == "" || password == "")
+                        {
+                            Console.WriteLine("You have entered an empty Username or Password");
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("You added new user: {0}", username);
+                            Console.ResetColor();
+                        }
+                        break;
+
+                    case 3:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\nInvalid number!Please choose a number between 1-3");
+                        Console.ResetColor();
+                        break;
+                }
+            }
+        }
+        public static int MainMenu()
+        {
+            while (true)
             {
                 int choice = GetMenuChoice();
                 int id;
@@ -108,10 +170,24 @@ namespace ConsoleApplication43
                 }
             }
 
-            Console.ReadKey(true);
+            //Console.ReadKey(true);
         }
 
+        public static int MenuChoice1()
+        {
+            Console.WriteLine("1. Registered");
+            Console.WriteLine("2. Not registered");
+            Console.WriteLine("3. Exit");
 
+            Console.Write("Please choose from the following options:");
+            int numChoice1;
+            while (!int.TryParse(Console.ReadLine(), out numChoice1))
+            {
+                Console.WriteLine("\nInvalid number!Please choose a number between 1-3");
+            }
+            return numChoice1;
+
+        }
         public static int GetMenuChoice()
         {
             Console.WriteLine("1. Show Users");
@@ -241,7 +317,8 @@ namespace ConsoleApplication43
                 myConnection.Open();
                 SqlCommand aCommand = new SqlCommand("DELETE FROM users WHERE ID = @par1", myConnection);
 
-                aCommand.Parameters.AddRange(new[] {
+                aCommand.Parameters.AddRange(new[] 
+                {
                     new SqlParameter("@par1", ID)
                 });
                 int numberOfRows = aCommand.ExecuteNonQuery();
@@ -264,5 +341,55 @@ namespace ConsoleApplication43
                 myConnection.Close();
             }
         }
+        public static void Identify()
+        {
+            string username, password;
+            Console.Write("Please type your username: ");
+            username = Console.ReadLine();
+            Console.Write("Please type your password: ");
+            password = Console.ReadLine();
+            int input = 0;
+            while (true)
+            {
+                Console.WriteLine("\nChoose:");
+                Console.WriteLine("1. Member");
+                Console.WriteLine("2. Admin");
+                Console.Write("\nPlease choose your role: ");
+                int role_id = int.Parse(Console.ReadLine());
+
+                switch (role_id)
+                {
+                    case 1:
+                        Console.WriteLine("\n1. Member");
+                        Retrieve(); break;
+                    case 2:
+                        Console.WriteLine("\n2. Admin");
+                        string pass;
+                        Console.Write("Please type the admin password: ");
+                        pass = Console.ReadLine();
+                        if (pass != "adminpassword")
+                        {
+                            Console.WriteLine("\nWrong password!");
+                        }
+                        if (pass == "adminpassword")
+                        {
+                            Console.Clear();
+                            MainMenu();
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("\nPlease choose a number from 1 to 2!\n");
+                        break;
+                }
+                input++;
+                if (input < 30)
+                    continue;
+                else
+                    break;
+            }
+            Console.ReadKey(true);
+        }
+
     }
 }
+
