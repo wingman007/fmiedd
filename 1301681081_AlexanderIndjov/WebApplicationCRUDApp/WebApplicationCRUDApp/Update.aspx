@@ -18,7 +18,7 @@
     
         <br />
       <div class="Style">
-        <asp:ImageButton ID="BtnID" runat="server" Height="149px" ImageUrl="~/Images/th3.jpg" OnClick="BtnID_Click" Width="252px" />
+        <asp:ImageButton ID="BtnID" runat="server" Height="154px" ImageUrl="~/Images/th3.jpg" OnClick="BtnID_Click" Width="252px" />
         <br />
           <div class="Labels">
         <br />
@@ -26,7 +26,7 @@
          </div>
         <br />
        </div>
-        <hr style="height: -12px" />
+        <hr style="height: -12px; margin-left: 4px;" />
         <br />
         <asp:Label ID="LblID" runat="server" Font-Bold="True" Text="PLEASE CHOOSE ID:" Visible="False"></asp:Label>
         <asp:TextBox ID="TxtID" runat="server" Height="23px" OnTextChanged="TxtID_TextChanged" Visible="False" Width="63px"></asp:TextBox>
@@ -39,6 +39,7 @@
         <asp:Label ID="LblEmail" runat="server" Font-Bold="True" Text="PLEASE ENTER NEW EMAIL:"></asp:Label>
         <asp:TextBox ID="TxtEmail" runat="server" Height="19px"></asp:TextBox>
          <asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" runat="server" ErrorMessage="Enter Email!" ForeColor="Red" ControlToValidate="TxtEmail" Visible="False"></asp:RequiredFieldValidator>
+        <br />
         <br />
         <br />
         <br />

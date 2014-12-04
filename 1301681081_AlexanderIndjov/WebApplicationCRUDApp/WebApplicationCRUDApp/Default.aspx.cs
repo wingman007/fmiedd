@@ -18,20 +18,5 @@ namespace WebApplicationCRUDApp
         {
             Response.Redirect("~/CRUD.aspx");
         }
-
-        protected void BtnCreate_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Create.aspx");
-        }
-
-        protected void Update_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Update.aspx");
-        }
-
-        protected void BtnDelete_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Delete.aspx");
-        }
     }
 }

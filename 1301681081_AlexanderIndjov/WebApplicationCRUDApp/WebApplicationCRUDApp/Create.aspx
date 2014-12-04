@@ -15,9 +15,9 @@
         }
     </style>
 </head>
-<body style="height: 400px; margin-top: 10px;">
+<body style="height: 444px; margin-top: 10px;">
     <form id="form1" runat="server">
-    <div style="height: 404px; margin-left: 2px;">
+    <div style="height: 432px; margin-left: 2px;">
     
      <div class="Style">
         <asp:ImageButton ID="AddNewUser" runat="server" Height="156px" Width="281px" ImageUrl="~/Images/th1.jpg" OnClick="AddNewUser_Click" style="margin-top: 8px" />
@@ -40,6 +40,9 @@
         <asp:TextBox ID="TextBox3" runat="server" Width="156px" Height="26px" style="margin-left: 0px" Visible="False"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" runat="server" ErrorMessage="Email Required!" ControlToValidate="TextBox3" ForeColor="Red" Visible="False"></asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidatorEmail" runat="server" ControlToValidate="TextBox3" ErrorMessage="Must contain @!" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Visible="False"></asp:RegularExpressionValidator>
+        <br />
+        <asp:Label ID="LblRole" runat="server" Font-Bold="True" Font-Size="X-Large" Text="ROLE:"></asp:Label>
+        <asp:TextBox ID="TextBox4" runat="server" Height="27px"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="BtnSave" CssClass="BtnStyle" runat="server" Height="46px" OnClick="BtnSave_Click" Text="Save" Width="137px" />
