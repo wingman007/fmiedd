@@ -1,0 +1,12 @@
+c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\bin\Debug\CRUDdbProject.exe.config
+c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\bin\Debug\CRUDdbProject.exe
+c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\bin\Debug\CRUDdbProject.pdb
+c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.csprojResolveAssemblyReference.cache
+c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.LoginForm.resources
+c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.Properties.Resources.resources
+c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.csproj.GenerateResource.Cache
+c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.exe
+c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.pdb
+c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.RegistrationForm.resources
+c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\obj\Debug\CRUDdbProject.CRUDeditorForm.resources
+c:\users\i7\documents\visual studio 2012\Projects\CRUDdbProject\CRUDdbProject\bin\Debug\database.sdf
