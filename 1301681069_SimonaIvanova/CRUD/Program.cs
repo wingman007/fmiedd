@@ -10,8 +10,8 @@ namespace CRUD
     {
         static void Main(string[] args)
         {
-            InputView oprerations = new InputView();
-            oprerations.Start();
+            Login login = new Login();
+            login.LogIn();
         }
     }
 }

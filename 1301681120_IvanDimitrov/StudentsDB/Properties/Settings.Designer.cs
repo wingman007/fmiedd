@@ -26,22 +26,22 @@ namespace StudentsDB.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=INVICTUS\\MSSQLDATABASES;Initial Catalog=\"Students Database\";Integrate" +
-            "d Security=True;Pooling=False")]
-        public string ConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=INVICTUS\\MSSQLDATABASES;Initial Catalog=STUDENTS;Integrated Security=" +
+            "True")]
+        public string STUDENTS {
             get {
-                return ((string)(this["ConnectionString"]));
+                return ((string)(this["STUDENTS"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=INVICTUS\\MSSQLDATABASES;Initial Catalog=STUDENTS;Integrated Security=" +
-            "True")]
-        public string STUDENTS {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\MSSQLDATABASES;Initial Catalog=STUDENTS;Persist Security In" +
+            "fo=True;User ID=sa;Password=sa")]
+        public string connectString {
             get {
-                return ((string)(this["STUDENTS"]));
+                return ((string)(this["connectString"]));
             }
         }
     }

@@ -44,8 +44,14 @@ namespace StudentInformationSystemCRUDWinForms
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            access.addstudent(txtRegNo.Text, txtFname.Text, txtLname.Text, txtPhoneNo.Text);
+            int role=int.Parse(cmbRole.SelectedValue.ToString());
+            access.addstudent(txtRegNo.Text, txtFname.Text, txtLname.Text, txtPhoneNo.Text, txtPass.Text, role);
             MessageBox.Show("Successfully added!");
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

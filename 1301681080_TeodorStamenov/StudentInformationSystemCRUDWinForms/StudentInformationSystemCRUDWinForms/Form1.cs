@@ -15,6 +15,24 @@ namespace StudentInformationSystemCRUDWinForms
         public Form1()
         {
             InitializeComponent();
+
+            if (Authentication.Role_id == 1)
+            {
+ 
+            }
+            if (Authentication.Role_id == 2)
+            {
+                btnAddNew.Enabled = false;
+                btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
+            }
+            if (Authentication.Role_id == 3)
+            {
+                btnAddNew.Enabled = false;
+                btnViewStudents.Enabled = false;
+                btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

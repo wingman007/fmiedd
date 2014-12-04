@@ -38,7 +38,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(87, 23);
+            this.label1.Location = new System.Drawing.Point(154, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(306, 25);
             this.label1.TabIndex = 0;
@@ -50,12 +50,12 @@
             this.dgvStudentData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudentData.Location = new System.Drawing.Point(12, 83);
             this.dgvStudentData.Name = "dgvStudentData";
-            this.dgvStudentData.Size = new System.Drawing.Size(465, 412);
+            this.dgvStudentData.Size = new System.Drawing.Size(573, 412);
             this.dgvStudentData.TabIndex = 1;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(189, 517);
+            this.btnClose.Location = new System.Drawing.Point(244, 516);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(107, 38);
             this.btnClose.TabIndex = 2;
@@ -68,7 +68,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(489, 567);
+            this.ClientSize = new System.Drawing.Size(600, 566);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvStudentData);
             this.Controls.Add(this.label1);

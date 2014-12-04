@@ -40,6 +40,10 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -123,7 +127,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(225, 362);
+            this.btnReset.Location = new System.Drawing.Point(225, 465);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(101, 35);
             this.btnReset.TabIndex = 9;
@@ -133,7 +137,7 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(345, 362);
+            this.btnInsert.Location = new System.Drawing.Point(345, 465);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(101, 35);
             this.btnInsert.TabIndex = 10;
@@ -143,7 +147,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(290, 419);
+            this.btnClose.Location = new System.Drawing.Point(294, 506);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(101, 35);
             this.btnClose.TabIndex = 11;
@@ -151,12 +155,56 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(37, 358);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 16);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Password";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(225, 354);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(221, 20);
+            this.txtPass.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(40, 409);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 16);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Role";
+            // 
+            // cmbRole
+            // 
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Items.AddRange(new object[] {
+            "Administator",
+            "Member",
+            "Public"});
+            this.cmbRole.Location = new System.Drawing.Point(225, 403);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(221, 21);
+            this.cmbRole.TabIndex = 15;
+            // 
             // FrmNewStudnet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(485, 466);
+            this.ClientSize = new System.Drawing.Size(485, 553);
+            this.Controls.Add(this.cmbRole);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnReset);
@@ -191,5 +239,9 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbRole;
     }
 }
