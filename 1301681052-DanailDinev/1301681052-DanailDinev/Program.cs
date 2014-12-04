@@ -20,6 +20,8 @@ namespace EDD
         static string appHeader = "----------------------------------------------------------- USER ADMINISTRATION -----------------------------------------------------------\n";
         static string loginUsername, loginPassword;
         static string UserRole = "guest";
+
+        static string ops = "?????"; // used in ReadAllUsers()
         
         static void Main(string[] args)
         {
@@ -29,16 +31,48 @@ namespace EDD
             myConnection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+DataSourceURL+"");
 
             //hacking program begins lol - part 2
-            LoginScreen();
+            StartScreen();
         }
 
-        static void LoginScreen()
+        static void StartScreen()
         {
             try
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("\nLogin screen (leave empty fields for guest session)\n");
+                Console.WriteLine("\nWelcome to the SYSTEM!");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine("\n1. Login\n2. Register\n");
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.WriteLine("0. Exit application\n");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                int input = Int32.Parse(Console.ReadLine());
+                switch (input)
+                {
+                    case 1: LoginScreen();
+                        break;
+                    case 2: AddUserMenu();
+                        break;
+                    case 0: Environment.Exit(0);
+                        break;
+                    default: Console.WriteLine("\nINvalid choice!");
+                        break;
+                }
+            } 
+            catch (Exception e)
+            {
+                ErrorDisplay(e.StackTrace);
+                StartScreen();
+            }
+        }
+
+
+        static void LoginScreen()
+        {
+            try
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nLogin (leave empty fields for guest session)\n");
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.Write("Username: ");
                 loginUsername = Console.ReadLine();
@@ -55,32 +89,45 @@ namespace EDD
                         bool exists = (int)myCommandCheckUserExist.ExecuteScalar() > 0;
                         if (exists)
                         {
-                            //time to check if banned
-                            OleDbCommand myCommandCheckBanned = new OleDbCommand("select banned FROM " + myTable + " where username=? and password=?", myConnection);
-                            myCommandCheckBanned.Parameters.AddWithValue("@username", loginUsername);
-                            myCommandCheckBanned.Parameters.AddWithValue("@password", loginPassword);
-                            bool isBanned = (bool)myCommandCheckBanned.ExecuteScalar();
-                            myConnection.Close();
-
-                            if (isBanned == true)
+                            //check if user is approved (activated)
+                            OleDbCommand myCommandCheckActivated = new OleDbCommand("select activated FROM " + myTable + " where username=? and password=?", myConnection);
+                            myCommandCheckActivated.Parameters.AddWithValue("@username", loginUsername);
+                            myCommandCheckActivated.Parameters.AddWithValue("@password", loginPassword);
+                            bool isActivated = (bool)myCommandCheckActivated.ExecuteScalar();
+                            if (isActivated == false)
                             {
-                                ErrorDisplay("Sorry dude, you are BANNED from the system :(");
-                                LoginScreen();
+                                ErrorDisplay("Sorry dude, you are still not approved by admins :/");
+                                StartScreen();
                             }
                             else
                             {
-                                Console.ForegroundColor = ConsoleColor.Green;
-                                Console.Write("\nSuccess!");
-                                Console.ForegroundColor = ConsoleColor.Gray;
-                                Console.ReadKey();
-                                //time to check usr role
-                                CheckUserRole(loginUsername, loginPassword);
+                                //NOW IT'S TIME TO CHECK IF BANNED
+                                OleDbCommand myCommandCheckBanned = new OleDbCommand("select banned FROM " + myTable + " where username=? and password=?", myConnection);
+                                myCommandCheckBanned.Parameters.AddWithValue("@username", loginUsername);
+                                myCommandCheckBanned.Parameters.AddWithValue("@password", loginPassword);
+                                bool isBanned = (bool)myCommandCheckBanned.ExecuteScalar();
+                                myConnection.Close();
+
+                                if (isBanned == true)
+                                {
+                                    ErrorDisplay("Sorry dude, you are BANNED from the system :(");
+                                    StartScreen();
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.Write("\nSuccess!");
+                                    Console.ForegroundColor = ConsoleColor.Gray;
+                                    Console.ReadKey();
+                                    //time to check usr role
+                                    CheckUserRole(loginUsername, loginPassword);
+                                }
                             }
                         }
                         else
                         {
                             ErrorDisplay("Wrong username/password!");
-                            LoginScreen();
+                            StartScreen();
                         }
                         //Console.ReadKey();
                         //LoginScreen();
@@ -89,7 +136,7 @@ namespace EDD
                     {
                         myConnection.Close();
                         ErrorDisplay(e.Message);
-                        LoginScreen();
+                        StartScreen();
                     }
                 }
                 else 
@@ -106,7 +153,7 @@ namespace EDD
             {
                 myConnection.Close();
                 ErrorDisplay(e.Message);
-                LoginScreen();
+                StartScreen();
             }
         }
 
@@ -134,16 +181,16 @@ namespace EDD
                 myConnection.Close();
                 ErrorDisplay(e.Message);
                 ErrorDisplay(e.StackTrace);
-                LoginScreen();
+                StartScreen();
             }
         }
 
         static void Logout()
         {
-            UserRole = string.Empty;
+            UserRole = "guest";
             loginUsername = string.Empty;
             loginPassword = string.Empty;
-            LoginScreen();
+            StartScreen();
         }
 
         static void Menu()
@@ -267,7 +314,7 @@ namespace EDD
                 OleDbCommand myCommand = new OleDbCommand("SELECT * FROM RegisteredUsers", myConnection);      //показжането на всички потребители
                 OleDbCommand myTotalEntries = new OleDbCommand("SELECT COUNT(*) FROM RegisteredUsers", myConnection);  //общо регистрирани
                 OleDbDataReader myReader = myCommand.ExecuteReader();
-                Console.WriteLine("All users ({0} total):\n\nID |     Username      |      Password     |         Email           |       Realname        | Birthday  |Reg.date  | Role | Confirmed\n", myTotalEntries.ExecuteScalar());
+                Console.WriteLine("All users ({0} total):\n\n'??' means you dont have permission to see this info\n\nID |     Username      |      Password     |         Email           |       Realname        | Birthday  |Reg.date  | Role | Confirmed\n", myTotalEntries.ExecuteScalar());
                 int i = Console.CursorTop;
                 while (myReader.Read())
                 {
@@ -280,18 +327,47 @@ namespace EDD
                     {
                         Console.ForegroundColor = ConsoleColor.Gray;
                     }
+
                     Console.SetCursorPosition(0, i);
                     Console.WriteLine(myReader.GetInt32(0).ToString());     // ID
                     Console.SetCursorPosition(4, i);
                     Console.WriteLine(myReader.GetString(1));               // username
                     Console.SetCursorPosition(24, i);
-                    Console.WriteLine(myReader.GetString(2));               // passwd
+                    if (UserRole == "member")     // members can't see the passwords
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine(ops);
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                    }
+                    else if (UserRole == "admin")
+                    {
+                        Console.WriteLine(myReader.GetString(2));               // passwd
+                    }
                     Console.SetCursorPosition(44, i);
                     Console.WriteLine(myReader.GetString(3));               // email
                     Console.SetCursorPosition(70, i);
-                    Console.WriteLine(myReader.GetString(4));               // realname
+                    if (UserRole == "member")     // members can't see user's email
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine(ops);
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                    }
+                    else
+                    {
+                        Console.WriteLine(myReader.GetString(4));               // realname
+                    }
                     Console.SetCursorPosition(94, i);
-                    Console.WriteLine(myReader.GetDateTime(5).ToString("yyyy-MM-dd"));    //bday
+                    if (UserRole == "member")     // members can't see user's bday
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine(ops);
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                    }
+                    else
+                    {
+                        
+                        Console.WriteLine(myReader.GetDateTime(5).ToString("yyyy-MM-dd"));    //bday
+                    }
                     Console.SetCursorPosition(106, i);
                     Console.WriteLine(myReader.GetDateTime(6).ToString("yyyy-MM-dd"));    //regdate
                     Console.SetCursorPosition(118, i);
@@ -306,19 +382,30 @@ namespace EDD
                         Console.WriteLine("Member");
                     }
                     Console.SetCursorPosition(126, i);
-                    if (myReader.GetBoolean(7) == true)                      // activated 
+                    if (UserRole == "member")     // members can't see if user is activated
                     {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("Yes");
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine(ops);
                         Console.ForegroundColor = ConsoleColor.Gray;
-                    }                                               
-                    Console.SetCursorPosition(133, i);
-                    if (myReader.GetBoolean(8) == true)                      // banned
+                    }
+                    else
                     {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Banned");
-                        Console.ForegroundColor = ConsoleColor.Gray;
-                    }          
+                        if (myReader.GetBoolean(7) == true)                      // activated 
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Yes");
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        }
+
+                        Console.SetCursorPosition(133, i);
+                        if (myReader.GetBoolean(8) == true)                      // banned
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Banned");
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        } 
+                    }
+          
                     i++;
                     #endregion
                 }
@@ -336,12 +423,20 @@ namespace EDD
         {
             try
             {
-                string newUserName, newPassword, newEmail, newRealname, newBirthday, newRole , isActivatedInput;
-                bool isActivated = false;
+                string newUserName, newPassword, newEmail, newRealname, newBirthday , isActivatedInput;
+                string newRole = "m"; //member by default
+                bool isActivated = false; //admin must approve the user .. sorry :/
 
                 Console.Clear();
-                Console.WriteLine(appHeader);
-                Console.WriteLine("Add new user \n\n");
+                if (UserRole == "guest")
+                {
+                    Console.WriteLine("\nNew Registration \n\n");
+                }
+                else
+                {
+                    Console.WriteLine(appHeader);
+                    Console.WriteLine("Add new user \n\n");
+                }
                 
                     Console.Write("Username (only letters and numbers): ");
                     do { newUserName = Console.ReadLine(); } while (newUserName == "");    // fast check for empty input
@@ -358,60 +453,86 @@ namespace EDD
                     Console.Write("Birthday (YYYY-MM-DD): ");
                     do { newBirthday = Console.ReadLine(); } while (newBirthday == "");
 
-                    Console.Write("Active (y/n): ");
-                    isActivatedInput = Console.ReadLine();
-                    do
+                    if (UserRole != "guest")
                     {
-                        if (isActivatedInput == "y")
-                            isActivated = true;
-                        else if (isActivatedInput == "n")
-                            isActivated = false;
-                    } while (isActivatedInput == "");
+                        Console.Write("Active (y/n): ");
+                        isActivatedInput = Console.ReadLine();
+                        do
+                        {
+                            if (isActivatedInput == "y")
+                                isActivated = true;
+                            else if (isActivatedInput == "n")
+                                isActivated = false;
+                        } while (isActivatedInput == "");
 
-                    Console.Write("User role ([m]ember / [a]dmin): ");
-                    do
-                    {
-                        // HARDCODING THE ROLE IDs!!
-                        newRole = Console.ReadLine();
-                        if (newRole == "m")
+                        Console.Write("User role ([m]ember / [a]dmin): ");
+                        do
                         {
-                            newRole = "2";
-                        }
-                        else if (newRole == "a")
-                        {
-                            newRole = "1";
-                        }
-                    } while (newRole == "m" || newRole == "a");
+                            // HARDCODING THE ROLE IDs!!
+                            newRole = Console.ReadLine();
+                            if (newRole == "m")
+                            {
+                                newRole = "2";
+                            }
+                            else if (newRole == "a")
+                            {
+                                newRole = "1";
+                            }
+                        } while (newRole == "m" || newRole == "a");
+                    }
 
                     try
                     {
                         myConnection.Open();
-                        OleDbCommand myCommand = new OleDbCommand("INSERT INTO RegisteredUsers (username, `password`, email, realname, birthday, dateregistered, activated, banned, role) values (@newUserName, @newPassword, @newEmail, @newRealname, @birthday, NOW(), @isActivated, FALSE, @role)", myConnection);
-                        myCommand.Parameters.AddWithValue("@newUserName", newUserName);
-                        myCommand.Parameters.AddWithValue("@newPassword", newPassword);
-                        myCommand.Parameters.AddWithValue("@newEmail,", newEmail);
-                        myCommand.Parameters.AddWithValue("@newRealname", newRealname);
-                        myCommand.Parameters.AddWithValue("@newBirthday", newBirthday);
-                        myCommand.Parameters.AddWithValue("@isActivated", isActivated);
-                        myCommand.Parameters.AddWithValue("@role", newRole);
-                        myCommand.ExecuteNonQuery();
-                        myConnection.Close();
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("\nSuccesfully added user!\n\nPress any key to back to menu ...");
-                        Console.ForegroundColor = ConsoleColor.Gray;
-                        Console.ReadKey();
-                        Menu();
+                        if (UserRole == "guest")    // different commands for every user role :D
+                        {
+                            OleDbCommand myCommand = new OleDbCommand("INSERT INTO RegisteredUsers (username, `password`, email, realname, birthday, dateregistered, activated, banned, role) values (@newUserName, @newPassword, @newEmail, @newRealname, @birthday, NOW(), FALSE, FALSE, 2)", myConnection);
+                            myCommand.Parameters.AddWithValue("@newUserName", newUserName);
+                            myCommand.Parameters.AddWithValue("@newPassword", newPassword);
+                            myCommand.Parameters.AddWithValue("@newEmail,", newEmail);
+                            myCommand.Parameters.AddWithValue("@newRealname", newRealname);
+                            myCommand.Parameters.AddWithValue("@newBirthday", newBirthday);
+                            myCommand.ExecuteNonQuery();
+                            myConnection.Close();
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("\nSuccesfully registered! You must wait for admin to approve and activate your account. Cya!");
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            StartScreen();
+                        }
+                        else if (UserRole == "admin")
+                        {
+                            OleDbCommand myCommand = new OleDbCommand("INSERT INTO RegisteredUsers (username, `password`, email, realname, birthday, dateregistered, activated, banned, role) values (@newUserName, @newPassword, @newEmail, @newRealname, @birthday, NOW(), @isActivated, FALSE, @role)", myConnection);
+                            myCommand.Parameters.AddWithValue("@newUserName", newUserName);
+                            myCommand.Parameters.AddWithValue("@newPassword", newPassword);
+                            myCommand.Parameters.AddWithValue("@newEmail,", newEmail);
+                            myCommand.Parameters.AddWithValue("@newRealname", newRealname);
+                            myCommand.Parameters.AddWithValue("@newBirthday", newBirthday);
+                            myCommand.Parameters.AddWithValue("@isActivated", isActivated);
+                            myCommand.Parameters.AddWithValue("@role", newRole);
+                            myCommand.ExecuteNonQuery();
+                            myConnection.Close();
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("\nSuccesfully added user!\n\nPress any key to back to menu ...");
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            Console.ReadKey();
+                            Menu();
+                        }
+
                     }
                     catch (OleDbException e)
                     {
                         myConnection.Close();
                         ErrorDisplay(e.Message);
+                        if (UserRole == "guest")
+                        { StartScreen(); }
+                        else { Menu(); }
                     }
             
             }
             catch (Exception e)
             {
                 ErrorDisplay(e.Message);
+                AddUserMenu();
             }
         }
 
