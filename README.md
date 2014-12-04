@@ -25,7 +25,7 @@ How to install it :
     - "User ID= sa" is database user you usually use
     - "Password= sa" is the database password you usually use
     - SAVE!
-  3. In folder "toInsert" exist SQL Query file, called "zaQvkataDLG.sql" , which you have to import into your database server.
-  
+ 3. In folder "toInsert" exist SQL Query file, called "zaQvkataDLG.sql" , which you have to import into your database server.
+ 4. If the application wont start, you should check the datasets studentsDS and rolesDS about their dataset connection strings.
 After doing thissteps, feel free to use the application!
 Congratulations!
