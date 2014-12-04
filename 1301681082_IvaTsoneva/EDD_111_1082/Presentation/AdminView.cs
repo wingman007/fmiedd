@@ -10,7 +10,7 @@ using System.Threading;
 
 namespace EDD_111_1082.Presentation
 {
-    class AdminView //CAUTION! DO NOT SEND: ERROR ON EDIT()
+    class AdminView 
     {
         public AdminView() //View and functional methods when logged as admin
         {
@@ -33,18 +33,18 @@ namespace EDD_111_1082.Presentation
             {
                 Console.Clear();
                 Console.WriteLine("User management:");
-                Console.WriteLine("[V]iew all users");
-                Console.WriteLine("[E]dit user");
-                Console.WriteLine("[D]elete user");
-                Console.WriteLine("E[X]it");
-
+                Console.WriteLine("1.View all users");
+                Console.WriteLine("2.Edit user");
+                Console.WriteLine("3.Delete user");
+                Console.WriteLine("4.Exit");
+                Console.WriteLine("Your choice:");
                 string choice = Console.ReadLine();
                 switch (choice.ToUpper())
                 {
-                    case "V":{return UserManagementEnum.Select; }
-                    case "E": { return UserManagementEnum.Update; }                        
-                    case "D":{ return UserManagementEnum.Delete;}
-                    case "X":{return UserManagementEnum.Exit;}
+                    case "1":{return UserManagementEnum.Select; }
+                    case "2": { return UserManagementEnum.Update; }                        
+                    case "3":{ return UserManagementEnum.Delete;}
+                    case "4":{return UserManagementEnum.Exit;}
                     default:
                         {
                             Console.WriteLine("Invalid choice.");
@@ -97,6 +97,8 @@ namespace EDD_111_1082.Presentation
                 user1.Firstname = Console.ReadLine();
                 Console.WriteLine("New lastname:");
                 user1.Lastname = Console.ReadLine();
+                Console.WriteLine("New role (Admin or User):");
+                user1.Role = Console.ReadLine().ToUpper();
                 int upd = urepo.Update(user1);
                 if (upd > 0)
                 {

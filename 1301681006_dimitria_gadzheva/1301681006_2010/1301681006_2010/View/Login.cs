@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using _1301681006_2010.Service;
 
 
 namespace _1301681006_2010.View
@@ -22,22 +23,34 @@ namespace _1301681006_2010.View
                 Console.WriteLine(":----------------------------------:");
                 Console.Write("       Enter username: ");
                 string username = Console.ReadLine();
-
                 Console.Write("       Enter password: ");
                 string password = Console.ReadLine();
                 Console.WriteLine(":----------------------------------:");
 
-                Admin.AdminAuthentication(username, password);
+                AuthenticationService.AuthenticateUser(username, password);
 
-                if (username == "admin")
+                if (AuthenticationService.LoggedUser != null)
                 {
+                    Console.WriteLine("   L O G I N  S U C C E S S F U L");                                 
+                    Console.WriteLine(":----------------------------------:");
+                    Console.WriteLine("");
+                    Console.WriteLine("                      Welcome " + AuthenticationService.LoggedUser.Username + ".");
                     Console.ReadKey(true);
                     break;
                 }
-
-                Console.ReadKey(true);
-
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("           I N V A L I D");
+                    Console.WriteLine(" U S E R N A M E or P A S S W O R D");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine(":----------------------------------:");
+                    Console.ReadKey(true);
+                    return;
+                }              
             }
+
         }
     }
+                
 }

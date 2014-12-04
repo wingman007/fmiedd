@@ -28,109 +28,129 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonLogIn = new System.Windows.Forms.Button();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.labelUsername = new System.Windows.Forms.Label();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.buttonReg = new System.Windows.Forms.Button();
             this.groupBoxLogIn = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxUsername = new MetroFramework.Controls.MetroTextBox();
+            this.ButtonLogIn = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.textBoxPassword = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.groupBoxLogIn.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonLogIn
-            // 
-            this.buttonLogIn.AutoSize = true;
-            this.buttonLogIn.Location = new System.Drawing.Point(60, 187);
-            this.buttonLogIn.Name = "buttonLogIn";
-            this.buttonLogIn.Size = new System.Drawing.Size(55, 23);
-            this.buttonLogIn.TabIndex = 3;
-            this.buttonLogIn.Text = "Log In";
-            this.buttonLogIn.UseVisualStyleBackColor = true;
-            this.buttonLogIn.Click += new System.EventHandler(this.buttonLogIn_Click);
-            // 
-            // textBoxUsername
-            // 
-            this.textBoxUsername.Location = new System.Drawing.Point(72, 100);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(123, 20);
-            this.textBoxUsername.TabIndex = 1;
-            // 
-            // labelUsername
-            // 
-            this.labelUsername.AutoSize = true;
-            this.labelUsername.Location = new System.Drawing.Point(69, 84);
-            this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(58, 13);
-            this.labelUsername.TabIndex = 2;
-            this.labelUsername.Text = "Username:";
-            // 
-            // labelPassword
-            // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(69, 129);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(56, 13);
-            this.labelPassword.TabIndex = 4;
-            this.labelPassword.Text = "Password:";
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Location = new System.Drawing.Point(72, 145);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(123, 20);
-            this.textBoxPassword.TabIndex = 2;
-            this.textBoxPassword.UseSystemPasswordChar = true;
-            // 
-            // buttonReg
-            // 
-            this.buttonReg.AutoSize = true;
-            this.buttonReg.Location = new System.Drawing.Point(146, 187);
-            this.buttonReg.Name = "buttonReg";
-            this.buttonReg.Size = new System.Drawing.Size(62, 23);
-            this.buttonReg.TabIndex = 4;
-            this.buttonReg.Text = "Register";
-            this.buttonReg.UseVisualStyleBackColor = true;
-            this.buttonReg.Click += new System.EventHandler(this.buttonReg_Click);
             // 
             // groupBoxLogIn
             // 
             this.groupBoxLogIn.AutoSize = true;
-            this.groupBoxLogIn.Location = new System.Drawing.Point(60, 54);
+            this.groupBoxLogIn.Controls.Add(this.metroLabel2);
+            this.groupBoxLogIn.Controls.Add(this.metroLabel1);
+            this.groupBoxLogIn.Controls.Add(this.textBoxPassword);
+            this.groupBoxLogIn.Controls.Add(this.textBoxUsername);
+            this.groupBoxLogIn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBoxLogIn.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBoxLogIn.Location = new System.Drawing.Point(23, 55);
             this.groupBoxLogIn.Name = "groupBoxLogIn";
-            this.groupBoxLogIn.Size = new System.Drawing.Size(148, 127);
+            this.groupBoxLogIn.Size = new System.Drawing.Size(221, 139);
             this.groupBoxLogIn.TabIndex = 6;
             this.groupBoxLogIn.TabStop = false;
-            this.groupBoxLogIn.Text = "Log In Form:";
+            this.groupBoxLogIn.Text = "Sign Up";
             // 
-            // label1
+            // textBoxUsername
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label1.Location = new System.Drawing.Point(43, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 26);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "My Movie Catalogue";
+            this.textBoxUsername.Lines = new string[0];
+            this.textBoxUsername.Location = new System.Drawing.Point(42, 44);
+            this.textBoxUsername.MaxLength = 32767;
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.PasswordChar = '\0';
+            this.textBoxUsername.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxUsername.SelectedText = "";
+            this.textBoxUsername.Size = new System.Drawing.Size(135, 23);
+            this.textBoxUsername.TabIndex = 10;
+            this.textBoxUsername.UseSelectable = true;
+            // 
+            // ButtonLogIn
+            // 
+            this.ButtonLogIn.DisplayFocus = true;
+            this.ButtonLogIn.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.ButtonLogIn.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.ButtonLogIn.Location = new System.Drawing.Point(23, 208);
+            this.ButtonLogIn.Name = "ButtonLogIn";
+            this.ButtonLogIn.Size = new System.Drawing.Size(98, 25);
+            this.ButtonLogIn.Style = MetroFramework.MetroColorStyle.Green;
+            this.ButtonLogIn.TabIndex = 8;
+            this.ButtonLogIn.Text = "Log In";
+            this.ButtonLogIn.UseSelectable = true;
+            this.ButtonLogIn.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.DisplayFocus = true;
+            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.metroButton1.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.metroButton1.Location = new System.Drawing.Point(167, 208);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(77, 25);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Teal;
+            this.metroButton1.TabIndex = 9;
+            this.metroButton1.Text = "Register";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click_1);
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Lines = new string[0];
+            this.textBoxPassword.Location = new System.Drawing.Point(42, 92);
+            this.textBoxPassword.MaxLength = 32767;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '●';
+            this.textBoxPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxPassword.SelectedText = "";
+            this.textBoxPassword.Size = new System.Drawing.Size(135, 23);
+            this.textBoxPassword.TabIndex = 11;
+            this.textBoxPassword.UseSelectable = true;
+            this.textBoxPassword.UseSystemPasswordChar = true;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Enabled = false;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel1.LabelMode = MetroFramework.Controls.MetroLabelMode.Selectable;
+            this.metroLabel1.Location = new System.Drawing.Point(42, 26);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(61, 15);
+            this.metroLabel1.TabIndex = 12;
+            this.metroLabel1.Text = "Username:";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Enabled = false;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel2.LabelMode = MetroFramework.Controls.MetroLabelMode.Selectable;
+            this.metroLabel2.Location = new System.Drawing.Point(40, 74);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(58, 15);
+            this.metroLabel2.TabIndex = 13;
+            this.metroLabel2.Text = "Password:";
             // 
             // LogIn
             // 
+            this.AcceptButton = this.ButtonLogIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(267, 239);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonReg);
-            this.Controls.Add(this.labelPassword);
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.labelUsername);
-            this.Controls.Add(this.textBoxUsername);
-            this.Controls.Add(this.buttonLogIn);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(267, 252);
+            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.ButtonLogIn);
             this.Controls.Add(this.groupBoxLogIn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "LogIn";
+            this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
+            this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "My Movie Catalogue";
+            this.groupBoxLogIn.ResumeLayout(false);
+            this.groupBoxLogIn.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,14 +158,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonLogIn;
-        private System.Windows.Forms.TextBox textBoxUsername;
-        private System.Windows.Forms.Label labelUsername;
-        private System.Windows.Forms.Label labelPassword;
-        private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.Button buttonReg;
         private System.Windows.Forms.GroupBox groupBoxLogIn;
-        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroButton ButtonLogIn;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroTextBox textBoxUsername;
+        private MetroFramework.Controls.MetroTextBox textBoxPassword;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }
 

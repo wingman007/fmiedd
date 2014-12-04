@@ -6,6 +6,7 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Data.SqlServerCe;
 using _1301681006_2010.View;
+using _1301681006_2010.Repository;
 
 
 
@@ -19,9 +20,9 @@ namespace _1301681006_2010
             Login log = new Login();
             log.SystemLogin();
 
-            Table table = new Table();
-            table.usersTable();
-
+            tableRepository repo = new tableRepository();
+            repo.Table();
+                       
             Console.ReadKey(true);
         }
     }

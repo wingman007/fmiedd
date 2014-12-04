@@ -13,35 +13,38 @@ using CRUD_Project.Views;
 
 namespace CRUD_Project.View
 {
-    public partial class Main : Form
+    public partial class Main : MetroFramework.Forms.MetroForm
     {
-        private Models.ModelUser currentUser;
+        private ControllerMovie ctrlMovie;
 
         public Main()
         {
             InitializeComponent();
-        }
-
-        public void LoggedUser(int userID)
-        {
-            ControllerUser ctr1 = new ControllerUser();
-            currentUser = ctr1.SetCurrentUser(userID);
-            toolStripStatusLabelUser.Text = currentUser.Username;
+            ctrlMovie = new ControllerMovie();
         }
 
         public Form mainForm { get; set; }
 
         private void Main_Load(object sender, EventArgs e)
         {
-            ControllerMovie ctrlMovie = new ControllerMovie();
+            toolStripStatusLabelUser.Text = ControllerUser.currentUser.Username;
+            toolStripStatusLabelRoleName.Text = ControllerUser.currentUser.Role.RoleName;
+
+            if (ControllerUser.currentUser.Role.RoleName == "Member" || ControllerUser.currentUser.Role.RoleName == "Public")
+            {
+                adminPanelToolStripMenuItem.Visible = false;
+                manageToolStripMenuItem.Visible = false;
+                addToolStripMenuItem1.Visible = false;
+            }
+
             ctrlMovie.LoadMoviesToListView(listView1);
-            comboBox1.Items.AddRange(ControllerCategory.LoadAllCategories());
+            metroComboBox1.Items.Add("All Genres...");
+            metroComboBox1.Items.AddRange(ControllerCategory.LoadAllCategories());
         }
 
         private void addToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             AddMovies addMovies = new AddMovies();
-            addMovies.CurrentUser = currentUser;
             addMovies.Show();
         }
 
@@ -60,16 +63,62 @@ namespace CRUD_Project.View
         private void Main_Activated(object sender, EventArgs e)
         {
             listView1.Items.Clear();
-            comboBox1.Items.Clear();
+            metroComboBox1.Items.Clear();
             ControllerMovie ctrlMovie = new ControllerMovie();
             ctrlMovie.LoadMoviesToListView(listView1);
-            comboBox1.Items.AddRange(ControllerCategory.LoadAllCategories());
+            metroComboBox1.Items.Add("All Genres...");
+            metroComboBox1.Items.AddRange(ControllerCategory.LoadAllCategories());
         }
 
         private void manageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageMovies manage = new ManageMovies();
             manage.Show();
+        }
+
+        private void adminPanelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserAdminPanel adminPanel = new UserAdminPanel();
+            adminPanel.ShowDialog();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+
+            if (metroTextBox1.Text == "" || metroComboBox1.SelectedItem == null)
+            {
+                return;
+            }
+
+            List<Movy> movies = ctrlMovie.GetByCondition(metroTextBox1.Text,
+                                metroComboBox1.SelectedItem.ToString(), metroDateTime1.Value.Year);
+
+
+
+            int count = 0;
+            foreach (var item in movies)
+            {
+                listView1.Items.Add(item.Id.ToString());
+                listView1.Items[count].SubItems.Add(item.Title);
+                listView1.Items[count].SubItems.Add(item.Category1.CategoryName);
+                listView1.Items[count].SubItems.Add(item.Year.ToString());
+                listView1.Items[count].SubItems.Add(item.Director);
+                listView1.Items[count].SubItems.Add(item.User.Username);
+                count++;
+            }
+        }
+
+        private void allToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            ControllerMovie ctrlMovie = new ControllerMovie();
+            ctrlMovie.LoadMoviesToListView(listView1);
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            metroTextBox1.Text = String.Empty;
         }
     }
 }

@@ -11,15 +11,15 @@ namespace EDD_111_1082.Presentation
 {
     class LoginView
     {
-        public string LoggedUser { get; private set; }
+        public User LoggedUser { get; private set; }
         public LoginView()
         {
             LoggedUser = Login();
 
         }
-        private string Login()
+        private User Login()
         {
-            string s_logged = null;
+            User s_logged = null;
             while (true)
             {
                 Console.Clear();
@@ -38,7 +38,13 @@ namespace EDD_111_1082.Presentation
                     {
                         Console.Clear();
                         Console.WriteLine("Welcome {0} !", returnedUser.Firstname);
-                        s_logged = returnedUser.Username;
+                        s_logged = returnedUser;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect username or password!");
+                        Thread.Sleep(1000);
                         break;
                     }
                 }

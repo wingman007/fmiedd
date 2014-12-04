@@ -13,40 +13,36 @@ namespace CRUD_Project.Controllers
     {
         private Models.ModelUser user1;
 
+        public static User currentUser;
+
+        DataClasses1DataContext db;
+
         public ControllerUser(Models.ModelUser user1)
         {
             this.user1 = user1;
         }
 
         public ControllerUser()
-        { }
-
-        public int LoginAuthentication(string username, string pass)
         {
-            DataClasses1DataContext db = new DataClasses1DataContext();
+            db = new DataClasses1DataContext();
+        }
 
-            var user = from u in db.Users
+        public User LoginAuthentication(string username, string pass)
+        {
+            var user = (from u in db.Users
                        where u.Username == username && u.Password == pass
-                       select u.Id;
-
-            if (user.FirstOrDefault() > 0)
-            {
-                return user.FirstOrDefault();
-            }
-
-            return 0;
+                       select u).FirstOrDefault();
+            return user;
         }
 
         public bool Register(string username, string pass, string email)
         {
-            DataClasses1DataContext db = new DataClasses1DataContext();
-
             var usernames = from un in db.Users
                             select un.Username;
 
             if (!usernames.Contains(username))
             {
-                db.Users.InsertOnSubmit(new User { Username = username, Password = pass, Email = email, IsAdmin = "false" });
+                db.Users.InsertOnSubmit(new User { Username = username, Password = pass, Email = email, RoleID = 1});
                 db.SubmitChanges();
                 return true;
             }
@@ -54,32 +50,48 @@ namespace CRUD_Project.Controllers
             return false;
         }
 
-        public Models.ModelUser SetCurrentUser(int userID)
+        public List<User> GetAll()
         {
-            DataClasses1DataContext db = new DataClasses1DataContext();
+            return db.Users.ToList();
 
-            Models.ModelUser user1 = new Models.ModelUser();
+        }
 
-            var user = from u in db.Users
-                       where userID == u.Id
-                       select new { 
-                           Username = u.Username,
-                           Password = u.Password,
-                           Email = u.Email,
-                           Id = u.Id,
-                           IsAdmin = u.IsAdmin
-                       };
+        public bool Delete(int id)
+        {
+            var user = (from u in db.Users
+                       where u.Id == id
+                       select u).FirstOrDefault();
 
-            foreach (var item in user.ToList())
+            if (user.Id != currentUser.Id)
             {
-                user1.UserId = item.Id;
-                user1.Username = item.Username;
-                user1.Password = item.Password;
-                user1.Email = item.Email;
-                user1.IsAdmin = Convert.ToBoolean(item.IsAdmin);
+                db.Users.DeleteOnSubmit(user);
+                db.SubmitChanges();
+                return true;
             }
+            return false;
+        }
 
-            return user1;
+        public User GetById(int userId)
+        {
+            var user = (from u in db.Users
+                        where u.Id == userId
+                        select u).FirstOrDefault();
+
+            return user;
+        }
+
+        public void Edit(User newUser)
+        {
+            User user = (from u in db.Users
+                         where u.Id == newUser.Id
+                         select u).FirstOrDefault();
+
+            user.Username = newUser.Username;
+            user.Password = newUser.Password;
+            user.RoleID = newUser.RoleID;
+            user.Email = newUser.Email;
+
+            db.SubmitChanges();
         }
     }
 }

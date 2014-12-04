@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace EDD_111_1082.Presentation
@@ -48,6 +49,7 @@ namespace EDD_111_1082.Presentation
                         urepo.Insert(user1);
                         s_logged = user1.Username;
                         Console.WriteLine("Congratulations, {0}! You are now part of C-Mail !", user1.Firstname);
+                        Thread.Sleep(1500);
                         break;
                     
                 }

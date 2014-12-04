@@ -74,6 +74,7 @@ namespace EDD_111_1082.Repository
                         Lastname = Convert.ToString(reader["Lastname"]),
                         Username = Convert.ToString(reader["Username"]),
                         Password = Convert.ToString(reader["Passwordd"]),
+                        Role=Convert.ToString(reader["Role"])
                     });
                 }
                 reader.Close();

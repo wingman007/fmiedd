@@ -22,16 +22,17 @@ namespace EDD_111_1082.Presentation
                     case LoginManagementEnum.Login:
                         {
                             LoginView laview = new LoginView();
-                            if (laview.LoggedUser != null && laview.LoggedUser != "admin")
+                            if (laview.LoggedUser != null && laview.LoggedUser.Role == "USER" || laview.LoggedUser.Role == "MANAGER")
                             {
                                 Thread.Sleep(1500);
-                                MailView mview = new MailView(laview.LoggedUser);
+                                MailView mview = new MailView(laview.LoggedUser.Username);
                             }
-                            else if (laview.LoggedUser == "admin")
+                            else if (laview.LoggedUser.Role  == "ADMIN")
                             {
                                 Thread.Sleep(1500);
                                 AdminView aview = new AdminView();
                             }
+                            
                             break;
                         }
                     case LoginManagementEnum.Register:
@@ -58,10 +59,14 @@ namespace EDD_111_1082.Presentation
             while (true)
             {
                 Console.Clear();
+                Console.BackgroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("To navigate select 1,2 or 3 and hit ENTER :)");
+                Console.BackgroundColor = ConsoleColor.White;
                 Console.WriteLine("C-Mail Menu:");
-                Console.WriteLine("1. Log-in");
-                Console.WriteLine("2. Register");
-                Console.WriteLine("3. Exit");
+                Console.WriteLine(" 1. Log-in");
+                Console.WriteLine(" 2. Register");
+                Console.WriteLine(" 3. Exit");
+                Console.WriteLine("Your choice:");
 
                 string choice = Console.ReadLine();
                 switch (choice)

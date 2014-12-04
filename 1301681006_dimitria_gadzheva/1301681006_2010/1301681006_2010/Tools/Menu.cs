@@ -9,7 +9,7 @@ namespace _1301681006_2010.Tools
     {
         Insert = 1,
         Update = 2,
-        Delete = 3,      
-        Exit = 4
+        Delete = 4,      
+        memberUpdate = 3
     }
 }
