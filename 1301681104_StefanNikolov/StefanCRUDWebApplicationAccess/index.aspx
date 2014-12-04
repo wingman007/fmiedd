@@ -1,0 +1,38 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="StefanCRUDWebApplicationAccess.index" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ADMIN Panel</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+    <!-- Optional theme -->
+    <link rel="stylesheet"href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+        <h3>ADMIN Panel<small>List view</small></h3>
+        <br />
+        <p><a href="Add_page.aspx" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Add user</a><br /></p>
+        <p><a href="login.aspx" class="btn btn-primary"><span class="glyphicon glyphicon-log-out"></span>Logout</a><br /></p>
+        <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1">
+            <Columns>
+                <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
+                <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
+                <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
+                <asp:BoundField DataField="type" HeaderText="type" SortExpression="email" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [users]"></asp:SqlDataSource>
+        <h4>Operations:</h4>
+        <a href="update_page.aspx" class="glyphicon glyphicon-edit">Edit</a><br />
+        <a href="delete_page.aspx" class='glyphicon glyphicon-trash'>Delete</a></div>
+    </form>
+</body>
+</html>
