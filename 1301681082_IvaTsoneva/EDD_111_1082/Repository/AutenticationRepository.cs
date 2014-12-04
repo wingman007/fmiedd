@@ -44,15 +44,15 @@ namespace EDD_111_1082.Repository
                         user.Lastname = Convert.ToString(reader["Lastname"]);
                         user.Username = Convert.ToString(reader["Username"]);
                         user.Password = Convert.ToString(reader["Passwordd"]);
+                        user.Role = Convert.ToString(reader["Role"]);
                     }
                     reader.Close();
                     if (user.ID > 0)
                     {
                         return user;
                     }
-
                 }
-                catch (OleDbException e)
+                catch (OleDbException)
                 {
                     throw;
                 }

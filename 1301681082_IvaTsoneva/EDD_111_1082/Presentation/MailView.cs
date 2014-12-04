@@ -81,14 +81,14 @@ namespace EDD_111_1082.Presentation
                    }
                    else
                    {
-                       Console.WriteLine("Invalid reciever/operation!Failed sending message!");                       
-                       Console.ReadKey(true);
+                       Console.WriteLine("Invalid reciever/operation!Failed sending message!");
+                       break;
                    }
                 }
                 else
                 {
                     Console.WriteLine("Invalid sender or reciever!");
-                    Console.ReadKey(true);                
+                    break;              
                 }
             }
         }
