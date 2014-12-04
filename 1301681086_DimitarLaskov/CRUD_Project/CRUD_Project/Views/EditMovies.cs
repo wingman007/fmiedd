@@ -12,7 +12,7 @@ using CRUD_Project.Models;
 
 namespace CRUD_Project.Views
 {
-    public partial class EditMovies : Form
+    public partial class EditMovies : MetroFramework.Forms.MetroForm
     {
         private int id;
         private ModelMovie movie;
@@ -39,7 +39,7 @@ namespace CRUD_Project.Views
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void metroButton1_Click(object sender, EventArgs e)
         {
             Movy movie = new Movy
             {
@@ -66,7 +66,7 @@ namespace CRUD_Project.Views
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void metroButton2_Click(object sender, EventArgs e)
         {
             this.Close();
         }

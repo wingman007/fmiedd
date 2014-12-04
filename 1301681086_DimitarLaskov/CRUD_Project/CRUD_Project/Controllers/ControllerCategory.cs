@@ -33,7 +33,7 @@ namespace CRUD_Project.Controllers
                 {
                     if (item.CategoryName == category.CategoryName)
                     {
-                        return 0;
+                        return -1;
                     }
                 }
 

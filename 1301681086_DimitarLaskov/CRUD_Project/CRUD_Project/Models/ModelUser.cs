@@ -32,7 +32,7 @@ namespace CRUD_Project.Models
             set;
         }
 
-        public bool IsAdmin
+        public int Role
         {
             get;
             set;

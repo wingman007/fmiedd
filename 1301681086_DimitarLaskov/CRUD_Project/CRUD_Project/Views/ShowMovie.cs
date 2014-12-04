@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CRUD_Project.Views
 {
-    public partial class ShowMovie : Form
+    public partial class ShowMovie : MetroFramework.Forms.MetroForm
     {
         public ShowMovie()
         {

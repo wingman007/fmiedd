@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CRUD_Project.Views
 {
-    public partial class Register : Form
+    public partial class Register : MetroFramework.Forms.MetroForm
     {
         public Register()
         {
@@ -26,20 +26,14 @@ namespace CRUD_Project.Views
             set;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ClearTextBoxes()
         {
-            ClearTextBoxes();
+            textBoxUsername.Clear();
+            textBoxPass.Clear();
+            textBoxEmail.Clear();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ClearTextBoxes();
-            this.Close();
-            LogIn form1 = new LogIn();
-            form1.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void metroButtonRegister_Click(object sender, EventArgs e)
         {
             ControllerUser ctr1 = new ControllerUser();
 
@@ -60,15 +54,14 @@ namespace CRUD_Project.Views
             {
                 MessageBox.Show("This username is not avaliable!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-                
-                
         }
 
-        private void ClearTextBoxes()
+        private void metroButton1_Click(object sender, EventArgs e)
         {
-            textBoxUsername.Clear();
-            textBoxPass.Clear();
-            textBoxEmail.Clear();
+            ClearTextBoxes();
+            this.Close();
+            LogIn form1 = new LogIn();
+            form1.Show();
         }
 
     }
