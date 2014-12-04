@@ -1,0 +1,4 @@
+Simple CRUD using WebForms Visual Studio
+1.Run from Preview in the solution.
+
+http://support.microsoft.com/KB/301240

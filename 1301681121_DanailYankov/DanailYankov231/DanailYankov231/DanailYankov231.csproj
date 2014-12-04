@@ -158,6 +158,7 @@
     <Content Include="Delete.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Insert.aspx" />
+    <Content Include="Logon.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -288,6 +289,13 @@
     </Compile>
     <Compile Include="Insert.aspx.designer.cs">
       <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logon.aspx.cs">
+      <DependentUpon>Logon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logon.aspx.designer.cs">
+      <DependentUpon>Logon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Preview.aspx.cs">

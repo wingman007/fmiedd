@@ -18,10 +18,5 @@ namespace DanailYankov231
         {
 
         }
-
-        protected void txt_id_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

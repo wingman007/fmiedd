@@ -20,7 +20,7 @@
                             <asp:Label ID="Label1" runat="server" Text="ID"></asp:Label>
                         </td>
                         <td>
-                            <asp:TextBox ID="txt_id" runat="server" OnTextChanged="txt_id_TextChanged"></asp:TextBox>
+                            <asp:TextBox ID="txt_id" runat="server"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -51,7 +51,7 @@
     
     </div>
         <asp:Button ID="bttnAdd" runat="server" ClientIDMode="Static" Height="23px" OnClick="bttnAdd_Click" Text="Add User" Width="137px" />
-         <asp:SqlDataSource ID="UsersDany" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString3 %>" ProviderName="<%$ ConnectionStrings:ConnectionString3.ProviderName %>" SelectCommand="SELECT * FROM [Users]" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [Users] WHERE [ID] = ? AND (([Username] = ?) OR ([Username] IS NULL AND ? IS NULL)) AND (([Password] = ?) OR ([Password] IS NULL AND ? IS NULL)) AND (([Email] = ?) OR ([Email] IS NULL AND ? IS NULL))" InsertCommand="INSERT INTO [Users] ([ID], [Username], [Password], [Email]) VALUES (?, ?, ?, ?)" OldValuesParameterFormatString="original_{0}" UpdateCommand="UPDATE [Users] SET [Username] = ?, [Password] = ?, [Email] = ? WHERE [ID] = ? AND (([Username] = ?) OR ([Username] IS NULL AND ? IS NULL)) AND (([Password] = ?) OR ([Password] IS NULL AND ? IS NULL)) AND (([Email] = ?) OR ([Email] IS NULL AND ? IS NULL))">
+         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString3 %>" ProviderName="<%$ ConnectionStrings:ConnectionString3.ProviderName %>" SelectCommand="SELECT * FROM [UsersDany]" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [UsersDany] WHERE [ID] = ? AND (([Username] = ?) OR ([Username] IS NULL AND ? IS NULL)) AND (([Password] = ?) OR ([Password] IS NULL AND ? IS NULL)) AND (([Email] = ?) OR ([Email] IS NULL AND ? IS NULL))" InsertCommand="INSERT INTO [UsersDany] ([ID], [Username], [Password], [Email]) VALUES (?, ?, ?, ?)" OldValuesParameterFormatString="original_{0}" UpdateCommand="UPDATE [UsersDany] SET [Username] = ?, [Password] = ?, [Email] = ? WHERE [ID] = ? AND (([Username] = ?) OR ([Username] IS NULL AND ? IS NULL)) AND (([Password] = ?) OR ([Password] IS NULL AND ? IS NULL)) AND (([Email] = ?) OR ([Email] IS NULL AND ? IS NULL))">
             <DeleteParameters>
                 <asp:Parameter Name="original_ID" Type="Int32" />
                 <asp:Parameter Name="original_Username" Type="String" />
