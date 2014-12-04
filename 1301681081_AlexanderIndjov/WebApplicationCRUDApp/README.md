@@ -44,4 +44,4 @@ add RoleID int foreign key
  second we search for the tag with name connectionStrings and in it we should find our connection string name
  third we coppy the name inside the brakets and we paste it on every page where we use the connection string to make connection with the servers's database
  finally we start the project and test it any problems
- Specia thnks to my mind! Enjoy the project :) **
+ Specia thnks to my mind! Enjoy the project :) 
