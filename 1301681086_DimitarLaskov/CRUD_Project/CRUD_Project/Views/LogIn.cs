@@ -15,24 +15,23 @@ using System.Windows.Forms;
 
 namespace CRUD_Project.View
 {
-    public partial class LogIn : Form
+    public partial class LogIn : MetroFramework.Forms.MetroForm
     {
         public LogIn()
         {
             InitializeComponent();
         }
 
-        private void buttonLogIn_Click(object sender, EventArgs e)
+        private void metroButton1_Click(object sender, EventArgs e)
         {
-
             ControllerUser ctr1 = new ControllerUser();
-            int userId = ctr1.LoginAuthentication(textBoxUsername.Text, textBoxPassword.Text);
+            User user = ctr1.LoginAuthentication(textBoxUsername.Text, textBoxPassword.Text);
 
-            if (userId > 0)
+            if (user != null)
             {
                 this.Hide();
                 Main form2 = new Main();
-                form2.LoggedUser(userId);
+                ControllerUser.currentUser = user;
                 form2.mainForm = this;
                 form2.Show();
             }
@@ -44,7 +43,7 @@ namespace CRUD_Project.View
             }
         }
 
-        private void buttonReg_Click(object sender, EventArgs e)
+        private void metroButton1_Click_1(object sender, EventArgs e)
         {
             Register register = new Register();
             register.PreviousForm = this;

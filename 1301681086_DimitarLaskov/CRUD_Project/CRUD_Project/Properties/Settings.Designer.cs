@@ -44,5 +44,15 @@ namespace CRUD_Project.Properties {
                 return ((string)(this["DatabaseConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=CrudProjectDB;Integrated Security=True")]
+        public string CrudProjectDBConnectionString {
+            get {
+                return ((string)(this["CrudProjectDBConnectionString"]));
+            }
+        }
     }
 }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace CRUD_Project.Views
 {
-    public partial class ManageMovies : Form
+    public partial class ManageMovies : MetroFramework.Forms.MetroForm
     {
         public ManageMovies()
         {
@@ -22,7 +22,7 @@ namespace CRUD_Project.Views
         {
             ControllerMovie ctrlMovie = new ControllerMovie();
             ctrlMovie.LoadMoviesToListView(listView1);
-            comboBox1.Items.AddRange(ControllerCategory.LoadAllCategories());
+            metroComboBox1.Items.AddRange(ControllerCategory.LoadAllCategories());
 
         }
 
@@ -33,8 +33,7 @@ namespace CRUD_Project.Views
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            EditMovies editMovie = new EditMovies(Convert.ToInt32(listView1.SelectedItems[0].Text));
-            editMovie.Show();
+
         }
 
         private void ManageMovies_Activated(object sender, EventArgs e)
@@ -58,6 +57,17 @@ namespace CRUD_Project.Views
             }
 
 
+        }
+
+        private void listView1_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            EditMovies editMovie = new EditMovies(Convert.ToInt32(listView1.SelectedItems[0].Text));
+            editMovie.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
