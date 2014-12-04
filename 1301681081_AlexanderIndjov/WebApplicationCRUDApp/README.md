@@ -33,7 +33,7 @@ add RoleID int foreign key
   insert into Users
  Values(1,'Alex','AlexPass','Alex94@abv.bg',2)
   Working and adding SQL Server to the project
-  --------------------------------------------
+ ==============================================
  First we open the project via Visual Studio, reommended 2013's version
  Second we go to the tab View and find the option called SQL Server Object Explorer, after that a menu pops up with all the servers that are imported in VS,
  so we add SQL Server by folowing the needed steps, Note: use Server Authentication for the task! 
